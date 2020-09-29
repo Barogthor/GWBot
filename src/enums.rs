@@ -1,6 +1,12 @@
 use std::fmt::{Display, Formatter};
 use std::fmt;
 
+#[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Clone, Hash)]
+pub enum Language {
+    French,
+    English,
+}
+
 #[derive(Debug, Copy, Clone)]
 pub enum ProfessionType {
     None,
@@ -142,5 +148,7 @@ impl From<u32> for AttributeType{
         }
     }
 }
+
+
 
 // https://wiki.guildwars.com/images/e/e0/

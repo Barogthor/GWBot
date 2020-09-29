@@ -1,4 +1,8 @@
 use std::collections::HashMap;
+use crate::enums::Language;
+use crate::utils::ZaishenQuestStore;
+use chrono::FixedOffset;
+
 const INVALID_VALUE: u8 = 255;
 pub const STANDARD_DECODE: &[u8; 256] = {&[
     INVALID_VALUE, // input 0 (0x0)
@@ -268,7 +272,43 @@ pub const ZAISHEN_COMBAT_SIZE_CYCLE: i64 = 28;
 pub const ZAISHEN_VANQUISH_START: (i32, u32, u32) = (2017, 2, 15);
 pub const ZAISHEN_VANQUISH_SIZE_CYCLE: i64 = 136;
 
+pub const REACTION_ONE: &str = "1\u{fe0f}\u{20e3}";
+pub const REACTION_TWO: &str = "2\u{fe0f}\u{20e3}";
+pub const REACTION_THREE: &str = "3\u{fe0f}\u{20e3}";
+pub const REACTION_FOUR: &str = "4\u{fe0f}\u{20e3}";
+pub const REACTION_FIVE: &str = "5\u{fe0f}\u{20e3}";
+pub const REACTION_SIX: &str = "6\u{fe0f}\u{20e3}";
+pub const REACTION_SEVEN: &str = "7\u{fe0f}\u{20e3}";
+pub const REACTION_EIGHT: &str = "8\u{fe0f}\u{20e3}";
+
+
 lazy_static! {
+
+    pub static ref ZAISHEN_COMBAT_QUESTS: HashMap<Language, ZaishenQuestStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, ZaishenQuestStore::from_csv("datas/cz_en_US.csv"));
+        m.insert(Language::French, ZaishenQuestStore::from_csv("datas/cz_fr_FR.csv"));
+        m
+    };
+    pub static ref ZAISHEN_BOUNTY_QUESTS: HashMap<Language, ZaishenQuestStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, ZaishenQuestStore::from_csv("datas/bz_en_US.csv"));
+        m.insert(Language::French, ZaishenQuestStore::from_csv("datas/bz_fr_FR.csv"));
+        m
+    };
+    pub static ref ZAISHEN_MISSION_QUESTS: HashMap<Language, ZaishenQuestStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, ZaishenQuestStore::from_csv("datas/mz_en_US.csv"));
+        m.insert(Language::French, ZaishenQuestStore::from_csv("datas/mz_fr_FR.csv"));
+        m
+    };
+    pub static ref ZAISHEN_VANQUISH_QUESTS: HashMap<Language, ZaishenQuestStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, ZaishenQuestStore::from_csv("datas/vz_en_US.csv"));
+        m.insert(Language::French, ZaishenQuestStore::from_csv("datas/vz_fr_FR.csv"));
+        m
+    };
+
     pub static ref SKILLS_EN: HashMap<u32, &'static str> = {
         let mut m = HashMap::new();
 

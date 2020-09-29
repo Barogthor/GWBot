@@ -4,10 +4,7 @@ use serenity::model::channel::Message;
 use serenity::framework::standard::{CommandResult, Args};
 use crate::SkillCodeParser;
 use serenity::utils::MessageBuilder;
-use serenity::http::routing::RouteInfo::{CreateEmoji, GetEmoji};
 use serenity::model::guild::Emoji;
-use std::iter::Map;
-use serenity::model::id::EmojiId;
 use std::collections::HashMap;
 
 #[command]
@@ -21,7 +18,7 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
 
     let emojis = ctx.http.get_guild(channel.guild_id.0).await?.emojis;
     let emoji_lookup = emojis.iter()
-        .map(|(id, emoji)| (emoji.name.clone(), emoji.clone()))
+        .map(|(_id, emoji)| (emoji.name.clone(), emoji.clone()))
         .collect::<HashMap<String, Emoji>>();
 
     let mut response = MessageBuilder::new();
@@ -42,6 +39,11 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
         if count>0 {
             response.push(", ");
         }
+    }
+    response.push_line("");
+
+    for i in 0..8{
+        response.push("Skill ").push(i+1).push(": ").push_bold_line(skill_record.skills[i].1);
     }
 
     if let Err(why) = msg.channel_id.say(&ctx.http, &response).await {

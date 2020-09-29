@@ -29,8 +29,6 @@ use crate::constants::{
 };
 use std::str::{Chars};
 use crate::enums::{ProfessionType, AttributeType};
-use std::process::exit;
-use chrono::Date;
 
 
 #[group]
@@ -47,7 +45,7 @@ impl EventHandler for Handler {
 }
 
 use chrono::prelude::*;
-use chrono::offset::LocalResult;
+
 #[tokio::main]
 async fn main() {
     let augury_rock = Utc.ymd(2011, 3, 3);

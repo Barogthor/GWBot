@@ -1,2 +1,2 @@
 # GWBot
-A discord bot for gw1 
+A discord bot for guild wars 1
