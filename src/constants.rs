@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 use crate::enums::Language;
 use crate::utils::ZaishenQuestStore;
-use chrono::FixedOffset;
 
 const INVALID_VALUE: u8 = 255;
 pub const STANDARD_DECODE: &[u8; 256] = {&[
@@ -280,6 +279,9 @@ pub const REACTION_FIVE: &str = "5\u{fe0f}\u{20e3}";
 pub const REACTION_SIX: &str = "6\u{fe0f}\u{20e3}";
 pub const REACTION_SEVEN: &str = "7\u{fe0f}\u{20e3}";
 pub const REACTION_EIGHT: &str = "8\u{fe0f}\u{20e3}";
+pub const SECOND_PER_MINUTE: u64 = 60;
+pub const SECOND_PER_HOUR: u64 = 60 * SECOND_PER_MINUTE;
+pub const SECOND_PER_DAY: u64 = 24 * SECOND_PER_HOUR;
 
 
 lazy_static! {

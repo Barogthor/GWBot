@@ -20,7 +20,8 @@ use commands::{
     ping::*,
     skill::*,
     menu::*,
-    zq::*
+    zq::*,
+    zqnext::*,
 };
 use serenity::model::prelude::Ready;
 use crate::constants::{
@@ -32,7 +33,7 @@ use crate::enums::{ProfessionType, AttributeType};
 
 
 #[group]
-#[commands(ping, skill, menu, zq)]
+#[commands(ping, skill, menu, zq, zqnext)]
 struct General;
 
 struct Handler;

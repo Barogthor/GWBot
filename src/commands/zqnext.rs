@@ -19,6 +19,8 @@ use crate::constants::{
     ZAISHEN_VANQUISH_QUESTS,
 };
 use crate::enums::Language::French;
+use std::ops::Add;
+
 fn get_timezone_start(date: Date<Utc>) -> DateTime<FixedOffset> {
     date.and_hms(16,0,0).with_timezone(&FixedOffset::east(2*3600))
 }
@@ -41,9 +43,10 @@ fn get_vz_cycle_start() -> Date<Utc> {
 }
 
 #[command]
-async fn zq(ctx: &Context, msg: &Message) -> CommandResult {
+async fn zqnext(ctx: &Context, msg: &Message) -> CommandResult {
     let now =  Utc::now().with_timezone(&FixedOffset::east(2*3600));
-    let datetime_diff = |since| now.signed_duration_since(get_timezone_start(since)).num_days();
+    let tomorrow =  Utc::now().add(chrono::Duration::days(1)).with_timezone(&FixedOffset::east(2*3600));
+    let datetime_diff = |since| tomorrow.signed_duration_since(get_timezone_start(since)).num_days();
     let mz_id = datetime_diff(get_mz_cycle_start()) % ZAISHEN_MISSION_SIZE_CYCLE;
     let bz_id = datetime_diff(get_bz_cycle_start()) % ZAISHEN_BOUNTY_SIZE_CYCLE;
     let cz_id = datetime_diff(get_cz_cycle_start()) % ZAISHEN_COMBAT_SIZE_CYCLE;
