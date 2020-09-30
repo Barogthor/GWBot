@@ -1,11 +1,14 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader, Lines};
 
-pub trait FileParser{
+pub mod skill;
+
+pub trait FileParser {
     fn parse(path: &str) -> Self;
 }
 
 pub type CSVRecord = Vec<String>;
+
 #[derive(Default, Debug)]
 pub struct CSVFile {
     headers: Vec<String>,
@@ -125,4 +128,3 @@ impl NicholasGiftStore {
         self.0.get(id as usize)
     }
 }
-

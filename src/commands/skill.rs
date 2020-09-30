@@ -1,11 +1,13 @@
-use serenity::framework::standard::macros::command;
-use serenity::client::{Context};
-use serenity::model::channel::Message;
-use serenity::framework::standard::{CommandResult, Args};
-use crate::SkillCodeParser;
-use serenity::utils::MessageBuilder;
-use serenity::model::guild::Emoji;
 use std::collections::HashMap;
+
+use serenity::client::Context;
+use serenity::framework::standard::{Args, CommandResult};
+use serenity::framework::standard::macros::command;
+use serenity::model::channel::Message;
+use serenity::model::guild::Emoji;
+use serenity::utils::MessageBuilder;
+
+use crate::utils::skill::SkillCodeParser;
 
 #[command]
 async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
