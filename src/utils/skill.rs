@@ -57,7 +57,6 @@ fn read_professions(binary: &mut Chars) -> (ProfessionType, ProfessionType) {
     let second_profession = string_from_n_chars(binary, profession_chunk_size as usize);
     let first_profession = unflip_binary(first_profession);
     let second_profession = unflip_binary(second_profession);
-    println!("first prof: {}, second prof: {}", first_profession, second_profession);
     (ProfessionType::from(first_profession), ProfessionType::from(second_profession))
 }
 
@@ -70,9 +69,8 @@ fn read_attributes(binary: &mut Chars) -> Vec<(AttributeType, u32)> {
     for _i in 0..count_attributes {
         let attribute_id = string_from_n_chars(binary, attribute_chunk_size as usize);
         let attribute_id = unflip_binary(attribute_id);
-        let attribute_points = string_from_n_chars(binary, attribute_chunk_size as usize);
+        let attribute_points = string_from_n_chars(binary, 4);
         let attribute_points = unflip_binary(attribute_points);
-        println!("attribute: {} - {} pts", attribute_id, attribute_points);
         attributes.push((AttributeType::from(attribute_id), attribute_points));
     }
     attributes
@@ -91,7 +89,7 @@ fn read_skills<'a>(binary: &mut Chars) -> [(u32, &'a str); 8] {
     skills
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct SkillCodeRecord<'a> {
     pub primary_profession: ProfessionType,
     pub secondary_profession: ProfessionType,
@@ -99,17 +97,20 @@ pub struct SkillCodeRecord<'a> {
     pub skills: [(u32, &'a str); 8],
 }
 
+fn decode(code: String) -> String {
+    code
+        .bytes()
+        .map(|x| STANDARD_DECODE[x as usize])
+        .map(|x| format!("{:0>6b}", x))
+        .map(flip_binary_pad)
+        .collect::<Vec<String>>().join("")
+}
+
 pub struct SkillCodeParser;
 
 impl SkillCodeParser {
     pub fn parse<'a>(skill_code: String) -> SkillCodeRecord<'a> {
-        let binary_code = skill_code
-            .bytes()
-            .map(|x| STANDARD_DECODE[x as usize])
-            .map(|x| format!("{:0>6b}", x))
-            .map(flip_binary_pad)
-            .collect::<Vec<String>>();
-        let binary_code: String = binary_code.join("");
+        let binary_code = decode(skill_code);
         let mut binary_code = binary_code.chars();
         read_template_header(&mut binary_code);
         let (primary, secondary) = read_professions(&mut binary_code);
@@ -124,3 +125,33 @@ impl SkillCodeParser {
     }
 }
 
+
+#[cfg(test)]
+mod test {
+    use crate::constants::SKILLS_EN;
+    use crate::enums::{AttributeType, ProfessionType};
+    use crate::enums::AttributeType::{EnergyStorage, FireMagic, ShadowArts};
+    use crate::enums::ProfessionType::{Assassin, Elementalist};
+    use crate::utils::skill::{decode, read_attributes, read_professions, read_template_header, SkillCodeParser, SkillCodeRecord, string_from_n_chars, unflip_binary};
+
+    #[test]
+    pub fn full_skill_set() {
+        let code_skill = "OgdCoMzjyAYg7OiDDeBuQAA".to_string();
+        let skill_record = SkillCodeParser::parse(code_skill);
+        let expected = SkillCodeRecord { primary_profession: Elementalist, secondary_profession: Assassin, attributes: vec![(FireMagic, 12), (EnergyStorage, 12)], skills: [(202, "Glyph of Sacrifice"), (192, "Meteor Shower"), (952, "Death\'s Charge"), (1095, "Star Burst"), (195, "Lava Font"), (188, "Flame Burst"), (184, "Fire Attunement"), (2, "Resurrection Signet")] };
+        assert_eq!(skill_record, expected);
+    }
+
+    #[test]
+    pub fn skill_holed_set() {
+        let code_skill = "OgdR8ZaCC3xmkUMCCAAAIVE".to_string();
+        let expected = SkillCodeRecord {
+            primary_profession: Elementalist,
+            secondary_profession: Assassin,
+            attributes: vec![(ShadowArts, 12)],
+            skills: [(1043, "Dash"), (952, "Death\'s Charge"), (2358, "\"You Move Like a Dwarf!\""), (2212, "Light of Deldrimor"), (1041, "Unseen Fury"), (0, "None"), (0, "None"), (2217, "\"By Ural\'s Hammer!\"")],
+        };
+        let actual = SkillCodeParser::parse(code_skill);
+        assert_eq!(expected, actual);
+    }
+}
