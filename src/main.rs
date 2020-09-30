@@ -13,8 +13,8 @@ use serenity::async_trait;
 use serenity::client::{Client, Context, EventHandler};
 use serenity::framework::standard::{
     macros::group,
-    macros::group,
 };
+use serenity::framework::StandardFramework;
 use serenity::model::prelude::Ready;
 
 use commands::{
@@ -22,6 +22,7 @@ use commands::{
     bonusnext::*,
     menu::*,
     nick::*,
+    nicknext::*,
     ping::*,
     skill::*,
     zq::*,
@@ -40,7 +41,7 @@ mod commands;
 pub mod utils;
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick)]
+#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext)]
 struct General;
 
 struct Handler;
