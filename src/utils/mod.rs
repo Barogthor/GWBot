@@ -103,6 +103,7 @@ pub struct NicholasGiftData {
     pub location: String,
     pub region: String,
     pub campaign: String,
+    pub item_url: String,
     pub location_url: String,
 }
 
@@ -118,8 +119,9 @@ impl NicholasGiftStore {
             let location = x.get(2).unwrap().to_string();
             let region = x.get(3).unwrap().to_string();
             let campaign = x.get(4).unwrap().to_string();
-            let location_url = x.get(5).unwrap().to_string();
-            store.0.push(NicholasGiftData { item, location, region, campaign, location_url });
+            let item_url = x.get(5).unwrap().to_string();
+            let location_url = x.get(6).unwrap().to_string();
+            store.0.push(NicholasGiftData { item, location, region, campaign, item_url, location_url });
         }
         store
     }
