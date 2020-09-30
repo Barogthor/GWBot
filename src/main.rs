@@ -1,40 +1,46 @@
+extern crate dotenv;
 #[macro_use]
 extern crate lazy_static;
 
-extern crate dotenv;
-pub mod constants;
-pub mod enums;
 use std::env;
+use std::ops::Sub;
+use std::str::Chars;
+
+use chrono::Duration;
+use chrono::prelude::*;
 use dotenv::dotenv;
-mod commands;
-pub mod utils;
 use serenity::async_trait;
 use serenity::client::{Client, Context, EventHandler};
 use serenity::framework::standard::{
-    StandardFramework,
-    macros::{
-        group
-    }
-};
-use commands::{
-    ping::*,
-    skill::*,
-    menu::*,
-    zq::*,
-    zqnext::*,
-    bonus::*,
+    macros::group,
+    macros::group,
 };
 use serenity::model::prelude::Ready;
-use crate::constants::{
-    STANDARD_DECODE,
-    SKILLS_EN
-};
-use std::str::{Chars};
-use crate::enums::{ProfessionType, AttributeType};
 
+use commands::{
+    bonus::*,
+    bonusnext::*,
+    menu::*,
+    nick::*,
+    ping::*,
+    skill::*,
+    zq::*,
+    zqnext::*,
+};
+
+use crate::constants::{
+    SKILLS_EN,
+    STANDARD_DECODE,
+};
+use crate::enums::{AttributeType, ProfessionType};
+
+pub mod constants;
+pub mod enums;
+mod commands;
+pub mod utils;
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext, bonus)]
+#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick)]
 struct General;
 
 struct Handler;
@@ -45,10 +51,6 @@ impl EventHandler for Handler {
         println!("{}#{} is connected!", ready.user.name, ready.user.discriminator);
     }
 }
-
-use chrono::prelude::*;
-use std::ops::Sub;
-use chrono::Duration;
 
 #[tokio::main]
 async fn main() {
@@ -223,3 +225,8 @@ impl SkillCodeParser {
 // https://wiki.guildwars.com/wiki/Special_event
 // https://kamadan-chat.com/Search.php?search={}
 // 1.5-1.6mo
+// During Wayfarer's Reverie, the following weekly bonuses are also active (source):
+// Elonian Support Bonus
+// Extra Luck Bonus
+// Faction Support Bonus
+// Northern Support Bonus

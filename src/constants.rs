@@ -1,27 +1,30 @@
 use std::collections::HashMap;
+
 use crate::enums::Language;
-use crate::utils::ZaishenQuestStore;
 use crate::utils::BonusEventStore;
+use crate::utils::NicholasGiftStore;
+use crate::utils::ZaishenQuestStore;
 
 const INVALID_VALUE: u8 = 255;
-pub const STANDARD_DECODE: &[u8; 256] = {&[
-    INVALID_VALUE, // input 0 (0x0)
-    INVALID_VALUE, // input 1 (0x1)
-    INVALID_VALUE, // input 2 (0x2)
-    INVALID_VALUE, // input 3 (0x3)
-    INVALID_VALUE, // input 4 (0x4)
-    INVALID_VALUE, // input 5 (0x5)
-    INVALID_VALUE, // input 6 (0x6)
-    INVALID_VALUE, // input 7 (0x7)
-    INVALID_VALUE, // input 8 (0x8)
-    INVALID_VALUE, // input 9 (0x9)
-    INVALID_VALUE, // input 10 (0xA)
-    INVALID_VALUE, // input 11 (0xB)
-    INVALID_VALUE, // input 12 (0xC)
-    INVALID_VALUE, // input 13 (0xD)
-    INVALID_VALUE, // input 14 (0xE)
-    INVALID_VALUE, // input 15 (0xF)
-    INVALID_VALUE, // input 16 (0x10)
+pub const STANDARD_DECODE: &[u8; 256] = {
+    &[
+        INVALID_VALUE, // input 0 (0x0)
+        INVALID_VALUE, // input 1 (0x1)
+        INVALID_VALUE, // input 2 (0x2)
+        INVALID_VALUE, // input 3 (0x3)
+        INVALID_VALUE, // input 4 (0x4)
+        INVALID_VALUE, // input 5 (0x5)
+        INVALID_VALUE, // input 6 (0x6)
+        INVALID_VALUE, // input 7 (0x7)
+        INVALID_VALUE, // input 8 (0x8)
+        INVALID_VALUE, // input 9 (0x9)
+        INVALID_VALUE, // input 10 (0xA)
+        INVALID_VALUE, // input 11 (0xB)
+        INVALID_VALUE, // input 12 (0xC)
+        INVALID_VALUE, // input 13 (0xD)
+        INVALID_VALUE, // input 14 (0xE)
+        INVALID_VALUE, // input 15 (0xF)
+        INVALID_VALUE, // input 16 (0x10)
     INVALID_VALUE, // input 17 (0x11)
     INVALID_VALUE, // input 18 (0x12)
     INVALID_VALUE, // input 19 (0x13)
@@ -274,8 +277,8 @@ pub const ZAISHEN_VANQUISH_SIZE_CYCLE: i64 = 136;
 pub const BONUS_EVENT_START: (i32, u32, u32) = (2020, 8, 10);
 pub const BONUS_EVENT_PVE_SIZE_CYCLE: i64 = 9;
 pub const BONUS_EVENT_PVP_SIZE_CYCLE: i64 = 6;
-pub const NICHOLAS_TRAVELETER_START: (i32, u32, u32) = (2018, 1, 22);
-pub const NICHOLAS_TRAVELETER_SIZE_CYCLE: i64 = 137;
+pub const NICHOLAS_TRAVELER_START: (i32, u32, u32) = (2018, 1, 22);
+pub const NICHOLAS_TRAVELER_SIZE_CYCLE: i64 = 137;
 
 pub const REACTION_ONE: &str = "1\u{fe0f}\u{20e3}";
 pub const REACTION_TWO: &str = "2\u{fe0f}\u{20e3}";
@@ -286,12 +289,23 @@ pub const REACTION_SIX: &str = "6\u{fe0f}\u{20e3}";
 pub const REACTION_SEVEN: &str = "7\u{fe0f}\u{20e3}";
 pub const REACTION_EIGHT: &str = "8\u{fe0f}\u{20e3}";
 pub const EMOTE_MAP: &str = "🗺️";
+pub const EMOTE_ARROW_RIGHT: &str = "➡️";
+pub const EMOTE_POINT_RIGHT: &str = "👉";
+pub const EMOTE_GLASS_RIGHT: &str = "🔎";
+pub const EMOTE_GLASS_LEFT: &str = "🔍";
 
 pub const SECOND_PER_MINUTE: u64 = 60;
 pub const SECOND_PER_HOUR: u64 = 60 * SECOND_PER_MINUTE;
 pub const SECOND_PER_DAY: u64 = 24 * SECOND_PER_HOUR;
 
 lazy_static! {
+
+    pub static ref NICHOLAS_TRAVELER: HashMap<Language, NicholasGiftStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, NicholasGiftStore::from_csv("datas/nicolas_traveler_en_US.csv"));
+        m.insert(Language::French, NicholasGiftStore::from_csv("datas/nicolas_traveler_fr_FR.csv"));
+        m
+    };
 
     pub static ref BONUS_PVE_EVENTS: HashMap<Language, BonusEventStore> = {
         let mut m = HashMap::new();

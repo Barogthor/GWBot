@@ -1,9 +1,12 @@
-use serenity::framework::standard::macros::command;
-use serenity::client::{Context};
-use serenity::model::channel::Message;
+use std::ops::Add;
+
+use chrono::{Date, Datelike, DateTime, FixedOffset, Timelike, TimeZone, Utc};
+use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
-use chrono::{Utc, FixedOffset, DateTime, Timelike, Date, TimeZone, Datelike};
+use serenity::framework::standard::macros::command;
+use serenity::model::channel::Message;
 use serenity::utils::MessageBuilder;
+
 use crate::constants::{
     BONUS_EVENT_PVE_SIZE_CYCLE,
     BONUS_EVENT_PVP_SIZE_CYCLE,
@@ -13,8 +16,6 @@ use crate::constants::{
 };
 use crate::enums::Language::French;
 use crate::utils::BonusEventData;
-use std::ops::Add;
-use std::borrow::BorrowMut;
 
 fn get_timezone_start(date: Date<Utc>) -> DateTime<FixedOffset> {
     date.and_hms(16,0,0).with_timezone(&FixedOffset::east(2*3600))
@@ -27,7 +28,6 @@ fn get_bonus_cycle_start() -> Date<Utc> {
 
 #[command]
 async fn bonusnext(ctx: &Context, msg: &Message) -> CommandResult {
-    
     let now =  Utc::now().with_timezone(&FixedOffset::east(2*3600));
     let next_week =  Utc::now().add(chrono::Duration::weeks(1)).with_timezone(&FixedOffset::east(2*3600));
     let datetime_diff = |since| next_week.signed_duration_since(get_timezone_start(since)).num_weeks();

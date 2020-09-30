@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::{BufReader, BufRead, Lines};
+use std::io::{BufRead, BufReader, Lines};
 
 pub trait FileParser{
     fn parse(path: &str) -> Self;
@@ -94,4 +94,35 @@ impl BonusEventStore {
 }
 
 
+#[derive(Debug)]
+pub struct NicholasGiftData {
+    pub item: String,
+    pub location: String,
+    pub region: String,
+    pub campaign: String,
+    pub location_url: String,
+}
+
+#[derive(Debug)]
+pub struct NicholasGiftStore(Vec<NicholasGiftData>);
+
+impl NicholasGiftStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path);
+        let mut store = Self { 0: vec![] };
+        for x in csv.records {
+            let item = x.get(1).unwrap().to_string();
+            let location = x.get(2).unwrap().to_string();
+            let region = x.get(3).unwrap().to_string();
+            let campaign = x.get(4).unwrap().to_string();
+            let location_url = x.get(5).unwrap().to_string();
+            store.0.push(NicholasGiftData { item, location, region, campaign, location_url });
+        }
+        store
+    }
+
+    pub fn get_from_id(&self, id: i64) -> Option<&NicholasGiftData> {
+        self.0.get(id as usize)
+    }
+}
 

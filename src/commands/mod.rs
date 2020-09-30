@@ -5,3 +5,4 @@ pub mod zq;
 pub mod zqnext;
 pub mod bonus;
 pub mod bonusnext;
+pub mod nick;
