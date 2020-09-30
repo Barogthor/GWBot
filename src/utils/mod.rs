@@ -68,4 +68,30 @@ impl ZaishenQuestStore {
 }
 
 
+#[derive(Debug)]
+pub struct BonusEventData {
+    pub name: String,
+    pub description: String,
+}
+#[derive(Debug)]
+pub struct BonusEventStore(Vec<BonusEventData>);
+
+impl BonusEventStore {
+    pub fn from_csv(path: &str) -> Self{
+        let csv = CSVFile::parse(path);
+        let mut store = Self{ 0: vec![] };
+        for x in csv.records {
+            let name = x.get(1).unwrap().to_string();
+            let description = x.get(2).unwrap().to_string();
+            store.0.push(BonusEventData{name, description});
+        }
+        store
+    }
+
+    pub fn get_from_id(&self, id: i64) -> Option<&BonusEventData> {
+        self.0.get(id as usize)
+    }
+}
+
+
 

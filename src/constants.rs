@@ -270,6 +270,11 @@ pub const ZAISHEN_COMBAT_START: (i32, u32, u32) = (2009, 10, 22);
 pub const ZAISHEN_COMBAT_SIZE_CYCLE: i64 = 28;
 pub const ZAISHEN_VANQUISH_START: (i32, u32, u32) = (2017, 2, 15);
 pub const ZAISHEN_VANQUISH_SIZE_CYCLE: i64 = 136;
+pub const BONUS_EVENT_START: (i32, u32, u32) = (2020, 8, 10);
+pub const BONUS_EVENT_PVE_SIZE_CYCLE: i64 = 9;
+pub const BONUS_EVENT_PVP_SIZE_CYCLE: i64 = 6;
+pub const NICHOLAS_TRAVELETER_START: (i32, u32, u32) = (2018, 1, 22);
+pub const NICHOLAS_TRAVELETER_SIZE_CYCLE: i64 = 137;
 
 pub const REACTION_ONE: &str = "1\u{fe0f}\u{20e3}";
 pub const REACTION_TWO: &str = "2\u{fe0f}\u{20e3}";

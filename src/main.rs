@@ -22,6 +22,7 @@ use commands::{
     menu::*,
     zq::*,
     zqnext::*,
+    bonus::*,
 };
 use serenity::model::prelude::Ready;
 use crate::constants::{
@@ -33,7 +34,7 @@ use crate::enums::{ProfessionType, AttributeType};
 
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext)]
+#[commands(ping, skill, menu, zq, zqnext, bonus)]
 struct General;
 
 struct Handler;
@@ -46,23 +47,24 @@ impl EventHandler for Handler {
 }
 
 use chrono::prelude::*;
+use std::ops::Sub;
+use chrono::Duration;
 
 #[tokio::main]
 async fn main() {
     let augury_rock = Utc.ymd(2011, 3, 3);
     let drake_kabob = Utc.ymd(2020, 9, 7);
-    let next_drake_kabob = Utc.ymd(2023, 4, 24);
     let augury_rock_2020 = Utc.ymd(2020, 3, 27);
     let raisu_2020 = Utc.ymd(2020, 3, 29);
     let frost_gate = Utc.ymd(2011, 5, 10);
     let diff = frost_gate.signed_duration_since(augury_rock);
     let diff2 = augury_rock_2020.signed_duration_since(augury_rock);
     let diff3 = raisu_2020.signed_duration_since(augury_rock);
-    let diff4 = next_drake_kabob.signed_duration_since(drake_kabob);
+    let diff4 = drake_kabob.sub(Duration::weeks(137));
     println!("{}", diff.num_days());
     println!("{}", diff2.num_days()%69);
     println!("{}", diff3.num_days()%69);
-    println!("{}", diff4.num_weeks());
+    println!("{}", diff4);
     // exit(0);
     dotenv().ok();
     let framework = StandardFramework::new()
@@ -77,6 +79,10 @@ async fn main() {
         .framework(framework)
         .await
         .expect("Error creating client");
+    {
+        // let mut data = client.data.write();
+        // data.insert::<MessageEventCounter>(HashMap::default());
+    }
 
     // start listening for events by starting a single shard
     if let Err(why) = client.start().await {
@@ -213,3 +219,7 @@ impl SkillCodeParser {
 // https://wiki.guildwars.com/wiki/Zaishen_Bounty/cycles
 // https://wiki.guildwars.com/wiki/Zaishen_Combat/cycles
 // https://wiki.guildwars.com/wiki/Zaishen_Vanquish/cycles
+// https://wiki.guildwars.com/wiki/Weekly_bonuses
+// https://wiki.guildwars.com/wiki/Special_event
+// https://kamadan-chat.com/Search.php?search={}
+// 1.5-1.6mo
