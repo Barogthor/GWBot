@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use crate::enums::Language;
 use crate::utils::ZaishenQuestStore;
+use crate::utils::BonusEventStore;
 
 const INVALID_VALUE: u8 = 255;
 pub const STANDARD_DECODE: &[u8; 256] = {&[
@@ -284,12 +285,27 @@ pub const REACTION_FIVE: &str = "5\u{fe0f}\u{20e3}";
 pub const REACTION_SIX: &str = "6\u{fe0f}\u{20e3}";
 pub const REACTION_SEVEN: &str = "7\u{fe0f}\u{20e3}";
 pub const REACTION_EIGHT: &str = "8\u{fe0f}\u{20e3}";
+pub const EMOTE_MAP: &str = "🗺️";
+
 pub const SECOND_PER_MINUTE: u64 = 60;
 pub const SECOND_PER_HOUR: u64 = 60 * SECOND_PER_MINUTE;
 pub const SECOND_PER_DAY: u64 = 24 * SECOND_PER_HOUR;
 
-
 lazy_static! {
+
+    pub static ref BONUS_PVE_EVENTS: HashMap<Language, BonusEventStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, BonusEventStore::from_csv("datas/bonus_pve_en_US.csv"));
+        m.insert(Language::French, BonusEventStore::from_csv("datas/bonus_pve_fr_FR.csv"));
+        m
+    };
+
+    pub static ref BONUS_PVP_EVENTS: HashMap<Language, BonusEventStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, BonusEventStore::from_csv("datas/bonus_pvp_en_US.csv"));
+        m.insert(Language::French, BonusEventStore::from_csv("datas/bonus_pvp_fr_FR.csv"));
+        m
+    };
 
     pub static ref ZAISHEN_COMBAT_QUESTS: HashMap<Language, ZaishenQuestStore> = {
         let mut m = HashMap::new();
