@@ -128,11 +128,9 @@ impl SkillCodeParser {
 
 #[cfg(test)]
 mod test {
-    use crate::constants::SKILLS_EN;
-    use crate::enums::{AttributeType, ProfessionType};
     use crate::enums::AttributeType::{EnergyStorage, FireMagic, ShadowArts};
     use crate::enums::ProfessionType::{Assassin, Elementalist};
-    use crate::utils::skill::{decode, read_attributes, read_professions, read_template_header, SkillCodeParser, SkillCodeRecord, string_from_n_chars, unflip_binary};
+    use crate::utils::skill::{SkillCodeParser, SkillCodeRecord};
 
     #[test]
     pub fn full_skill_set() {
