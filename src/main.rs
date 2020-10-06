@@ -19,6 +19,7 @@ use serenity::model::prelude::Ready;
 use commands::{
     bonus::*,
     bonusnext::*,
+    event::*,
     menu::*,
     nick::*,
     nicknext::*,
@@ -28,13 +29,16 @@ use commands::{
     zqnext::*,
 };
 
+use crate::utils::get_special_events_time_range;
+use crate::utils::time::DateTimeRangeComparison;
+
 pub mod constants;
 pub mod enums;
 mod commands;
 pub mod utils;
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext)]
+#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext, event)]
 struct General;
 
 struct Handler;

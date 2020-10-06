@@ -7,3 +7,4 @@ pub mod bonus;
 pub mod bonusnext;
 pub mod nick;
 pub mod nicknext;
+pub mod event;

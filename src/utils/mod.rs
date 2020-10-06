@@ -1,7 +1,13 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader, Lines};
+use std::str::FromStr;
+
+use chrono::{TimeZone, Utc};
+
+use crate::utils::time::DateTimeRange;
 
 pub mod skill;
+pub mod time;
 
 pub trait FileParser {
     fn parse(path: &str) -> Self;
@@ -129,4 +135,49 @@ impl NicholasGiftStore {
     pub fn get_from_id(&self, id: i64) -> Option<&NicholasGiftData> {
         self.0.get(id as usize)
     }
+}
+
+
+#[derive(Debug)]
+pub struct SpecialEventData {
+    pub name: String,
+    pub note: String,
+}
+
+#[derive(Debug)]
+pub struct SpecialEventStore(Vec<SpecialEventData>);
+
+impl SpecialEventStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path);
+        let mut store = Self { 0: vec![] };
+        for x in csv.records {
+            let name = x.get(1).unwrap().to_string();
+            let note = x.get(2).unwrap().to_string();
+            store.0.push(SpecialEventData { name, note });
+        }
+        store
+    }
+
+    pub fn get_from_id(&self, id: i64) -> Option<&SpecialEventData> {
+        self.0.get(id as usize)
+    }
+}
+
+#[derive(Debug)]
+pub struct SpecialEventPeriod(pub u32, pub DateTimeRange<Utc>);
+
+pub fn get_special_events_time_range() -> Vec<SpecialEventPeriod> {
+    let mut events = vec![];
+    let csv = CSVFile::parse("datas/special_events.csv");
+    for x in csv.records {
+        let id = x.get(0).unwrap();
+        let id = u32::from_str(id).unwrap();
+        let start = x.get(1).unwrap();
+        let start = Utc.datetime_from_str(start, &"%+").unwrap();
+        let end = x.get(2).unwrap();
+        let end = Utc.datetime_from_str(end, &"%+").unwrap();
+        events.push(SpecialEventPeriod(id, DateTimeRange::new(start, end)));
+    }
+    events
 }
