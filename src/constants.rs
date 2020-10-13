@@ -2,7 +2,10 @@ use std::collections::HashMap;
 
 use crate::enums::Language;
 use crate::utils::BonusEventStore;
+use crate::utils::get_special_events_time_range;
 use crate::utils::NicholasGiftStore;
+use crate::utils::SpecialEventPeriod;
+use crate::utils::SpecialEventStore;
 use crate::utils::ZaishenQuestStore;
 
 const INVALID_VALUE: u8 = 255;
@@ -301,6 +304,17 @@ pub const STANDARD_DECODE: &[u8; 256] = {
 };
 
 lazy_static! {
+
+    pub static ref SPECIAL_EVENTS: HashMap<Language, SpecialEventStore> = {
+        let mut m = HashMap::new();
+        m.insert(Language::English, SpecialEventStore::from_csv("datas/special_events_en_US.csv"));
+        m.insert(Language::French, SpecialEventStore::from_csv("datas/special_events_fr_FR.csv"));
+        m
+    };
+
+    pub static ref SPECIAL_EVENT_PERIODS: Vec<SpecialEventPeriod> = {
+        get_special_events_time_range()
+    };
 
     pub static ref NICHOLAS_TRAVELER: HashMap<Language, NicholasGiftStore> = {
         let mut m = HashMap::new();

@@ -159,7 +159,7 @@ impl SpecialEventStore {
         store
     }
 
-    pub fn get_from_id(&self, id: i64) -> Option<&SpecialEventData> {
+    pub fn get_from_id(&self, id: u32) -> Option<&SpecialEventData> {
         self.0.get(id as usize)
     }
 }
