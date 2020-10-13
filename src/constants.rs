@@ -9,6 +9,7 @@ use crate::utils::SpecialEventStore;
 use crate::utils::ZaishenQuestStore;
 
 const INVALID_VALUE: u8 = 255;
+pub const DATETIME_FORMAT: &str = "%F %X %Z";
 
 pub const ZAISHEN_MISSION_START: (i32, u32, u32) = (2011, 3, 3);
 pub const ZAISHEN_MISSION_SIZE_CYCLE: i64 = 69;
