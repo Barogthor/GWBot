@@ -3,10 +3,9 @@ extern crate dotenv;
 extern crate lazy_static;
 
 use std::env;
-use std::ops::Sub;
+use std::collections::HashMap;
+use std::sync::Arc;
 
-use chrono::Duration;
-use chrono::prelude::*;
 use dotenv::dotenv;
 use serenity::async_trait;
 use serenity::client::{Client, Context, EventHandler};
@@ -15,6 +14,7 @@ use serenity::framework::standard::{
 };
 use serenity::framework::StandardFramework;
 use serenity::model::prelude::Ready;
+use serenity::prelude::TypeMapKey;
 
 use commands::{
     bonus::*,
@@ -29,8 +29,8 @@ use commands::{
     zqnext::*,
 };
 
-use crate::utils::get_special_events_time_range;
-use crate::utils::time::DateTimeRangeComparison;
+use crate::enums::Language;
+use crate::utils::{BonusEventStore, get_special_events_time_range, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
 
 pub mod constants;
 pub mod enums;
@@ -52,19 +52,29 @@ impl EventHandler for Handler {
 
 #[tokio::main]
 async fn main() {
-    let augury_rock = Utc.ymd(2011, 3, 3);
-    let drake_kabob = Utc.ymd(2020, 9, 7);
-    let augury_rock_2020 = Utc.ymd(2020, 3, 27);
-    let raisu_2020 = Utc.ymd(2020, 3, 29);
-    let frost_gate = Utc.ymd(2011, 5, 10);
-    let diff = frost_gate.signed_duration_since(augury_rock);
-    let diff2 = augury_rock_2020.signed_duration_since(augury_rock);
-    let diff3 = raisu_2020.signed_duration_since(augury_rock);
-    let diff4 = drake_kabob.sub(Duration::weeks(137));
-    println!("{}", diff.num_days());
-    println!("{}", diff2.num_days()%69);
-    println!("{}", diff3.num_days()%69);
-    println!("{}", diff4);
+    // let now = Utc::now();
+    // let tt = get_special_events_time_range();
+    // println!("{:?} \n", tt);
+    // let f = tt.iter()
+    //     .filter(|it| it.1.compare(&now).ge(&DateTimeRangeComparison::Within));
+    // let fv: Vec<_> = f.collect();
+    // println!("{:?}", fv);
+    // let augury_rock = Utc.ymd(2011, 3, 3);
+    // let drake_kabob = Utc.ymd(2020, 9, 7);
+    // let augury_rock_2020 = Utc.ymd(2020, 3, 27);
+    // let raisu_2020 = Utc.ymd(2020, 3, 29);
+    // let frost_gate = Utc.ymd(2011, 5, 10);
+    //
+    // let diff = frost_gate.signed_duration_since(augury_rock);
+    // let diff2 = augury_rock_2020.signed_duration_since(augury_rock);
+    // let diff3 = raisu_2020.signed_duration_since(augury_rock);
+    // let diff4 = drake_kabob.sub(Duration::weeks(137));
+    // println!("{}", diff.num_days());
+    // println!("{}", diff2.num_days() % 69);
+    // println!("{}", diff3.num_days() % 69);
+    // println!("{}", diff4);
+    // let test_date = Utc.ymd(2020, 2, 29);
+    // println!("{}", test_date);
     // exit(0);
     dotenv().ok();
     let framework = StandardFramework::new()
@@ -80,14 +90,117 @@ async fn main() {
         .await
         .expect("Error creating client");
     {
-        // let mut data = client.data.write();
-        // data.insert::<MessageEventCounter>(HashMap::default());
+        // https://docs.rs/serenity/0.8.7/serenity/client/struct.Client.html#structfield.data
+        let mut data = client.data.write().await;
+        data.insert::<BotData>(BotData::init());
     }
+
 
     // start listening for events by starting a single shard
     if let Err(why) = client.start().await {
         println!("An error occurred while running the client: {:?}", why);
     }
+}
+
+pub type I18nMap<T> = HashMap<Language, T>;
+
+#[derive(Debug)]
+pub struct I18nStore<T>(I18nMap<T>);
+
+impl<T> I18nStore<T> {
+    pub fn lng(&self, lng: Language) -> Option<&T> {
+        self.0.get(&lng)
+    }
+}
+
+#[derive(Debug)]
+pub struct BotData {
+    pub zaishen_vanquish: I18nStore<ZaishenQuestStore>,
+    pub zaishen_bounty: I18nStore<ZaishenQuestStore>,
+    pub zaishen_mission: I18nStore<ZaishenQuestStore>,
+    pub zaishen_combat: I18nStore<ZaishenQuestStore>,
+    pub nicholas_traveler: I18nStore<NicholasGiftStore>,
+    pub bonus_pve: I18nStore<BonusEventStore>,
+    pub bonus_pvp: I18nStore<BonusEventStore>,
+    pub event: (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>),
+}
+
+impl BotData {
+    pub fn init() -> Arc<tokio::sync::RwLock<Self>> {
+        let special_events = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, SpecialEventStore::from_csv("datas/special_events_en_US.csv"));
+            m.insert(Language::French, SpecialEventStore::from_csv("datas/special_events_fr_FR.csv"));
+            m
+        };
+        let special_event_periods: Vec<SpecialEventPeriod> = {
+            get_special_events_time_range()
+        };
+        let nicholas_traveler = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, NicholasGiftStore::from_csv("datas/nicolas_traveler_en_US.csv"));
+            m.insert(Language::French, NicholasGiftStore::from_csv("datas/nicolas_traveler_fr_FR.csv"));
+            m
+        };
+        let bonus_pve_events = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, BonusEventStore::from_csv("datas/bonus_pve_en_US.csv"));
+            m.insert(Language::French, BonusEventStore::from_csv("datas/bonus_pve_fr_FR.csv"));
+            m
+        };
+        let bonus_pvp_events = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, BonusEventStore::from_csv("datas/bonus_pvp_en_US.csv"));
+            m.insert(Language::French, BonusEventStore::from_csv("datas/bonus_pvp_fr_FR.csv"));
+            m
+        };
+        let zaishen_combat_quests = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, ZaishenQuestStore::from_csv("datas/cz_en_US.csv"));
+            m.insert(Language::French, ZaishenQuestStore::from_csv("datas/cz_fr_FR.csv"));
+            m
+        };
+        let zaishen_bounty_quests = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, ZaishenQuestStore::from_csv("datas/bz_en_US.csv"));
+            m.insert(Language::French, ZaishenQuestStore::from_csv("datas/bz_fr_FR.csv"));
+            m
+        };
+        let zaishen_mission_quests = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, ZaishenQuestStore::from_csv("datas/mz_en_US.csv"));
+            m.insert(Language::French, ZaishenQuestStore::from_csv("datas/mz_fr_FR.csv"));
+            m
+        };
+        let zaishen_vanquish_quests = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, ZaishenQuestStore::from_csv("datas/vz_en_US.csv"));
+            m.insert(Language::French, ZaishenQuestStore::from_csv("datas/vz_fr_FR.csv"));
+            m
+        };
+
+        let datas = Self {
+            zaishen_vanquish: I18nStore(zaishen_vanquish_quests),
+            zaishen_bounty: I18nStore(zaishen_bounty_quests),
+            zaishen_mission: I18nStore(zaishen_mission_quests),
+            zaishen_combat: I18nStore(zaishen_combat_quests),
+            nicholas_traveler: I18nStore(nicholas_traveler),
+            bonus_pve: I18nStore(bonus_pve_events),
+            bonus_pvp: I18nStore(bonus_pvp_events),
+            event: (special_event_periods, I18nStore(special_events)),
+        };
+        Arc::new(tokio::sync::RwLock::new(datas))
+    }
+}
+
+impl TypeMapKey for BotData {
+    type Value = Arc<tokio::sync::RwLock<Self>>;
+}
+
+#[inline]
+pub async fn get_bot_datas(ctx: &Context) -> Arc<tokio::sync::RwLock<BotData>> {
+    let data = ctx.data.read().await;
+    data.get::<BotData>().expect("Excepted Bot data in the shared map").clone()
 }
 
 

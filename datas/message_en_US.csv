@@ -1,0 +1,27 @@
+key;content
+time-days;days
+event-started;has started !
+event-end;Event end in :
+event-next;The next event is {name}, {note}
+event-begin;Event begin in: {days} days,
+zaishen-quest-headline;Today's Zaishen Quests:
+zaishen-quest-mission;Zaishen Mission:
+zaishen-quest-bounty;Zaishen Bounty:
+zaishen-quest-combat;Zaishen Combat:
+zaishen-quest-vanquish;Zaishen Vanquish:
+zaishen-quest-reset;Zaishen daily quests will reset in
+zaishen-quest-tomorrow-headline;Tomorrow' Zaishen Quests:
+nicholas-gift-headline;This week:
+nicholas-gift-next-headline;For next week:
+nicholas-gift-collecting;Nicholas the traveler is collecting
+nicholas-gift-per; per present at
+nicholas-gift-in;in
+nicholas-gift-moving;Moving off in
+nicholas-gift-found;Will be found here in
+bonus-headline;This week:
+bonus-next-headline;For next week:
+bonus-next-pve;PvE bonus:
+bonus-next-pvp;PvP bonus:
+bonus-next-expire;Weekly bonuses will expire in
+bonus-next-start;Those Weekly bonuses will take effect in
+skill-prefix;Skill
