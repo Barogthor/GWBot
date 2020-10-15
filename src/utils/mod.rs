@@ -217,6 +217,9 @@ impl I18nMessageStore {
     pub fn time_days(&self) -> Msg {
         self.0.get("time-days").expect("'time-days' key is missing")
     }
+    pub fn event_no_running(&self) -> Msg {
+        self.0.get("event-no-running").expect("'event-no-running' key is missing")
+    }
     pub fn event_started(&self) -> Msg {
         self.0.get("event-started").expect("'event-started' key is missing")
     }

@@ -1,9 +1,10 @@
 key;content
 time-days;days
-event-started;has started !
-event-end;Event end in :
-event-next;The next event is {name}, {note}
-event-begin;Event begin in: {days} days,
+event-no-running;There is no event currently running
+event-started;has begun !
+event-end;Event end in:
+event-next;The next event is
+event-begin;Event begins in:
 zaishen-quest-headline;Today's Zaishen Quests:
 zaishen-quest-mission;Zaishen Mission:
 zaishen-quest-bounty;Zaishen Bounty:
