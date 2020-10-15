@@ -280,14 +280,14 @@ impl I18nMessageStore {
     pub fn bonus_next_headline(&self) -> Msg {
         self.0.get("bonus-next-headline").expect("'bonus-next-headline' key is missing")
     }
-    pub fn bonus_next_pve(&self) -> Msg {
-        self.0.get("bonus-next-pve").expect("'bonus-next-pve' key is missing")
+    pub fn bonus_pve(&self) -> Msg {
+        self.0.get("bonus-pve").expect("'bonus-next-pve' key is missing")
     }
-    pub fn bonus_next_pvp(&self) -> Msg {
-        self.0.get("bonus-next-pvp").expect("'bonus-next-pvp' key is missing")
+    pub fn bonus_pvp(&self) -> Msg {
+        self.0.get("bonus-pvp").expect("'bonus-next-pvp' key is missing")
     }
-    pub fn bonus_next_expire(&self) -> Msg {
-        self.0.get("bonus-next-expire").expect("'bonus-next-expire' key is missing")
+    pub fn bonus_expire(&self) -> Msg {
+        self.0.get("bonus-expire").expect("'bonus-next-expire' key is missing")
     }
     pub fn bonus_next_start(&self) -> Msg {
         self.0.get("bonus-next-start").expect("'bonus-next-start' key is missing")

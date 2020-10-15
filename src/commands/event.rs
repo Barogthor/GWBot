@@ -63,7 +63,7 @@ fn print_running_event(response: &mut MessageBuilder, event_period: &&&SpecialEv
     let mins_left = time_left.num_minutes() % 60;
     let secs_left = time_left.num_seconds() % 60;
     response.push_bold(format!(" {} {}, {:0>2}:{:0>2}:{:0>2}!", days_left, localized_messages.time_days(), hours_left, mins_left, secs_left));
-    response.push(format!(" ({})\n", event_range.1.format(DATETIME_FORMAT)));
+    response.push_line(format!(" ({})\n", event_range.1.format(DATETIME_FORMAT)));
 }
 
 fn print_next_event(response: &mut MessageBuilder, event_period: &&&SpecialEventPeriod, localized_events: &SpecialEventStore, localized_messages: &I18nMessageStore, now: &DateTime<Utc>) {
@@ -79,5 +79,5 @@ fn print_next_event(response: &mut MessageBuilder, event_period: &&&SpecialEvent
     let mins_left = time_left.num_minutes() % 60;
     let secs_left = time_left.num_seconds() % 60;
     response.push_bold(format!(" {} {}, {:0>2}:{:0>2}:{:0>2}!", days_left, localized_messages.time_days(), hours_left, mins_left, secs_left));
-    response.push(format!(" ({})\n", event_range.0.format(DATETIME_FORMAT)));
+    response.push_line(format!(" ({})\n", event_range.0.format(DATETIME_FORMAT)));
 }
