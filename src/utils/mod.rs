@@ -197,6 +197,7 @@ pub fn get_special_events_time_range() -> Vec<SpecialEventPeriod> {
     events
 }
 
+#[derive(Debug)]
 pub struct I18nMessageStore(HashMap<String, String>);
 
 type Msg<'a> = &'a str;

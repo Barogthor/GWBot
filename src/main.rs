@@ -2,8 +2,8 @@ extern crate dotenv;
 #[macro_use]
 extern crate lazy_static;
 
-use std::env;
 use std::collections::HashMap;
+use std::env;
 use std::sync::Arc;
 
 use dotenv::dotenv;
@@ -30,7 +30,7 @@ use commands::{
 };
 
 use crate::enums::Language;
-use crate::utils::{BonusEventStore, get_special_events_time_range, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
+use crate::utils::{BonusEventStore, get_special_events_time_range, I18nMessageStore, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
 
 pub mod constants;
 pub mod enums;
@@ -122,6 +122,7 @@ pub struct BotData {
     pub nicholas_traveler: I18nStore<NicholasGiftStore>,
     pub bonus_pve: I18nStore<BonusEventStore>,
     pub bonus_pvp: I18nStore<BonusEventStore>,
+    pub i18n_messages: I18nStore<I18nMessageStore>,
     pub event: (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>),
 }
 
@@ -179,6 +180,13 @@ impl BotData {
             m
         };
 
+        let i18n_messages = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, I18nMessageStore::from_csv("datas/message_en_US.csv"));
+            m.insert(Language::French, I18nMessageStore::from_csv("datas/message_fr_FR.csv"));
+            m
+        };
+
         let datas = Self {
             zaishen_vanquish: I18nStore(zaishen_vanquish_quests),
             zaishen_bounty: I18nStore(zaishen_bounty_quests),
@@ -187,6 +195,7 @@ impl BotData {
             nicholas_traveler: I18nStore(nicholas_traveler),
             bonus_pve: I18nStore(bonus_pve_events),
             bonus_pvp: I18nStore(bonus_pvp_events),
+            i18n_messages: I18nStore(i18n_messages),
             event: (special_event_periods, I18nStore(special_events)),
         };
         Arc::new(tokio::sync::RwLock::new(datas))
