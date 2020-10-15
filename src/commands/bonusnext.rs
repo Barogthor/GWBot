@@ -49,7 +49,7 @@ async fn bonusnext(ctx: &Context, msg: &Message) -> CommandResult {
         .push("PvE bonus: ")
         .push(current_pve.name.clone()).push(" -- ")
         .push_bold_line(current_pve.description.clone())
-        .push("PvP: ")
+        .push("PvP bonus: ")
         .push(current_pvp.name.clone()).push(" -- ")
         .push_bold_line(current_pvp.description.clone())
         .push("Those Weekly bonuses will take effect in ")

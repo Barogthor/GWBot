@@ -1,25 +1,27 @@
-use serenity::framework::standard::macros::command;
-use serenity::client::{Context};
-use serenity::model::channel::Message;
+use std::ops::Add;
+
+use chrono::{Date, DateTime, FixedOffset, Timelike, TimeZone, Utc};
+use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
-use chrono::{Utc, FixedOffset, DateTime, Timelike, Date, TimeZone};
+use serenity::framework::standard::macros::command;
+use serenity::model::channel::Message;
 use serenity::utils::MessageBuilder;
+
 use crate::constants::{
-    ZAISHEN_MISSION_START,
-    ZAISHEN_MISSION_SIZE_CYCLE,
-    ZAISHEN_BOUNTY_START,
-    ZAISHEN_BOUNTY_SIZE_CYCLE,
-    ZAISHEN_COMBAT_START,
-    ZAISHEN_COMBAT_SIZE_CYCLE,
-    ZAISHEN_VANQUISH_START,
-    ZAISHEN_VANQUISH_SIZE_CYCLE,
-    ZAISHEN_MISSION_QUESTS,
     ZAISHEN_BOUNTY_QUESTS,
+    ZAISHEN_BOUNTY_SIZE_CYCLE,
+    ZAISHEN_BOUNTY_START,
     ZAISHEN_COMBAT_QUESTS,
+    ZAISHEN_COMBAT_SIZE_CYCLE,
+    ZAISHEN_COMBAT_START,
+    ZAISHEN_MISSION_QUESTS,
+    ZAISHEN_MISSION_SIZE_CYCLE,
+    ZAISHEN_MISSION_START,
     ZAISHEN_VANQUISH_QUESTS,
+    ZAISHEN_VANQUISH_SIZE_CYCLE,
+    ZAISHEN_VANQUISH_START,
 };
 use crate::enums::Language::French;
-use std::ops::Add;
 
 fn get_timezone_start(date: Date<Utc>) -> DateTime<FixedOffset> {
     date.and_hms(16,0,0).with_timezone(&FixedOffset::east(2*3600))
@@ -61,7 +63,7 @@ async fn zqnext(ctx: &Context, msg: &Message) -> CommandResult {
 
     let mut response = MessageBuilder::new();
     response
-        .push_underline_line("Today's Zaishen Quests:")
+        .push_underline_line("Tomorrow' Zaishen Quests:")
         .push("Zaishen Mission: ")
         .push_bold_line(ZAISHEN_MISSION_QUESTS.get(&French).unwrap().get_from_id(mz_id).unwrap().name.clone())
         .push("Zaishen Bounty: ")

@@ -37,16 +37,16 @@ async fn nick(ctx: &Context, msg: &Message) -> CommandResult {
     response
         .push_underline_line("This week:")
         .push("Nicholas the traveler is collecting ")
-        .push_bold(gift.item.clone())
+        .push_bold(&gift.item)
         .push(" per present at ")
-        .push_bold_line(gift.location.clone())
+        .push_bold_line(&gift.location)
         .push("in ")
-        .push_bold(gift.region.clone())
-        .push(" (").push(gift.campaign.clone()).push_line(").")
+        .push_bold(&gift.region)
+        .push(format!(" ({}).", gift.campaign))
         .push("Moving off in ")
         .push_bold_line(format!("{} days and {:0>2}:{:0>2}:{:0>2}!", days_left, hour_left, min_left, sec_left))
         .push(EMOTE_MAP).push(" ").push(EMOTE_POINT_RIGHT).push(" ")
-        .push_spoiler_line(gift.location_url.clone());
+        .push_spoiler_line(&gift.location_url);
 
     if let Err(why) = msg.channel_id.send_message(&ctx.http, |m| {
         m.content(response);

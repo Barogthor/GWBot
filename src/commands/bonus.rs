@@ -1,9 +1,10 @@
-use serenity::framework::standard::macros::command;
-use serenity::client::{Context};
-use serenity::model::channel::Message;
+use chrono::{Date, Datelike, DateTime, FixedOffset, Timelike, TimeZone, Utc};
+use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
-use chrono::{Utc, FixedOffset, DateTime, Timelike, Date, TimeZone, Datelike};
+use serenity::framework::standard::macros::command;
+use serenity::model::channel::Message;
 use serenity::utils::MessageBuilder;
+
 use crate::constants::{
     BONUS_EVENT_PVE_SIZE_CYCLE,
     BONUS_EVENT_PVP_SIZE_CYCLE,
@@ -45,7 +46,7 @@ async fn bonus(ctx: &Context, msg: &Message) -> CommandResult {
         .push("PvE bonus: ")
         .push(current_pve.name.clone()).push(" -- ")
         .push_bold_line(current_pve.description.clone())
-        .push("PvP: ")
+        .push("PvP bonus: ")
         .push(current_pvp.name.clone()).push(" -- ")
         .push_bold_line(current_pvp.description.clone())
         .push("Weekly bonuses will expire in ")
