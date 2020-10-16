@@ -14,7 +14,7 @@ use crate::constants::{
 };
 use crate::enums::Language::French;
 use crate::get_bot_datas;
-use crate::utils::{BonusEventData, BonusEventStore, I18nMessageStore};
+use crate::utils::{BonusEventStore, I18nMessageStore};
 
 fn get_timezone_start(date: Date<Utc>) -> DateTime<Utc> {
     date.and_hms(16, 0, 0)
@@ -45,8 +45,8 @@ async fn bonusnext(ctx: &Context, msg: &Message) -> CommandResult {
     } - 1;
     let min_left = 60 - now.minute() - 1;
     let sec_left = 60 - now.second() - 1;
-    let current_pve: &BonusEventData = bonus_pve.get_from_id(pve_id).unwrap();
-    let current_pvp: &BonusEventData = bonus_pvp.get_from_id(pvp_id).unwrap();
+    let current_pve = bonus_pve.get_from_id(pve_id).unwrap();
+    let current_pvp = bonus_pvp.get_from_id(pvp_id).unwrap();
     let mut response = MessageBuilder::new();
     response
         .push_underline_line(i18n_messages.bonus_next_headline())
