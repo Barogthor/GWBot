@@ -11,10 +11,6 @@ use crate::utils::time::{DateTimeRange, DateTimeRangeComparison};
 pub mod skill;
 pub mod time;
 
-pub trait FileParser {
-    fn parse(path: &str) -> Self;
-}
-
 pub type CSVRecord = Vec<String>;
 
 #[derive(Default, Debug)]
@@ -55,19 +51,23 @@ impl CSVFile {
             Ok(())
         });
     }
-}
 
-impl FileParser for CSVFile {
-    fn parse(path: &str) -> Self {
+    fn parse(path: &str) -> Result<Self, ()> {
         let mut csv = CSVFile::default();
-        let file = File::open(path).unwrap();
-        let reader = BufReader::new(file);
-        let mut iter = reader.lines();
-        csv.read_header(&mut iter);
-        iter.for_each(|s| csv.read_record(s.unwrap()));
-        csv
+        let res = File::open(path);
+        match res {
+            Ok(f) => {
+                let reader = BufReader::new(f);
+                let mut iter = reader.lines();
+                csv.read_header(&mut iter);
+                iter.for_each(|s| csv.read_record(s.unwrap()));
+                Ok(csv)
+            },
+            _ => Err(())
+        }
     }
 }
+
 
 #[derive(Debug)]
 pub struct ZaishenQuestData {
@@ -78,8 +78,8 @@ pub struct ZaishenQuestStore(Vec<ZaishenQuestData>);
 
 impl ZaishenQuestStore {
     pub fn from_csv(path: &str) -> Self{
-        let csv = CSVFile::parse(path);
-        let mut store = Self{ 0: vec![] };
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut store = Self { 0: vec![] };
         for x in csv.records {
             let name = x.get(1).unwrap().to_string();
             store.0.push(ZaishenQuestData{name});
@@ -102,8 +102,8 @@ pub struct BonusEventStore(Vec<BonusEventData>);
 
 impl BonusEventStore {
     pub fn from_csv(path: &str) -> Self{
-        let csv = CSVFile::parse(path);
-        let mut store = Self{ 0: vec![] };
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut store = Self { 0: vec![] };
         for x in csv.records {
             let name = x.get(1).unwrap().to_string();
             let description = x.get(2).unwrap().to_string();
@@ -133,7 +133,7 @@ pub struct NicholasGiftStore(Vec<NicholasGiftData>);
 
 impl NicholasGiftStore {
     pub fn from_csv(path: &str) -> Self {
-        let csv = CSVFile::parse(path);
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
         let mut store = Self { 0: vec![] };
         for x in csv.records {
             let item = x.get(1).unwrap().to_string();
@@ -164,7 +164,7 @@ pub struct SpecialEventStore(Vec<SpecialEventData>);
 
 impl SpecialEventStore {
     pub fn from_csv(path: &str) -> Self {
-        let csv = CSVFile::parse(path);
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
         let mut store = Self { 0: vec![] };
         for x in csv.records {
             let name = x.get(1).unwrap().to_string();
@@ -198,7 +198,8 @@ impl SpecialEventPeriod {
 
 pub fn get_special_events_time_range() -> Vec<SpecialEventPeriod> {
     let mut events = vec![];
-    let csv = CSVFile::parse("datas/special_events.csv");
+    let path = "datas/special_events.csv";
+    let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
     for x in csv.records {
         let id = x.get(0).unwrap();
         let id = u32::from_str(id).unwrap();
@@ -218,7 +219,7 @@ type Msg<'a> = &'a str;
 
 impl I18nMessageStore {
     pub fn from_csv(path: &str) -> Self {
-        let csv = CSVFile::parse(path);
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
         let mut hm = HashMap::new();
         for x in csv.records {
             let key = x.get(0).unwrap().to_string();
@@ -327,7 +328,19 @@ pub struct GuildsConfig(HashMap<GuildRawId, GuildConfigData>);
 //TODO: save on disk changes
 impl GuildsConfig {
     pub fn load() -> Self {
-        Self(Default::default())
+        let mut hm = HashMap::new();
+        match CSVFile::parse("user-config.csv") {
+            Ok(file) => {
+                for x in file.records {
+                    let guild = u64::from_str(&x[0]).unwrap();
+                    let language = Language::from(&x[1]).unwrap();
+                    let utc = i32::from_str(&x[2]).unwrap();
+                    hm.insert(guild, GuildConfigData { language, utc });
+                }
+                Self(hm)
+            }
+            _ => Self(Default::default())
+        }
     }
 
     fn save(&self) {

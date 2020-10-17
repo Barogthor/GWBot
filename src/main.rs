@@ -26,7 +26,7 @@ use commands::{
     nicknext::*,
     ping::*,
     skill::*,
-    utc::*,
+    // utc::*,
     zq::*,
     zqnext::*,
 };
@@ -40,7 +40,7 @@ mod commands;
 pub mod utils;
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext, event, utc, lang)]
+#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext, event, lang)]
 struct General;
 
 struct Handler;
