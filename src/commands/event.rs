@@ -7,7 +7,6 @@ use serenity::utils::MessageBuilder;
 
 use crate::{get_bot_datas, I18nStore};
 use crate::constants::DATETIME_FORMAT;
-use crate::enums::Language;
 use crate::utils::{I18nMessageStore, SpecialEventPeriod, SpecialEventStore};
 use crate::utils::time::DateTimeRange;
 
@@ -15,8 +14,11 @@ type EventTuple = (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>);
 
 #[command]
 async fn event(ctx: &Context, msg: &Message) -> CommandResult {
+    let guild = msg.channel_id.to_channel(&ctx).await?.guild()
+        .and_then(|channel| Some(channel.guild_id.0)).unwrap_or(0);
     let datas_lock = get_bot_datas(ctx).await;
     let read_data = &datas_lock.read().await;
+    let (lang, _) = read_data.guilds_config.get_guild_config(guild);
     let i18n_messages: &I18nStore<I18nMessageStore> = &read_data.i18n_messages;
     let tuple: &EventTuple = &read_data.event;
     let (periods, event_store) = tuple;
@@ -32,8 +34,8 @@ async fn event(ctx: &Context, msg: &Message) -> CommandResult {
         .collect();
     let next_event = next_events.first();
     println!("{:?} {:?}", events_left, running_events);
-    let localized_events = event_store.lng(Language::English).unwrap();
-    let localized_messages = i18n_messages.lng(Language::English).unwrap();
+    let localized_events = event_store.lng(lang).unwrap();
+    let localized_messages = i18n_messages.lng(lang).unwrap();
     let mut response = MessageBuilder::new();
     if running_events.is_empty() {
         response.push_line(localized_messages.event_no_running());
