@@ -20,17 +20,19 @@ use commands::{
     bonus::*,
     bonusnext::*,
     event::*,
+    lang::*,
     menu::*,
     nick::*,
     nicknext::*,
     ping::*,
     skill::*,
+    utc::*,
     zq::*,
     zqnext::*,
 };
 
 use crate::enums::Language;
-use crate::utils::{BonusEventStore, get_special_events_time_range, I18nMessageStore, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
+use crate::utils::{BonusEventStore, get_special_events_time_range, GuildsConfig, I18nMessageStore, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
 
 pub mod constants;
 pub mod enums;
@@ -38,7 +40,7 @@ mod commands;
 pub mod utils;
 
 #[group]
-#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext, event)]
+#[commands(ping, skill, menu, zq, zqnext, bonus, bonusnext, nick, nicknext, event, utc, lang)]
 struct General;
 
 struct Handler;
@@ -124,6 +126,7 @@ pub struct BotData {
     pub bonus_pvp: I18nStore<BonusEventStore>,
     pub i18n_messages: I18nStore<I18nMessageStore>,
     pub event: (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>),
+    pub guilds_config: GuildsConfig
 }
 
 impl BotData {
@@ -134,6 +137,7 @@ impl BotData {
             m.insert(Language::French, SpecialEventStore::from_csv("datas/special_events_fr_FR.csv"));
             m
         };
+
         let special_event_periods: Vec<SpecialEventPeriod> = {
             get_special_events_time_range()
         };
@@ -197,6 +201,7 @@ impl BotData {
             bonus_pvp: I18nStore(bonus_pvp_events),
             i18n_messages: I18nStore(i18n_messages),
             event: (special_event_periods, I18nStore(special_events)),
+            guilds_config: GuildsConfig::load()
         };
         Arc::new(tokio::sync::RwLock::new(datas))
     }
@@ -210,6 +215,12 @@ impl TypeMapKey for BotData {
 pub async fn get_bot_datas(ctx: &Context) -> Arc<tokio::sync::RwLock<BotData>> {
     let data = ctx.data.read().await;
     data.get::<BotData>().expect("Excepted Bot data in the shared map").clone()
+}
+
+#[inline]
+pub async fn get_mut_bot_datas(ctx: &Context) -> Arc<tokio::sync::RwLock<BotData>> {
+    let mut data = ctx.data.write().await;
+    data.get_mut::<BotData>().expect("Excepted Bot data in the shared map").clone()
 }
 
 

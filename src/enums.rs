@@ -1,10 +1,20 @@
 use std::fmt::{Display, Formatter};
 use std::fmt;
 
-#[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Clone, Hash)]
+#[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Clone, Hash, Copy)]
 pub enum Language {
     French,
     English,
+}
+
+impl Language {
+    pub fn from(s: &String) -> Result<Self, String> {
+        match s.to_lowercase().as_str() {
+            "fr" | "fr_fr" | "french" => Ok(Language::French),
+            "en" | "en_US" | "english" => Ok(Language::English),
+            _ => Err(format!("Could not convert '{}' into a known language", s))
+        }
+    }
 }
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]

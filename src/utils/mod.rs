@@ -5,6 +5,7 @@ use std::str::FromStr;
 
 use chrono::{DateTime, TimeZone, Utc};
 
+use crate::enums::Language;
 use crate::utils::time::{DateTimeRange, DateTimeRangeComparison};
 
 pub mod skill;
@@ -294,5 +295,50 @@ impl I18nMessageStore {
     }
     pub fn skill_prefix(&self) -> Msg {
         self.0.get("skill-prefix").expect("'skill-prefix' key is missing")
+    }
+}
+
+#[derive(Debug)]
+pub struct GuildConfigData {
+    language: Language,
+    utc: i32,
+}
+
+impl GuildConfigData {}
+
+type GuildRawId = u64;
+
+#[derive(Debug)]
+pub struct GuildsConfig(HashMap<GuildRawId, GuildConfigData>);
+
+//TODO: save on disk changes
+impl GuildsConfig {
+    pub fn load() -> Self {
+        Self(Default::default())
+    }
+
+    pub fn set_language(&mut self, guild: GuildRawId, lng: Language) {
+        self.0.get_mut(&guild)
+            .and_then(|config| {
+                config.language = lng;
+                Some(true)
+            })
+            .or_else(|| {
+                let config = GuildConfigData { language: lng.clone(), utc: 0 };
+                self.0.insert(guild, config);
+                Some(true)
+            });
+    }
+    pub fn set_utc(&mut self, guild: GuildRawId, utc: i32) {
+        self.0.get_mut(&guild)
+            .and_then(|config| {
+                config.utc = utc;
+                Some(true)
+            })
+            .or_else(|| {
+                let config = GuildConfigData { language: Language::English, utc };
+                self.0.insert(guild, config);
+                Some(true)
+            });
     }
 }
