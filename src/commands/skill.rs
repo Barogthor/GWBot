@@ -32,12 +32,11 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
         .emoji(emoji_lookup.get(&skill_record.secondary_profession.to_string()).unwrap())
         .push("--")
         .push_mono(code_skill)
-        .push("--")
-        .push_line("");
+        .push("--\n");
     let mut count = skill_record.attributes.len();
     for (attr, points) in skill_record.attributes {
-        count-=1;
-        response.push(attr.to_string()).push(": ").push_bold(points);
+        count -= 1;
+        response.push(format!("{}: ", attr.to_string())).push_bold(points);
         if count>0 {
             response.push(", ");
         }
@@ -45,7 +44,7 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     response.push_line("");
 
     for i in 0..8{
-        response.push("Skill ").push(i+1).push(": ").push_bold_line(skill_record.skills[i].1);
+        response.push(format!("Skill {}: ", i + 1)).push_bold_line(skill_record.skills[i].1);
     }
 
     if let Err(why) = msg.channel_id.say(&ctx.http, &response).await {
