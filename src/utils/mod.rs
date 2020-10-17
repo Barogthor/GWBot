@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::fs::File;
-use std::io::{BufRead, BufReader, BufWriter, Lines, Write};
+use std::io::{BufRead, BufReader, Lines, Write};
 use std::str::FromStr;
 
 use chrono::{DateTime, TimeZone, Utc};
@@ -295,7 +295,7 @@ impl I18nMessageStore {
         self.0.get("bonus-next-headline").expect("'bonus-next-headline' key is missing")
     }
     pub fn bonus_pve(&self) -> Msg {
-        self.0.get("bonus-pve").expect("'bonus-next-pve' key is missing")
+        self.0.get("bonus-pve").expect("'bonus-pve' key is missing")
     }
     pub fn bonus_pvp(&self) -> Msg {
         self.0.get("bonus-pvp").expect("'bonus-next-pvp' key is missing")
@@ -368,5 +368,10 @@ impl GuildsConfig {
                 Some(true)
             });
         self.save();
+    }
+    pub fn get_guild_config(&self, guild: GuildRawId) -> (Language, i32) {
+        self.0.get(&guild)
+            .and_then(|config| Some((config.language, config.utc)))
+            .unwrap_or((Language::English, 0))
     }
 }

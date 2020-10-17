@@ -21,8 +21,8 @@ nicholas-gift-moving;Moving off in
 nicholas-gift-found;Will be found here in
 bonus-headline;This week:
 bonus-next-headline;For next week:
-bonus-next-pve;PvE bonus:
-bonus-next-pvp;PvP bonus:
-bonus-next-expire;Weekly bonuses will expire in
+bonus-pve;PvE bonus:
+bonus-pvp;PvP bonus:
+bonus-expire;Weekly bonuses will expire in
 bonus-next-start;Those Weekly bonuses will take effect in
 skill-prefix;Skill
