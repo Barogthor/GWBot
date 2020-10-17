@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 use std::ops::Add;
 
-use chrono::{Date, Datelike, DateTime, Duration, TimeZone, Utc};
+use chrono::{Date, Datelike, DateTime, Duration, Timelike, TimeZone, Utc};
 
 #[derive(Clone, PartialOrd, PartialEq, Eq, Ord)]
 pub enum DateTimeRangeComparison {
@@ -48,4 +48,16 @@ pub fn get_next_week(now: DateTime<Utc>) -> Date<Utc> {
     } else {
         now.add(Duration::days((7 - weekday.num_days_from_monday()) as i64)).date()
     }
+}
+
+pub fn get_next_day(now: DateTime<Utc>, reference_hour: u32) -> Date<Utc> {
+    if now.hour() < reference_hour {
+        now.date()
+    } else {
+        now.add(Duration::days(1)).date()
+    }
+}
+
+pub fn get_utc_start(date: Date<Utc>) -> DateTime<Utc> {
+    date.and_hms(16, 0, 0)
 }

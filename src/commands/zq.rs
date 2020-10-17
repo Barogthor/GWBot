@@ -1,4 +1,4 @@
-use chrono::{Date, DateTime, Timelike, TimeZone, Utc};
+use chrono::{Date, TimeZone, Utc};
 use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
 use serenity::framework::standard::macros::command;
@@ -15,13 +15,9 @@ use crate::constants::{
     ZAISHEN_VANQUISH_SIZE_CYCLE,
     ZAISHEN_VANQUISH_START,
 };
-use crate::enums::Language::French;
 use crate::get_bot_datas;
 use crate::utils::{I18nMessageStore, ZaishenQuestStore};
-
-fn get_timezone_start(date: Date<Utc>) -> DateTime<Utc> {
-    date.and_hms(16, 0, 0)
-}
+use crate::utils::time::{get_next_day, get_time_left, get_utc_start};
 
 fn get_mz_cycle_start() -> Date<Utc> {
     let zq = ZAISHEN_MISSION_START;
@@ -43,26 +39,25 @@ fn get_vz_cycle_start() -> Date<Utc> {
 
 #[command]
 async fn zq(ctx: &Context, msg: &Message) -> CommandResult {
+    let guild = msg.channel_id.to_channel(&ctx).await?.guild()
+        .and_then(|channel| Some(channel.guild_id.0)).unwrap_or(0);
     let datas_lock = get_bot_datas(ctx).await;
     let read_data = &datas_lock.read().await;
-    let i18n_messages: &I18nMessageStore = &read_data.i18n_messages.lng(French).unwrap();
-    let zq_mission: &ZaishenQuestStore = &read_data.zaishen_mission.lng(French).unwrap();
-    let zq_bounty: &ZaishenQuestStore = &read_data.zaishen_bounty.lng(French).unwrap();
-    let zq_combat: &ZaishenQuestStore = &read_data.zaishen_combat.lng(French).unwrap();
-    let zq_vanquish: &ZaishenQuestStore = &read_data.zaishen_vanquish.lng(French).unwrap();
+    let (lang, _) = read_data.guilds_config.get_guild_config(guild);
+    let i18n_messages: &I18nMessageStore = &read_data.i18n_messages.lng(lang).unwrap();
+    let zq_mission: &ZaishenQuestStore = &read_data.zaishen_mission.lng(lang).unwrap();
+    let zq_bounty: &ZaishenQuestStore = &read_data.zaishen_bounty.lng(lang).unwrap();
+    let zq_combat: &ZaishenQuestStore = &read_data.zaishen_combat.lng(lang).unwrap();
+    let zq_vanquish: &ZaishenQuestStore = &read_data.zaishen_vanquish.lng(lang).unwrap();
     let now = Utc::now();
-    let count_days = |since| now.signed_duration_since(get_timezone_start(since)).num_days();
+    let tomorrow = get_utc_start(get_next_day(now, 16));
+    let count_days = |since| now.signed_duration_since(get_utc_start(since)).num_days();
     let mz_id = count_days(get_mz_cycle_start()) % ZAISHEN_MISSION_SIZE_CYCLE;
     let bz_id = count_days(get_bz_cycle_start()) % ZAISHEN_BOUNTY_SIZE_CYCLE;
     let cz_id = count_days(get_cz_cycle_start()) % ZAISHEN_COMBAT_SIZE_CYCLE;
     let vz_id = count_days(get_vz_cycle_start()) % ZAISHEN_VANQUISH_SIZE_CYCLE;
-    let hour_left = if now.hour() > 18 {
-        24 - now.hour() + 18
-    } else {
-        18 - now.hour()
-    } - 1;
-    let min_left = 60 - now.minute() - 1;
-    let sec_left = 60 - now.second() - 1;
+    let (_, hours_left, mins_left, secs_left) = get_time_left(tomorrow, now);
+
     let mission = zq_mission.get_from_id(mz_id).unwrap();
     let bounty = zq_bounty.get_from_id(bz_id).unwrap();
     let combat = zq_combat.get_from_id(cz_id).unwrap();
@@ -79,7 +74,7 @@ async fn zq(ctx: &Context, msg: &Message) -> CommandResult {
         .push(format!("{} ", i18n_messages.zaishen_quest_vanquish()))
         .push_bold_line(&vanquish.name)
         .push(i18n_messages.zaishen_quest_reset())
-        .push_bold_line(format!(" {:0>2}:{:0>2}:{:0>2}!", hour_left, min_left, sec_left));
+        .push_bold_line(format!(" {:0>2}:{:0>2}:{:0>2}!", hours_left, mins_left, secs_left));
 
     if let Err(why) = msg.channel_id.say(&ctx.http, &response).await {
         println!("Error sending message: {:?}", why);

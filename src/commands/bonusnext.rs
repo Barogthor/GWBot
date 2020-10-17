@@ -1,4 +1,4 @@
-use chrono::{Date, DateTime, TimeZone, Utc};
+use chrono::{Date, TimeZone, Utc};
 use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
 use serenity::framework::standard::macros::command;
@@ -12,11 +12,7 @@ use crate::constants::{
 };
 use crate::get_bot_datas;
 use crate::utils::{BonusEventStore, I18nMessageStore};
-use crate::utils::time::{get_next_week, get_time_left};
-
-fn get_timezone_start(date: Date<Utc>) -> DateTime<Utc> {
-    date.and_hms(16, 0, 0)
-}
+use crate::utils::time::{get_next_week, get_time_left, get_utc_start};
 
 fn get_bonus_cycle_start() -> Date<Utc> {
     let zq = BONUS_EVENT_START;
@@ -34,8 +30,8 @@ async fn bonusnext(ctx: &Context, msg: &Message) -> CommandResult {
     let bonus_pve: &BonusEventStore = &read_data.bonus_pve.lng(lang).unwrap();
     let bonus_pvp: &BonusEventStore = &read_data.bonus_pvp.lng(lang).unwrap();
     let now = Utc::now();
-    let next_week = get_timezone_start(get_next_week(now));
-    let count_weeks = |since| next_week.signed_duration_since(get_timezone_start(since)).num_weeks();
+    let next_week = get_utc_start(get_next_week(now));
+    let count_weeks = |since| next_week.signed_duration_since(get_utc_start(since)).num_weeks();
     let pve_id = count_weeks(get_bonus_cycle_start()) % BONUS_EVENT_PVE_SIZE_CYCLE;
     let pvp_id = count_weeks(get_bonus_cycle_start()) % BONUS_EVENT_PVP_SIZE_CYCLE;
     let (days_left, hours_left, mins_left, secs_left) = get_time_left(next_week, now);
