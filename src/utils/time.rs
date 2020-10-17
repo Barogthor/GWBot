@@ -58,6 +58,10 @@ pub fn get_next_day(now: DateTime<Utc>, reference_hour: u32) -> Date<Utc> {
     }
 }
 
-pub fn get_utc_start(date: Date<Utc>) -> DateTime<Utc> {
+pub fn get_daily_start(date: Date<Utc>) -> DateTime<Utc> {
     date.and_hms(16, 0, 0)
+}
+
+pub fn get_weekly_start(date: Date<Utc>) -> DateTime<Utc> {
+    date.and_hms(15, 0, 0)
 }

@@ -17,7 +17,7 @@ use crate::constants::{
 };
 use crate::get_bot_datas;
 use crate::utils::{I18nMessageStore, ZaishenQuestStore};
-use crate::utils::time::{get_next_day, get_time_left, get_utc_start};
+use crate::utils::time::{get_daily_start, get_next_day, get_time_left};
 
 fn get_mz_cycle_start() -> Date<Utc> {
     let zq = ZAISHEN_MISSION_START;
@@ -50,8 +50,8 @@ async fn zq(ctx: &Context, msg: &Message) -> CommandResult {
     let zq_combat: &ZaishenQuestStore = &read_data.zaishen_combat.lng(lang).unwrap();
     let zq_vanquish: &ZaishenQuestStore = &read_data.zaishen_vanquish.lng(lang).unwrap();
     let now = Utc::now();
-    let tomorrow = get_utc_start(get_next_day(now, 16));
-    let count_days = |since| now.signed_duration_since(get_utc_start(since)).num_days();
+    let tomorrow = get_daily_start(get_next_day(now, 16));
+    let count_days = |since| now.signed_duration_since(get_daily_start(since)).num_days();
     let mz_id = count_days(get_mz_cycle_start()) % ZAISHEN_MISSION_SIZE_CYCLE;
     let bz_id = count_days(get_bz_cycle_start()) % ZAISHEN_BOUNTY_SIZE_CYCLE;
     let cz_id = count_days(get_cz_cycle_start()) % ZAISHEN_COMBAT_SIZE_CYCLE;
