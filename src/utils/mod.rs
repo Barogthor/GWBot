@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::fs::File;
-use std::io::{BufRead, BufReader, Lines};
+use std::io::{BufRead, BufReader, BufWriter, Lines, Write};
 use std::str::FromStr;
 
 use chrono::{DateTime, TimeZone, Utc};
@@ -31,13 +31,29 @@ impl CSVFile {
             self.headers.push(x.trim().to_string());
         }
     }
-    fn read_record(&mut self, raw_record: String){
+    fn read_record(&mut self, raw_record: String) {
         let split_record: Vec<&str> = raw_record.split(';').collect();
         let mut record = vec![];
         for x in split_record {
             record.push(x.trim().to_string());
         }
         self.records.push(record);
+    }
+
+    fn save(path: &str, headers: Vec<String>, records: Vec<CSVRecord>) {
+        let file = File::create(path).or_else(|_| File::open(path));
+        file.and_then(|mut f| {
+            let headers = format!("{}\n", headers.join(";"));
+            f.write_all(headers.as_bytes());
+            records.iter()
+                .map(|record| record.join(";"))
+                .map(|record| format!("{}\n", record))
+                .for_each(|record| {
+                    f.write_all(record.as_bytes());
+                });
+
+            Ok(())
+        });
     }
 }
 
@@ -52,8 +68,6 @@ impl FileParser for CSVFile {
         csv
     }
 }
-
-
 
 #[derive(Debug)]
 pub struct ZaishenQuestData {
@@ -77,7 +91,6 @@ impl ZaishenQuestStore {
         self.0.get(id as usize)
     }
 }
-
 
 #[derive(Debug)]
 pub struct BonusEventData {
@@ -317,6 +330,19 @@ impl GuildsConfig {
         Self(Default::default())
     }
 
+    fn save(&self) {
+        let func: fn(Vec<&str>) -> Vec<String> = |vec| vec.iter().map(|s| s.to_string()).collect();
+        let headers = func(vec!["guild", "language", "utc"]);
+        let records: Vec<CSVRecord> = self.0.iter()
+            .map(|item| {
+                let guild = format!("{}", item.0);
+                let utc = format!("{}", item.1.utc);
+                let lang = format!("{:?}", item.1.language);
+                vec![guild, lang, utc]
+            }).collect();
+        CSVFile::save("user-config.csv", headers, records);
+    }
+
     pub fn set_language(&mut self, guild: GuildRawId, lng: Language) {
         self.0.get_mut(&guild)
             .and_then(|config| {
@@ -328,6 +354,7 @@ impl GuildsConfig {
                 self.0.insert(guild, config);
                 Some(true)
             });
+        self.save();
     }
     pub fn set_utc(&mut self, guild: GuildRawId, utc: i32) {
         self.0.get_mut(&guild)
@@ -340,5 +367,6 @@ impl GuildsConfig {
                 self.0.insert(guild, config);
                 Some(true)
             });
+        self.save();
     }
 }
