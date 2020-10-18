@@ -8,7 +8,7 @@ use serenity::utils::MessageBuilder;
 use crate::{get_bot_datas, I18nStore};
 use crate::constants::DATETIME_FORMAT;
 use crate::utils::{I18nMessageStore, SpecialEventPeriod, SpecialEventStore};
-use crate::utils::time::DateTimeRange;
+use crate::utils::time::{DateTimeRange, get_time_left};
 
 type EventTuple = (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>);
 
@@ -59,11 +59,7 @@ fn print_running_event(response: &mut MessageBuilder, event_period: &&&SpecialEv
     response.push_bold(&event.name);
     response.push_line(format!(" {} {}", localized_messages.event_started(), &event.note));
     response.push(localized_messages.event_end());
-    let time_left = event_range.1.signed_duration_since(*now);
-    let days_left = time_left.num_days();
-    let hours_left = time_left.num_hours() % 24;
-    let mins_left = time_left.num_minutes() % 60;
-    let secs_left = time_left.num_seconds() % 60;
+    let (days_left, hours_left, mins_left, secs_left) = get_time_left(event_range.1, *now);
     response.push_bold(format!(" {} {}, {:0>2}:{:0>2}:{:0>2}!", days_left, localized_messages.time_days(), hours_left, mins_left, secs_left));
     response.push_line(format!(" ({})\n", event_range.1.format(DATETIME_FORMAT)));
 }
@@ -75,11 +71,7 @@ fn print_next_event(response: &mut MessageBuilder, event_period: &&&SpecialEvent
     response.push_bold(format!(" {}, ", &event.name));
     response.push_line(&event.note);
     response.push(localized_messages.event_begin());
-    let time_left = event_range.0.signed_duration_since(*now);
-    let days_left = time_left.num_days();
-    let hours_left = time_left.num_hours() % 24;
-    let mins_left = time_left.num_minutes() % 60;
-    let secs_left = time_left.num_seconds() % 60;
+    let (days_left, hours_left, mins_left, secs_left) = get_time_left(event_range.0, *now);
     response.push_bold(format!(" {} {}, {:0>2}:{:0>2}:{:0>2}!", days_left, localized_messages.time_days(), hours_left, mins_left, secs_left));
     response.push_line(format!(" ({})\n", event_range.0.format(DATETIME_FORMAT)));
 }
