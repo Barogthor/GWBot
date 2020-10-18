@@ -1,137 +1,137 @@
 id;name
-0;Jaya Bluffs
-1;Holdings of Chokhin
-2;Ice Cliff Chasms
-3;Griffon's Mouth
-4;Kinya Province
-5;Issnur Isles
-6;Jaga Moraine
-7;Ice Floe
-8;Maishang Hills
-9;Jahai Bluffs
-10;Riven Earth
-11;Icedome
-12;Minister Cho's Estate
-13;Mehtani Keys
-14;Sacnoth Valley
-15;Iron Horse Mine
-16;Morostav Trail
-17;Plains of Jarin
-18;Sparkfly Swamp
-19;Kessex Peak
-20;Mourning Veil Falls
-21;The Alkali Pan
-22;Varajar Fells
-23;Lornar's Pass
-24;Pongmei Valley
-25;The Floodplain of Mahnkelon
-26;Verdant Cascades
-27;Majesty's Rest
-28;Raisu Palace
-29;The Hidden City of Ahdashim
-30;Rhea's Crater
-31;Mamnoon Lagoon
-32;Shadow's Passage
-33;The Mirror of Lyss
-34;Saoshang Trail
-35;Nebo Terrace
-36;Shenzun Tunnels
-37;The Ruptured Heart
-38;Salt Flats
-39;North Kryta Province
-40;Silent Surf
-41;The Shattered Ravines
-42;Scoundrel's Rise
-43;Old Ascalon
-44;Sunjiang District
-45;The Sulfurous Wastes
-46;Magus Stones
-47;Perdition Rock
-48;Sunqua Vale
-49;Turai's Procession
-50;Norrhart Domains
-51;Pockmark Flats
-52;Tahnnakai Temple
-53;Vehjin Mines
-54;Poisoned Outcrops
-55;Prophet's Path
-56;The Eternal Grove
-57;Tasca's Demise
-58;Resplendent Makuun
-59;Reed Bog
-60;Unwaking Waters
-61;Stingray Strand
-62;Sunward Marches
-63;Regent Valley
-64;Wajjun Bazaar
-65;Yatendi Canyons
-66;Twin Serpent Lakes
-67;Sage Lands
-68;Xaquang Skyway
-69;Zehlon Reach
-70;Tangle Root
-71;Silverwood
+0;Promontoire de Jaya
+1;Territoire de Chokhin
+2;Gouffre de givre
+3;Gueule du Griffon
+4;Province de Kinya
+5;Iles d'Issnur
+6;Moraine de Jaga
+7;Banquise de glace
+8;Collines de Maishang
+9;Falaises de Jahai
+10;Terre Déchiquetée
+11;Dôme de Glace
+12;Domaine du ministre Cho
+13;Archipel de Mehtani
+14;Vallée de Sacnoth
+15;Mine du Cheval de Fer
+16;Chemin de Morostav
+17;Plaines de Jarin
+18;Marais de la lumillule
+19;Pic Kesse
+20;Chutes Endeuillées
+21;Cuvette d'Alkali
+22;Lande de Varajar
+23;Passage de Lornar
+24;Vallée de Pongmei
+25;Plaines inondables de Mahnkelon
+26;Cascades verdoyantes
+27;Refuge royal
+28;Palais de Raisu
+29;Cité cachée d'Ahdashim
+30;Le Cratère de Rhea
+31;Lagon de Mamnoun
+32;Passage de l'Ombre
+33;Le Miroir de Lyss
+34;Chemin de Saoshang
+35;Plateau Nebo
+36;Tunnels de Shenzun
+37;Coeur déchiré
+38;Plaines Salines
+39;Kryte du Nord
+40;Ressac silencieux
+41;Les Ravins dévastés
+42;Pente des Brigands
+43;Vieil Ascalon
+44;District de Sunjiang
+45;Désert Sulfureux
+46;Pierres des Mages
+47;Roc de la Perdition
+48;Vallée de Sunqua
+49;Procession de Turai
+50;Domaines de Norrhart
+51;Plaines Grêlées
+52;Temple de Tahnnakai
+53;Mines de Vehjin
+54;Saillies empoisonnées
+55;Chemin du Prophète
+56;Le Verger Eternel
+57;Fin de Tasca
+58;Makuun Resplendissant
+59;Marais du Roseau
+60;Eaux Endormies
+61;Côte de la Raie
+62;Confins du Soleil
+63;Vallée du Régent
+64;Bazar de Waijun
+65;Canyons de Yatendi
+66;Lacs des Serpents jumeaux
+67;Saugeterres
+68;Sentier de Xaquang
+69;Etendues de Zehlon
+70;Racine enchevêtrée
+71;Bois-Argent
 72;Zen Daijun
-73;The Arid Sea
-74;Nahpui Quarter
-75;Skyward Reach
-76;The Scar
-77;The Black Curtain
-78;Panjiang Peninsula
-79;Snake Dance
-80;Traveler's Vale
-81;The Breach
-82;Lahtenda Bog
-83;Spearhead Peak
-84;Mount Qinkai
-85;Marga Coast
-86;Melandru's Hope
-87;The Falls
-88;Joko's Domain
-89;Vulture Drifts
-90;Wilderness of Bahdza
-91;Talmark Wilderness
-92;Vehtendi Valley
-93;Talus Chute
-94;Mineral Springs
-95;Anvil Rock
-96;Arborstone
-97;Witman's Folly
-98;Arkjok Ward
-99;Ascalon Foothills
-100;Bahdok Caverns
-101;Cursed Lands
-102;Alcazia Tangle
-103;Archipelagos
-104;Eastern Frontier
-105;Dejarin Estate
-106;Watchtower Coast
-107;Arbor Bay
-108;Barbarous Shore
-109;Deldrimor Bowl
-110;Boreas Seabed
-111;Cliffs of Dohjok
-112;Diessa Lowlands
-113;Bukdek Byway
-114;Bjora Marches
-115;Crystal Overlook
-116;Diviner's Ascent
-117;Dalada Uplands
-118;Drazach Thicket
-119;Fahranur, the First City
-120;Dragon's Gullet
-121;Ferndale
-122;Forum Highlands
-123;Dreadnought's Drift
-124;Drakkar Lake
-125;Dry Top
-126;Tears of the Fallen
-127;Gyala Hatchery
-128;Ettin's Back
-129;Gandara, the Moon Fortress
-130;Grothmar Wardowns
-131;Flame Temple Corridor
-132;Haiju Lagoon
-133;Frozen Forest
-134;Garden of Seborhin
-135;Grenth's Footprint
+73;La Mer Aride
+74;Quartiers de Nahpui
+75;Etendues célestes
+76;La Cicatrice
+77;Le Rideau Noir
+78;Péninsule de Panjiang
+79;Danse du Serpent
+80;Val du pèlerin
+81;La Brèche du Rempart
+82;Marais de Lahtenda
+83;Pic de la Tête de Lance
+84;Mont Qinkai
+85;Côte de Marga
+86;Espoir de Melandru
+87;Les Chutes
+88;Domaine de Joko
+89;Moraines du Vautour
+90;Terres sauvages de Bahdza
+91;Lande de Talmark
+92;Vallée de Vehtendi
+93;Pente du Talus
+94;Sources minérales
+95;Rocher de l'Enclume
+96;Pierre Arborea
+97;Le palais de Witman
+98;Quartier d'Arkjok
+99;Collines d'Ascalon
+100;Cavernes Bahdok
+101;Terres maudites
+102;Lacis d'Alcazia
+103;Les Archipels
+104;Frontière orientale
+105;Domaine de Dejarin
+106;Côte des Tours de Guet
+107;Baie d'Arbor
+108;Côte Barbare
+109;Bassin de Deldrimor
+110;Fonds Marins de Boreas
+111;Falaises de Dohjok
+112;Basses-terres de Diessa
+113;Chemin de Bukdek
+114;Frontière de Bjora
+115;Plateau de Cristal
+116;Montée du Devin
+117;Plateaux de Dalada
+118;Brousses de Drazach
+119;Fahranur, première cité
+120;Gosier du Dragon
+121;Vallon de la Fougère
+122;Montagnes de la tribune
+123;Congère cuirassée
+124;Lac Drakkar
+125;Cimesèche
+126;Larmes des Déchus
+127;Couvoir de Gyala
+128;Echine d'Ettin
+129;Gandara, la Forteresse de la lune
+130;Collines de la Guerre de Grothmar
+131;Corridor du Temple de la Flamme
+132;Lagon d'Haiju
+133;Forêt gelée
+134;Jardin de Seborhin
+135;L'Empreinte de Grenth
