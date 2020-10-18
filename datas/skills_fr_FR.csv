@@ -334,7 +334,7 @@ skillId, skillName
 340;Taillade d'interruption
 341;Coup rapide
 342;Hache tournante
-343;Pour la justice !
+343;"Pour la justice !"
 344;Rafale
 345;Pose défensive
 346;Frénésie
@@ -355,8 +355,8 @@ skillId, skillName
 361;Sceau de dolyak
 362;Adresse du Guerrier
 363;Coup de bouclier
-364;Chargez !
-365;A moi la victoire !
+364;"Chargez !"
+365;"A moi la victoire !"
 366;"Craignez-moi !"
 367;"Levez les boucliers !"
 368;"Je survivrai !"
@@ -568,7 +568,7 @@ skillId, skillName
 887;Sceau de rajeunissement
 888;Hache tournoyante
 889;Coup forcé
-891;Nul ne passera !
+891;"Nul ne passera !"
 892;Lame vacillante
 893;Flèches chercheuses
 898;Surcharge
@@ -579,7 +579,7 @@ skillId, skillName
 903;Prisme de glace
 904;Hache de rage
 905;Coup propice
-906;A genoux !
+906;"A genoux !"
 907;Taillade du dragon
 908;Tir du maraudeur
 909;Tir focalisé
@@ -742,7 +742,7 @@ skillId, skillName
 1136;Taillade pénétrante
 1137;Frappe du Yéti
 1140;Tempête d'épées
-1141;Vous mourrez !
+1141;"Vous mourrez !"
 1142;Parade propice
 1144;Attaque d'Aildargent
 1146;Poussée
@@ -882,7 +882,7 @@ skillId, skillName
 1409;Frappe du Mokele
 1410;Attaque dominatrice
 1411;Sceau de constitution
-1412;Vous êtes seul !
+1412;"Vous êtes seul !"
 1413;Explosion d'agressivité
 1414;Charge enragée
 1415;Taillade incapacitante
@@ -1005,17 +1005,17 @@ skillId, skillName
 1586;Protection angélique
 1587;Lien angélique
 1588;Sceau cautère
-1589;Tenez bon !
-1590;Ouvrez le chemin !
-1591;Faites vite !
-1592;Nous reviendrons !
-1593;N'abandonnez jamais !
-1594;A l'aide !
-1595;Repliez-vous !
-1596;Attention !
-1597;Ils sont enflammés !
-1598;Ne vous rendez jamais !
-1599;C'est juste une petite blessure
+1589;"Tenez bon !"
+1590;"Ouvrez le chemin !"
+1591;"Faites vite !"
+1592;"Nous reviendrons !"
+1593;"N'abandonnez jamais !"
+1594;"A l'aide !"
+1595;"Repliez-vous !"
+1596;"Attention !"
+1597;"Ils sont enflammés !"
+1598;"Ne vous rendez jamais !"
+1599;"C'est juste une petite blessure"
 1600;Javelot perforant
 1601;Attaque vicieuse
 1602;Frappe stupéfiante
@@ -1132,10 +1132,10 @@ skillId, skillName
 1776;Sceau d'agression
 1777;Sceau du remède
 1778;Sceau de retour
-1779;Profitez de votre temps !
-1780;Touche pas !
-1781;Trouvez leur faiblesse !
-1782;La force est avec vous !
+1779;"Profitez de votre temps !"
+1780;"Touche pas !"
+1781;"Trouvez leur faiblesse !"
+1782;"La force est avec vous !"
 1783;Javelot de l'assassin
 1784;Javeline leste
 1814;Regard du Porteur de lumière
@@ -1188,7 +1188,7 @@ skillId, skillName
 2064;Esprit impéccable
 2065;Ame impeccable
 2066;Désarmement
-2067;C'est ce que je comptais faire !
+2067;"C'est ce que je comptais faire !"
 2068;Feu rapide
 2069;Tir du chasseur paresseux
 2070;Trancheur d'aura
@@ -1206,7 +1206,7 @@ skillId, skillName
 2108;Saccage collectif
 2109;Aura éternelle
 2110;Vampirisme
-2112;Il n'y a rien à craindre !
+2112;"Il n'y a rien à craindre !"
 2116;Attaque sournoise
 2135;Piétinement du boeuf
 2136;Defense poudre fumigène
@@ -1254,8 +1254,8 @@ skillId, skillName
 2213;Morsure d'oreille
 2214;Coup bas
 2215;Coup du bagarreur
-2216;Ne trébuche pas !
-2217;Par le marteau d'Ural !
+2216;"Ne trébuche pas !"
+2217;"Par le marteau d'Ural !"
 2218;Maître ivre
 2219;Arme du Grand Nain
 2220;Armure du Grand Nain
@@ -1277,7 +1277,7 @@ skillId, skillName
 2236;Puits de ruine
 2237;Atrophie
 2238;Javelot de rédemption
-2353;""Finissez-le !"
+2353;"Finissez-le !"
 2354;"Esquive ceci !"
 2355;"Je suis le plus fort !"
 2356;"Rien ne peut m'arrêter !"
