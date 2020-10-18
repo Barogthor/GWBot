@@ -1,1306 +1,1306 @@
 skillId, skillName
 0;Vide
-1;Healing Signet
-2;Resurrection Signet
-3;Signet of Capture
-5;Power Block
-6;Mantra of Earth
-7;Mantra of Flame
-8;Mantra of Frost
-9;Mantra of Lightning
-10;Hex Breaker
-11;Distortion
-13;Mantra of Recovery
-14;Mantra of Persistence
-15;Mantra of Inscriptions
-16;Mantra of Concentration
-17;Mantra of Resolve
-18;Mantra of Signets
-19;Fragility
-21;Inspired Enchantment
-22;Inspired Hex
-23;Power Spike
-24;Power Leak
-25;Power Drain
-26;Empathy
-27;Shatter Delusions
-28;Backfire
-29;Blackout
+1;Sceau de guérison
+2;Sceau de ressurection
+3;Sceau de capture
+5;Blocage de pouvoir
+6;Mantra de la Terre
+7;Mantra de flamme
+8;Mantra de givre
+9;Mantra de foudre
+10;Leveur de maléfice
+11;Distorsion
+13;Mantra de récupération
+14;Mantra de persévérance
+15;Mantra des inscriptions
+16;Mantra de concentration
+17;Mantra de résolution
+18;Mantra des sceaux
+19;Fragilité
+21;Enchantement inspiré
+22;Maléfice inspiré
+23;Dissipation de pouvoir
+24;Fuite de pouvoir
+25;Drain de pouvoir
+26;Empathie
+27;Dispersion des illusions
+28;Retour de flamme
+29;Black-out
 30;Diversion
-31;Conjure Phantasm
-32;Illusion of Weakness
-33;Illusionary Weaponry
-34;Sympathetic Visage
+31;Conjuration de fantasme
+32;Illusion de faiblesse
+33;Armes illusoires
+34;Visage avenant
 35;Ignorance
-36;Arcane Conundrum
-37;Illusion of Haste
-38;Channeling
-39;Energy Surge
-40;Ether Feast
-41;Ether Lord
-42;Energy Burn
-43;Clumsiness
-44;Phantom Pain
-45;Ethereal Burden
-46;Guilt
-47;Ineptitude
-48;Spirit of Failure
-49;Mind Wrack
-50;Wastrel's Worry
-51;Shame
-52;Panic
+36;Enigme des Arcanes
+37;Illusion de hâte
+38;Canalisation
+39;Afflux d'énergie
+40;Festin éthéré
+41;Seigneur éthéré
+42;Flamme d'énergie
+43;Maladresse
+44;Douleur fantôme
+45;Fardeau éthéré
+46;Culpabilité
+47;Incompétence
+48;Esprit de l'échec
+49;Délabrement spirituel
+50;Embarras de l'incapable
+51;Honte
+52;Panique
 53;Migraine
-54;Crippling Anguish
-55;Fevered Dreams
-56;Soothing Images
-57;Cry of Frustration
-58;Signet of Midnight
-59;Signet of Weariness
-61;Leech Signet
-62;Signet of Humility
-63;Keystone Signet
-65;Arcane Mimicry
-66;Spirit Shackles
-67;Shatter Hex
-68;Drain Enchantment
-69;Shatter Enchantment
-72;Elemental Resistance
-73;Physical Resistance
+54;Angoisse paralysante
+55;Rêves enfiévrés
+56;Images apaisantes
+57;Cri de Frustration
+58;Sceau de minuit
+59;Sceau de lassitude
+61;Sceau sangsue
+62;Sceau d'humilité
+63;Sceau de voûte
+65;Mimétisme des Arcanes
+66;Chaînes spirituelles
+67;Annihilateur de maléfices
+68;Drain d'enchantement
+69;Dissipation des enchantements
+72;Résistance aux éléments
+73;Résistance physique
 74;Echo
-75;Arcane Echo
-76;Imagined Burden
-77;Chaos Storm
-78;Epidemic
-79;Energy Drain
-80;Energy Tap
-81;Arcane Thievery
-82;Mantra of Recall
-83;Animate Bone Horror
-84;Animate Bone Fiend
-85;Animate Bone Minions
-86;Grenth's Balance
-87;Verata's Gaze
-88;Verata's Aura
-89;Deathly Chill
-90;Verata's Sacrifice
-91;Well of Power
-92;Well of Blood
-93;Well of Suffering
-94;Well of the Profane
-95;Putrid Explosion
-96;Soul Feast
-97;Necrotic Traversal
-98;Consume Corpse
-99;Parasitic Bond
-100;Soul Barbs
-101;Barbs
-102;Shadow Strike
-103;Price of Failure
-104;Death Nova
-105;Deathly Swarm
-106;Rotting Flesh
+75;Echo des Arcanes
+76;Fardeau imaginaire
+77;Tempête chaotique
+78;Epidémie
+79;Drain d'énergie
+80;Siphon d'énergie
+81;Vol des Arcanes
+82;Mantra de rappel
+83;Animation d'horreur squelettique
+84;Animation de démon squelette
+85;Animation de serviteurs squelettes
+86;Equilibre de Grenth
+87;Regard de Verata
+88;Aura de Verata
+89;Froideur mortelle
+90;Sacrifice de Verata
+91;Puits de pouvoir
+92;Puits de sang
+93;Puits de douleur
+94;Puits du profane
+95;Explosion putride
+96;Festin de l'âme
+97;Voyage nécrotique
+98;Combustion corporelle
+99;Lien parasitaire
+100;Ame barbelée
+101;Barbelés
+102;Choc de l'ombre
+103;Prix de l'échec
+104;Nova mortelle
+105;Essaim mortel
+106;Putréfaction
 107;Virulence
-108;Suffering
-109;Life Siphon
-110;Unholy Feast
-111;Awaken the Blood
-112;Desecrate Enchantments
-113;Tainted Flesh
-114;Aura of the Lich
-115;Blood Renewal
-116;Dark Aura
-117;Enfeeble
-118;Enfeebling Blood
-119;Blood is Power
-120;Blood of the Master
-121;Spiteful Spirit
-122;Malign Intervention
-123;Insidious Parasite
-124;Spinal Shivers
-125;Wither
-126;Life Transfer
-127;Mark of Subversion
-128;Soul Leech
-129;Defile Flesh
-130;Demonic Flesh
-131;Barbed Signet
-132;Plague Signet
-133;Dark Pact
-134;Order of Pain
-135;Faintheartedness
-136;Shadow of Fear
+108;Souffrance
+109;Siphon de vie
+110;Festin impie
+111;Réveil du sang
+112;Désacralisation d'Enchantements
+113;Chair putréfiée
+114;Aura de la liche
+115;Transfusion sanguine
+116;Aura noire
+117;Affaiblissement
+118;Sang du faible
+119;Pouvoir du sang
+120;Sang du Maître
+121;Esprit malveillant
+122;Intervention néfaste
+123;Parasite sournois
+124;Frissons glacés
+125;Flétrissure
+126;Transfert de vie
+127;Marque de subversion
+128;Sangsue de l'âme
+129;Souillure charnelle
+130;Chair démoniaque
+131;Sceau barbelé
+132;Sceau du fléau
+133;Pacte noir
+134;Ordre de la douleur
+135;Appréhension
+136;Ombre de terreur
 137;Rigor Mortis
-138;Dark Bond
-139;Infuse Condition
+138;Lien noir
+139;Transfert de condition
 140;Malaise
-141;Rend Enchantments
-142;Lingering Curse
-143;Strip Enchantment
-144;Chilblains
-145;Signet of Agony
-146;Offering of Blood
-147;Dark Fury
-148;Order of the Vampire
-149;Plague Sending
-150;Mark of Pain
-151;Feast of Corruption
-152;Taste of Death
-153;Vampiric Gaze
-154;Plague Touch
-155;Vile Touch
-156;Vampiric Touch
-157;Blood Ritual
-158;Touch of Agony
-159;Weaken Armor
-160;Windborne Speed
-162;Gale
-163;Whirlwind
-164;Elemental Attunement
-165;Armor of Earth
-166;Kinetic Armor
+141;Abolition des enchantements
+142;Malédiction latente
+143;Suppression d'un enchantement
+144;Engelures
+145;Sceau d'agonie
+146;Offrande de sang
+147;Fureur noire
+148;Ordre du vampire
+149;Propagation du fléau
+150;Marque de douleur
+151;Festin de corruption
+152;Goût de la mort
+153;Regard vampirique
+154;Caresse contagieuse
+155;Caresse nocive
+156;Caresse vampirique
+157;Rituel de sang
+158;Caresse d'agonie
+159;Armure affaiblie
+160;Vitesse du vent
+162;Bourrasque
+163;Tornade
+164;Affinité élémentaire
+165;Armure de la Terre
+166;Armure cinétique
 167;Eruption
-168;Magnetic Aura
-169;Earth Attunement
-170;Earthquake
-171;Stoning
-172;Stone Daggers
-173;Grasping Earth
-174;Aftershock
-175;Ward Against Elements
-176;Ward Against Melee
-177;Ward Against Foes
-178;Ether Prodigy
-179;Incendiary Bonds
-180;Aura of Restoration
-181;Ether Renewal
-182;Conjure Flame
-183;Inferno
-184;Fire Attunement
-185;Mind Burn
-186;Fireball
-187;Meteor
-188;Flame Burst
-189;Rodgort's Invocation
-190;Mark of Rodgort
-191;Immolate
-192;Meteor Shower
-193;Phoenix
-194;Flare
-195;Lava Font
-196;Searing Heat
-197;Fire Storm
-198;Glyph of Elemental Power
-199;Glyph of Energy
-200;Glyph of Lesser Energy
-201;Glyph of Concentration
-202;Glyph of Sacrifice
-203;Glyph of Renewal
-204;Rust
-205;Lightning Surge
-206;Armor of Frost
-207;Conjure Frost
-208;Water Attunement
-209;Mind Freeze
-210;Ice Prison
-211;Ice Spikes
-212;Frozen Burst
-213;Shard Storm
-214;Ice Spear
-215;Maelstrom
-216;Iron Mist
-217;Crystal Wave
-218;Obsidian Flesh
-219;Obsidian Flame
-220;Blinding Flash
-221;Conjure Lightning
-222;Lightning Strike
-223;Chain Lightning
-224;Enervating Charge
-225;Air Attunement
-226;Mind Shock
-227;Glimmering Mark
-228;Thunderclap
-229;Lightning Orb
-230;Lightning Javelin
-231;Shock
-232;Lightning Touch
-233;Swirling Aura
-234;Deep Freeze
-235;Blurred Vision
-236;Mist Form
-237;Water Trident
-238;Armor of Mist
-239;Ward Against Harm
-240;Smite
-241;Life Bond
-242;Balthazar's Spirit
-243;Strength of Honor
-244;Life Attunement
-245;Protective Spirit
-246;Divine Intervention
-247;Symbol of Wrath
-248;Retribution
-249;Holy Wrath
-250;Essence Bond
-251;Scourge Healing
-252;Banish
-253;Scourge Sacrifice
-254;Vigorous Spirit
-255;Watchful Spirit
-256;Blessed Aura
-257;Aegis
-258;Guardian
-259;Shield of Deflection
-260;Aura of Faith
-261;Shield of Regeneration
-262;Shield of Judgment
-263;Protective Bond
-264;Pacifism
-265;Amity
-266;Peace and Harmony
-267;Judge's Insight
-268;Unyielding Aura
-269;Mark of Protection
-270;Life Barrier
-271;Zealot's Fire
-272;Balthazar's Aura
-273;Spell Breaker
-274;Healing Seed
-275;Mend Condition
-276;Restore Condition
-277;Mend Ailment
-278;Purge Conditions
-279;Divine Healing
-280;Heal Area
-281;Orison of Healing
-282;Word of Healing
-283;Dwayna's Kiss
-284;Divine Boon
-285;Healing Hands
-286;Heal Other
-287;Heal Party
-288;Healing Breeze
-289;Vital Blessing
-290;Mending
-291;Live Vicariously
-292;Infuse Health
-293;Signet of Devotion
-294;Signet of Judgment
-295;Purge Signet
-296;Bane Signet
-297;Blessed Signet
-298;Martyr
-299;Shielding Hands
-300;Contemplation of Purity
-301;Remove Hex
-302;Smite Hex
-303;Convert Hexes
-304;Light of Dwayna
-305;Resurrect
-306;Rebirth
-307;Reversal of Fortune
-308;Succor
-309;Holy Veil
-310;Divine Spirit
-311;Draw Conditions
-312;Holy Strike
-313;Healing Touch
-314;Restore Life
+168;Aura magnétique
+169;Affinité terrestre
+170;Séisme
+171;Lapidation
+172;Dagues de pierre
+173;Etreinte de la Terre
+174;Réplique sismique
+175;Protection contre les éléments
+176;Protection de contact
+177;Protection contre l'ennemi
+178;Prodige éthéré
+179;Liens incendiaires
+180;Aura de rétablissement
+181;Renouveau éthéré
+182;Conjuration de flamme
+183;Enfer
+184;Affinité ignée
+185;Flamme spirituelle
+186;Boule de feu
+187;Météore
+188;Jet de flammes
+189;Invocation de Rodgort
+190;Marque de Rodgort
+191;Immolation
+192;Pluie de météores
+193;Phénix
+194;Eclat de feu
+195;Fontaine de lave
+196;Chaleur de fournaise
+197;Tempête de feu
+198;Glyphe de pouvoir élémentaire
+199;Glyphe d'énergie
+200;Glyphe d'énergie mineure
+201;Glyphe de concentration
+202;Glyphe de sacrifice
+203;Glyphe du renouveau
+204;Rouille
+205;Décharge foudroyante
+206;Armure de givre
+207;Conjuration du froid
+208;Affinité aquatique
+209;Gel spirituel
+210;Prison de glace
+211;Tessons de glace
+212;Explosion glaciale
+213;Tempête de glace
+214;Lance de glace
+215;Maelström
+216;Brume de fer
+217;Vague de cristal
+218;Chair d'obsidienne
+219;Flamme d'obsidienne
+220;Eblouissement
+221;Conjuration de la foudre
+222;Eclair foudroyant
+223;Chaîne d'éclairs
+224;Décharge incapacitante
+225;Affinité aérienne
+226;Choc spirituel
+227;Marque éblouissante
+228;Coup de tonnerre
+229;Globe de foudre
+230;Javelot de foudre
+231;Décharge électrique
+232;Caresse foudroyante
+233;Aura tourbillon
+234;Congélation
+235;Vision troublée
+236;Forme de brume
+237;Trident marin
+238;Armure de brume
+239;Protection contre le Mal
+240;Châtiment
+241;Lien de vie
+242;Esprit de Balthazar
+243;Force de l'Honneur
+244;Affinité vitale
+245;Esprit protecteur
+246;Intervention divine
+247;Symbole de Courroux
+248;Punition
+249;Colère divine
+250;Liens de l'Essence
+251;Guérison néfaste
+252;Bannissement
+253;Sacrifice néfaste
+254;Esprit vigoureux
+255;Esprit vigilant
+256;Aura sacrée
+257;Egide
+258;Gardien
+259;Bouclier de détournement
+260;Aura de foi
+261;Bouclier de régénération
+262;Bouclier du jugement
+263;Lien de protection
+264;Pacifisme
+265;Amitié
+266;Paix et harmonie
+267;Clairvoyance du juge
+268;Aura inflexible
+269;Marque de protection
+270;Barrière vitale
+271;Feu du zélote
+272;Aura de Balthazar
+273;Briseur de sorts
+274;Graine de guérison
+275;Rétablissement partiel
+276;Rétablissement total
+277;Guérison des affections
+278;Purification des conditions
+279;Guérison divine
+280;Zone de guérison
+281;Prière de guérison
+282;Parole de guérison
+283;Baiser de Dwayna
+284;Bienfait divin
+285;Mains du guérisseur
+286;Guérison des autres
+287;Guérison de groupe
+288;Souffle de guérison
+289;Bénédiction vitale
+290;Rénovation
+291;Vie par procuration
+292;Transfert de santé
+293;Sceau de dévotion
+294;Sceau du jugement
+295;Sceau d'épuration
+296;Sceau du fléau
+297;Sceau sacré
+298;Martyre
+299;Mains du protecteur
+300;Contemplation de la Pureté
+301;Annulation des maléfices
+302;Expiation des maléfices
+303;Conversion des maléfices
+304;Lumière de Dwayna
+305;Résurrection
+306;Renaissance
+307;Revers de fortune
+308;Secours
+309;Voile sacré
+310;Esprit divin
+311;Egalité de condition
+312;Choc sacré
+313;Caresse de guérison
+314;Reviviscence
 315;Vengeance
-316;"To the Limit!"
-317;Battle Rage
-318;Defy Pain
-319;Rush
-320;Hamstring
-321;Wild Blow
-322;Power Attack
-323;Desperation Blow
-324;Thrill of Victory
-325;Distracting Blow
-326;Protector's Strike
-327;Griffon's Sweep
-328;Pure Strike
-329;Skull Crack
-330;Cyclone Axe
-331;Hammer Bash
-332;Bull's Strike
-333;"I Will Avenge You!"
-334;Axe Rake
-335;Cleave
-336;Executioner's Strike
-337;Dismember
-338;Eviscerate
-339;Penetrating Blow
-340;Disrupting Chop
-341;Swift Chop
-342;Axe Twist
-343;"For Great Justice!"
-344;Flurry
-345;Defensive Stance
-346;Frenzy
-347;Endure Pain
-348;"Watch Yourself!"
+316;"Extrême limite !"
+317;Fureur guerrière
+318;Défi à la douleur
+319;Course
+320;Coupe-jarret
+321;Coup sauvage
+322;Attaque puissante
+323;Frappe désespérée
+324;Frisson de victoire
+325;Coup de diversion
+326;Attaque du protecteur
+327;Frappe du griffon
+328;Frappe pure
+329;Brise-crâne
+330;Hache cyclone
+331;Coup de marteau
+332;Attaque du taureau
+333;"Je vous vengerai !"
+334;Ratissage
+335;Clivage
+336;Frappe du bourreau
+337;Démembrement
+338;Eviscération
+339;Coup pénétrant
+340;Taillade d'interruption
+341;Coup rapide
+342;Hache tournante
+343;Pour la justice !
+344;Rafale
+345;Pose défensive
+346;Frénésie
+347;Résistance à la douleur
+348;"Prenez garde !"
 349;Sprint
-350;Belly Smash
-351;Mighty Blow
-352;Crushing Blow
-353;Crude Swing
-354;Earth Shaker
-355;Devastating Hammer
-356;Irresistible Blow
-357;Counter Blow
-358;Backbreaker
-359;Heavy Blow
-360;Staggering Blow
-361;Dolyak Signet
-362;Warrior's Cunning
-363;Shield Bash
-364;"Charge!"
-365;"Victory Is Mine!"
-366;"Fear Me!"
-367;"Shields Up!"
-368;"I Will Survive!"
-370;Berserker Stance
-371;Balanced Stance
-372;Gladiator's Defense
-373;Deflect Arrows
-374;Warrior's Endurance
-375;Dwarven Battle Stance
-376;Disciplined Stance
-377;Wary Stance
-378;Shield Stance
-379;Bull's Charge
-380;Bonetti's Defense
-381;Hundred Blades
-382;Sever Artery
-383;Galrath Slash
-384;Gash
-385;Final Thrust
-386;Seeking Blade
+350;Coup ventral
+351;Coup puissant
+352;Coup écrasant
+353;Swing brutal
+354;Marteau pilon
+355;Marteau dévastateur
+356;Coup impérieux
+357;Contrecoup
+358;Brise-échine
+359;Coup de brute
+360;Coup de boutoir
+361;Sceau de dolyak
+362;Adresse du Guerrier
+363;Coup de bouclier
+364;Chargez !
+365;A moi la victoire !
+366;"Craignez-moi !"
+367;"Levez les boucliers !"
+368;"Je survivrai !"
+370;Pose du berserker
+371;Pose d'équilibre
+372;Défense du gladiateur
+373;Déviation des flèches
+374;Endurance du Guerrier
+375;Pose de combat des Nains
+376;Pose de discipline
+377;Pose prudente
+378;Pose du bouclier
+379;Charge du taureau
+380;Défense de Bonetti
+381;Cent lames
+382;Tranche-artère
+383;Taillade de Galrath
+384;Entaille
+385;Botte fatale
+386;Lame chercheuse
 387;Riposte
-388;Deadly Riposte
-389;Flourish
-390;Savage Slash
-391;Hunter's Shot
-392;Pin Down
-393;Crippling Shot
-394;Power Shot
-395;Barrage
-396;Dual Shot
-397;Quick Shot
-398;Penetrating Attack
-399;Distracting Shot
-400;Precision Shot
-402;Determined Shot
-403;Called Shot
-404;Poison Arrow
-405;Oath Shot
-406;Debilitating Shot
-407;Point Blank Shot
-408;Concussion Shot
-409;Punishing Shot
-411;Charm Animal
-412;Call of Protection
-415;Call of Haste
-422;Revive Animal
-423;Symbiotic Bond
-424;Throw Dirt
-425;Dodge
-426;Savage Shot
-427;Antidote Signet
-428;Incendiary Arrows
-429;Melandru's Arrows
-430;Marksman's Wager
-431;Ignite Arrows
-432;Read the Wind
-433;Kindle Arrows
-434;Choking Gas
-435;Apply Poison
-436;Comfort Animal
-437;Bestial Pounce
-438;Maiming Strike
-439;Feral Lunge
-440;Scavenger Strike
-441;Melandru's Assault
-442;Ferocious Strike
-443;Predator's Pounce
-444;Brutal Strike
-445;Disrupting Lunge
-446;Troll Unguent
-447;Otyugh's Cry
-448;Escape
-449;Practiced Stance
-450;Whirling Defense
-451;Melandru's Resilience
-452;Dryder's Defenses
-453;Lightning Reflexes
-454;Tiger's Fury
-455;Storm Chaser
-456;Serpent's Quickness
-457;Dust Trap
-458;Barbed Trap
-459;Flame Trap
-460;Healing Spring
-461;Spike Trap
-462;Winter
-463;Winnowing
-464;Edge of Extinction
-465;Greater Conflagration
-466;Conflagration
-467;Fertile Season
-468;Symbiosis
-469;Primal Echoes
-470;Predatory Season
-471;Frozen Soil
-472;Favorable Winds
-474;Energizing Wind
-475;Quickening Zephyr
-476;Nature's Renewal
-477;Muddy Terrain
-570;Mark of Insecurity
-571;Disrupting Dagger
-572;Deadly Paradox
-763;Jaundiced Gaze
-764;Wail of Doom
-766;Gaze of Contempt
-769;Viper's Defense
-770;Return
-771;Aura of Displacement
-772;Generous Was Tsungrai
-773;Mighty Was Vorizun
-775;Death Blossom
-776;Twisting Fangs
-777;Horns of the Ox
-778;Falling Spider
-779;Black Lotus Strike
-780;Fox Fangs
-781;Moebius Strike
-782;Jagged Strike
-783;Unsuspecting Strike
-784;Entangling Asp
-785;Mark of Death
-786;Iron Palm
-787;Resilient Weapon
-788;Blind Was Mingson
-789;Grasping Was Kuurong
-790;Vengeful Was Khanhei
-791;Flesh of My Flesh
-792;Splinter Weapon
-793;Weapon of Warding
-794;Wailing Weapon
-795;Nightmare Weapon
-799;Beguiling Haze
-800;Enduring Toxin
-801;Shroud of Silence
-802;Expose Defenses
-803;Power Leech
-804;Arcane Languor
-805;Animate Vampiric Horror
-806;Cultist's Fervor
-808;Reaper's Mark
-809;Shatterstone
-810;Protector's Defense
-811;Run as One
-812;Defiant Was Xinrae
-813;Lyssa's Aura
-814;Shadow Refuge
-815;Scorpion Wire
-816;Mirrored Stance
-817;Discord
-818;Well of Weariness
-819;Vampiric Spirit
-820;Depravity
-821;Icy Veins
-822;Weaken Knees
-823;Burning Speed
-824;Lava Arrows
-825;Bed of Coals
-826;Shadow Form
-827;Siphon Strength
-828;Vile Miasma
-830;Ray of Judgment
-831;Primal Rage
-832;Animate Flesh Golem
-834;Reckless Haste
-835;Blood Bond
-836;Ride the Lightning
-837;Energy Boon
-838;Dwayna's Sorrow
-839;"Retreat!"
-840;Poisoned Heart
-841;Fetid Ground
-842;Arc Lightning
-843;Gust
-844;Churning Earth
-845;Liquid Flame
-846;Steam
-847;Boon Signet
-848;Reverse Hex
-849;Lacerating Chop
-850;Fierce Blow
-851;Sun and Moon Slash
-852;Splinter Shot
-853;Melandru's Shot
-854;Snare
-858;Dancing Daggers
-859;Conjure Nightmare
-860;Signet of Disruption
-862;Ravenous Gaze
-863;Order of Apostasy
-864;Oppressive Gaze
-865;Lightning Hammer
-866;Vapor Blade
-867;Healing Light
-869;"Coward!"
+388;Riposte mortelle
+389;Prospérité
+390;Taillade sauvage
+391;Tir du chasseur
+392;Immobilisation
+393;Tir incapacitant
+394;Tir puissant
+395;Tir de barrage
+396;Tir double
+397;Tir rapide
+398;Attaque pénétrante
+399;Tir de diversion
+400;Tir de précision
+402;Tir déterminé
+403;Tir ciblé
+404;Flèche empoisonnée
+405;Tir du serment
+406;Tir débilitant
+407;Tir à bout portant
+408;Coup cérébral
+409;Tir de représailles
+411;Charme animal
+412;Cri de protection
+415;Cri de hâte
+422;Renaissance animale
+423;Lien symbiotique
+424;Jet de terre
+425;Esquive
+426;Tir sauvage
+427;Sceau antidote
+428;Flèches incendiaires
+429;Flèches de Melandru
+430;Pari du tireur
+431;Flèches de feu
+432;Lecture du vent
+433;Flèches enflammées
+434;Gaz suffocant
+435;Application de poison
+436;Bien-être animal
+437;Assaut bestial
+438;Assaut de mutilation
+439;Coup barbare
+440;Assaut de charognard
+441;Assaut de Melandru
+442;Attaque féroce
+443;Coup du prédateur
+444;Coup brutal
+445;Attaque d'interruption
+446;Onguent des trolls
+447;Cri d'Otyugh
+448;Echappatoire
+449;Pose de pratique
+450;Tourbillon défensif
+451;Résistance de Melandru
+452;Défenses du Drider
+453;Réflexes foudroyants
+454;Fureur du tigre
+455;Chasseur de tempêtes
+456;Vitesse du serpent
+457;Piège à poussière
+458;Piège barbelé
+459;Piège de flammes
+460;Source de guérison
+461;Piège à pointes
+462;Hiver
+463;Vannage
+464;Voie d'extinction
+465;Grand brasier
+466;Brasier
+467;Saison fertile
+468;Symbiose
+469;Echos primitifs
+470;Saison des prédateurs
+471;Terre gelée
+472;Vents favorables
+474;Vent énergisant
+475;Zéphyr véloce
+476;Renouveau de la nature
+477;Terrain boueux
+570;Marque d'insécurité
+571;Dague d'interruption
+572;Paradoxe mortel
+763;Regard ictérique
+764;Complainte Funeste
+766;Regard du mépris
+769;Défense de la vipère
+770;Retour
+771;Aura de déplacement
+772;Tsungrai était généreux
+773;Vorizon était puissant
+775;Efflorescence mortelle
+776;Harpon de convulsion
+777;Cornes du boeuf
+778;Retombée arachnide
+779;Coup du lotus noir
+780;Crocs du renard
+781;Frappe de Moebius
+782;Coup déchiqueteur
+783;Attaque sournoise
+784;Enlacement reptilien
+785;Stigmate mortel
+786;Paume d'acier
+787;Arme résistante
+788;Mingson était aveugle
+789;Kuurong était avide
+790;Khanhei était revanchard
+791;Chair de ma chair
+792;Arme à fragmentation
+793;Arme de protection
+794;Arme des doléances
+795;Arme du tourment
+799;Mirage brumeux
+800;Toxine immuable
+801;Linceul du silence
+802;Vaines défenses
+803;Buveur d'énergie
+804;Alanguissement arcane
+805;Animation d'horreur vampirique
+806;Ferveur de l'adepte
+808;Empreinte du Faucheur
+809;Brise-roc
+810;Défense du protecteur
+811;Course unique
+812;Xinrae était rebelle
+813;Aura de Lyssa
+814;Refuge ombreux
+815;Attache de Scorpion
+816;Imitation de pose
+817;Discorde
+818;Puits de Lassitude
+819;Esprit vampirique
+820;Dépravation
+821;Veines glaciales
+822;Genoux flageolants
+823;Vélocité Incandescente
+824;Flèches de Lave
+825;Lit de Braise
+826;Silhouette
+827;Siphon de force
+828;Miasme insalubre
+830;Lumière du jugement
+831;Rage primitive
+832;Animation du Golem de chair
+834;Extrême hâte
+835;Lien du sang
+836;Chevauchée de l'éclair
+837;Compagnon d'énergie
+838;Douleur de Dwayna
+839;"Battez en retraite !"
+840;Coeur empoisonné
+841;Humus fétide
+842;Arc foudroyant
+843;Rafale
+844;Bouleversement terrestre
+845;Flamme liquide
+846;Buée
+847;Sceau du compagnon
+848;Inversion de maléfice
+849;Taillade lacérante
+850;Attaque féroce
+851;Attaque lunisolaire
+852;Tir de ricochet
+853;Tir de Melandru
+854;Attrape
+858;Valse des dagues
+859;Conjuration de cauchemar
+860;Sceau d'interruption
+862;Regard féroce
+863;Ordre d'apostasie
+864;Regard de l'oppresseur
+865;Masse foudroyante
+866;Lame vaporeuse
+867;Lumière rédemptrice
+869;"Froussard !"
 870;Pestilence
-871;Shadowsong
-876;Signet of Shadows
-877;Lyssa's Balance
-878;Visions of Regret
-879;Illusion of Pain
-880;Stolen Speed
-881;Ether Signet
-882;Signet of Disenchantment
-883;Vocal Minority
-884;Searing Flames
-885;Shield Guardian
-886;Restful Breeze
-887;Signet of Rejuvenation
-888;Whirling Axe
-889;Forceful Blow
-891;"None Shall Pass!"
-892;Quivering Blade
-893;Seeking Arrows
-898;Overload
-899;Images of Remorse
-900;Shared Burden
-901;Soul Bind
-902;Blood of the Aggressor
-903;Icy Prism
-904;Furious Axe
-905;Auspicious Blow
-906;"On Your Knees!"
-907;Dragon Slash
-908;Marauder's Shot
-909;Focused Shot
-910;Spirit Rift
+871;Mélodie des Ombres
+876;Sceau des Ombres
+877;Equilibre de Lyssa
+878;Visions de Regret
+879;Illusion de douleur
+880;Vol de vitesse
+881;Sceau éthéré
+882;Sceau de désenchantement
+883;Aphonie
+884;Flammes virulentes
+885;Gardien protecteur
+886;Bise reposante
+887;Sceau de rajeunissement
+888;Hache tournoyante
+889;Coup forcé
+891;Nul ne passera !
+892;Lame vacillante
+893;Flèches chercheuses
+898;Surcharge
+899;Images d'attrition
+900;Fardeau partagé
+901;Lien des âmes
+902;Sang de l'agresseur
+903;Prisme de glace
+904;Hache de rage
+905;Coup propice
+906;A genoux !
+907;Taillade du dragon
+908;Tir du maraudeur
+909;Tir focalisé
+910;Faille de l'esprit
 911;Union
-913;Tranquil Was Tanasen
-914;Consume Soul
-915;Spirit Light
+913;Tanasen était tranquille
+914;Consommation des âmes
+915;Esprit illuminé
 916;Lamentation
-917;Rupture Soul
-918;Spirit to Flesh
-919;Spirit Burn
+917;Rupture d'âme
+918;Esprit de chair
+919;Brûlure de l'esprit
 920;Destruction
 921;Dissonance
-923;Disenchantment
-925;Recall
-926;Sharpen Daggers
-927;Shameful Fear
-928;Shadow Shroud
-929;Shadow of Haste
-930;Auspicious Incantation
-931;Power Return
-932;Complicate
-933;Shatter Storm
-934;Unnatural Signet
-935;Rising Bile
-936;Envenom Enchantments
-937;Shockwave
-938;Ward of Stability
-939;Icy Shackles
-941;Blessed Light
-942;Withdraw Hexes
-943;Extinguish
-944;Signet of Strength
-946;Trapper's Focus
-947;Brambles
-948;Desperate Strike
-949;Way of the Fox
-950;Shadowy Burden
-951;Siphon Speed
-952;Death's Charge
-953;Power Flux
-954;Expel Hexes
-955;Rip Enchantment
-957;Spell Shield
-958;Healing Whisper
-959;Ethereal Light
-960;Release Enchantments
-961;Lacerate
-962;Spirit Transfer
-963;Restoration
-964;Vengeful Weapon
-973;Blinding Powder
-974;Mantis Touch
-975;Exhausting Assault
-976;Repeating Strike
-977;Way of the Lotus
-978;Mark of Instability
-979;Mistrust
-980;Feast of Souls
-981;Recuperation
-982;Shelter
-983;Weapon of Shadow
-985;Caltrops
-986;Nine Tail Strike
-987;Way of the Empty Palm
-988;Temple Strike
-989;Golden Phoenix Strike
-990;Expunge Enchantments
-991;Deny Hexes
-992;Triple Chop
-993;Enraged Smash
-994;Renewing Smash
-995;Tiger Stance
-996;Standing Slash
+923;Désenchantement
+925;Rappel
+926;Dagues affûtées
+927;Peur honteuse
+928;Linceul de l'Ombre
+929;Ombre de hâte
+930;Incantation propice
+931;Retour de pouvoir
+932;Complication
+933;Tempête destructrice
+934;Sceau antinaturel
+935;Fiel
+936;Enchantements envenimés
+937;Onde de choc
+938;Protection de stabilité
+939;Chaînes de glace
+941;Lumière divine
+942;Retrait de maléfices
+943;Extinction
+944;Sceau de force
+946;Concentration du trappeur
+947;Ronces
+948;Coup désespéré
+949;Méthode du renard
+950;Fardeau nébuleux
+951;Siphon de vitesse
+952;Charge mortelle
+953;Flux de puissance
+954;Expulsion de maléfices
+955;Confiscation d'enchantement
+957;Bouclier contre les sorts
+958;Souffle réparateur
+959;Lumière éthérée
+960;Libération d'enchantements
+961;Lacération
+962;Transfert d'esprit
+963;Restauration
+964;Arme de vengeance
+973;Poudre aveuglante
+974;Toucher de la mante
+975;Assaut épuisant
+976;Coup répété
+977;Méthode du lotus
+978;Marque d'instabilité
+979;Défiance
+980;Festin de l'esprit
+981;Rétablissement
+982;Refuge
+983;Arme de l'Ombre
+985;Chausse-trappes
+986;Coup des neuf queues
+987;Méthode de la paume vide
+988;Frappe à la tempe
+989;Coup du phénix doré
+990;Censure d'Enchantements
+991;Négation de maléfices
+992;Triple coup
+993;Coup enragé
+994;Coup de renouvellement
+995;Pose du tigre
+996;Entaille permanente
 997;Famine
 1014;"Let's Get 'Em!"
-1018;Critical Eye
-1019;Critical Strike
-1020;Blades of Steel
-1021;Jungle Strike
-1022;Wild Strike
-1023;Leaping Mantis Sting
-1024;Black Mantis Thrust
-1025;Disrupting Stab
-1026;Golden Lotus Strike
-1027;Critical Defenses
-1028;Way of Perfection
-1029;Dark Apostasy
-1030;Locust's Fury
-1031;Shroud of Distress
-1032;Heart of Shadow
-1033;Impale
-1034;Seeping Wound
-1035;Assassin's Promise
-1036;Signet of Malice
-1037;Dark Escape
-1038;Crippling Dagger
-1040;Spirit Walk
-1041;Unseen Fury
-1042;Flashing Blades
-1043;Dash
-1044;Dark Prison
-1045;Palm Strike
-1048;Revealed Enchantment
-1049;Revealed Hex
-1052;Accumulated Pain
-1053;Psychic Distraction
-1054;Ancestor's Visage
-1055;Recurring Insecurity
-1056;Kitah's Burden
-1057;Psychic Instability
-1059;Hex Eater Signet
-1061;Feedback
-1062;Arcane Larceny
-1066;Spoil Victor
-1067;Lifebane Strike
-1068;Bitter Chill
-1069;Taste of Pain
-1070;Defile Enchantments
-1071;Shivers of Dread
-1075;Vampiric Swarm
-1076;Blood Drinker
-1077;Vampiric Bite
-1078;Wallow's Bite
-1079;Enfeebling Touch
-1081;Teinai's Wind
-1082;Shock Arrow
-1083;Unsteady Ground
-1084;Sliver Armor
-1085;Ash Blast
-1086;Dragon's Stomp
-1088;Second Wind
-1090;Smoldering Embers
-1091;Double Dragon
-1093;Teinai's Heat
-1094;Breath of Fire
-1095;Star Burst
-1096;Glyph of Essence
-1097;Teinai's Prison
-1098;Mirror of Ice
-1099;Teinai's Crystals
-1113;Kirin's Wrath
-1114;Spirit Bond
-1115;Air of Enchantment
-1117;Heaven's Delight
-1118;Healing Burst
-1119;Karei's Healing Circle
-1120;Jamei's Gaze
-1121;Gift of Health
-1123;Life Sheath
-1126;Empathic Removal
-1128;Resurrection Chant
-1129;Word of Censure
-1130;Spear of Light
-1131;Stonesoul Strike
-1133;Drunken Blow
-1134;Leviathan's Sweep
-1135;Jaizhenju Strike
-1136;Penetrating Chop
-1137;Yeti Smash
-1140;Storm of Swords
-1141;"You Will Die!"
-1142;Auspicious Parry
-1144;Silverwing Slash
-1146;Shove
-1191;Sundering Attack
-1192;Zojun's Shot
-1194;Predatory Bond
-1195;Heal as One
-1196;Zojun's Haste
-1197;Needling Shot
-1198;Broad Head Arrow
-1199;Glass Arrows
-1200;Archer's Signet
-1201;Savage Pounce
-1202;Enraged Lunge
-1203;Bestial Mauling
-1205;Poisonous Bite
-1206;Pounce
-1209;Bestial Fury
-1211;Viper's Nest
-1212;Equinox
-1213;Tranquility
-1215;Clamor of Souls
-1217;Ritual Lord
-1218;Cruel Was Daoshen
-1219;Protective Was Kaolai
-1220;Attuned Was Songkai
-1221;Resilient Was Xiko
-1222;Lively Was Naomei
-1223;Anguished Was Lingwah
-1224;Draw Spirit
-1225;Channeled Strike
-1226;Spirit Boon Strike
-1227;Essence Strike
-1228;Spirit Siphon
-1229;Explosive Growth
-1230;Boon of Creation
-1231;Spirit Channeling
-1232;Armor of Unfeeling
-1233;Soothing Memories
-1234;Mend Body and Soul
-1235;Dulled Weapon
-1236;Binding Chains
-1237;Painful Bond
-1238;Signet of Creation
-1239;Signet of Spirits
-1240;Soul Twisting
-1244;Ghostly Haste
-1245;Gaze from Beyond
-1246;Ancestors' Rage
-1247;Pain
-1249;Displacement
-1250;Preservation
-1251;Life
-1252;Earthbind
-1253;Bloodsong
-1255;Wanderlust
-1257;Spirit Light Weapon
-1258;Brutal Weapon
-1259;Guided Weapon
-1260;Meekness
-1261;Frigid Armor
-1262;Healing Ring
-1263;Renew Life
-1264;Doom
-1265;Wielder's Boon
-1266;Soothing
-1267;Vital Weapon
-1268;Weapon of Quickening
-1269;Signet of Rage
-1333;Extend Conditions
-1334;Hypochondria
-1335;Wastrel's Demise
-1336;Spiritual Pain
-1337;Drain Delusions
-1338;Persistence of Memory
-1339;Symbols of Inspiration
-1340;Symbolic Celerity
+1018;Oeil critique
+1019;Attaque critique
+1020;Lames d'acier
+1021;Frappe de la jungle
+1022;Affront sauvage
+1023;Piqûre de mante sauteuse
+1024;Attaque de la mante noire
+1025;Blessure d'interruption
+1026;Coup du lotus doré
+1027;Défenses critiques
+1028;Méthode du geste parfait
+1029;Apostasie obscure
+1030;Fureur de Locuste
+1031;Linceul de détresse
+1032;Coeur d'ombre
+1033;Empalement
+1034;Plaie suintante
+1035;Promesse de l'Assassin
+1036;Sceau de malice
+1037;Echappatoire obscure
+1038;Dague d'Infirmité
+1040;Marche des esprits
+1041;Furie invisible
+1042;Lames éclatantes
+1043;Ruée
+1044;Prison obscure
+1045;Coup de paume
+1048;Enchantement révélé
+1049;Maléfice révélé
+1052;Cumul de douleur
+1053;Distraction psychique
+1054;Visage de l'ancêtre
+1055;Insécurité récurrente
+1056;Fardeau de Kitah
+1057;Instabilité psychique
+1059;Sceau du Mangeur de Maléfices
+1061;Rétroaction
+1062;Larcin arcane
+1066;Vainqueur dépouillé
+1067;Coup du fléau
+1068;Frisson amer
+1069;Saveur de douleur
+1070;Enchantements profanés
+1071;Frissons de terreur
+1075;Nuée vampirique
+1076;Buveur de sang
+1077;Morsure vampirique
+1078;Morsure de bauge
+1079;Toucher de faiblesse
+1081;Vent de Teinai
+1082;Flèche de choc
+1083;Sol instable
+1084;Armure d'éclats
+1085;Explosion de cendres
+1086;Pas du dragon
+1088;Seconde chance
+1090;Ambres ardents
+1091;Double dragon
+1093;Chaleur de Teinai
+1094;Souffle de Feu
+1095;Eclat constellé
+1096;Glyphe d'essence
+1097;Prison de Teinai
+1098;Miroir de glace
+1099;Cristaux de Teinai
+1113;Colère de Kirin
+1114;Lien spirituel
+1115;Atmosphère enchanteresse
+1117;Paradis exquis
+1118;Vague de guérison
+1119;Cercle de guérison de Karei
+1120;Regard de Jamei
+1121;Don de santé
+1123;Bouclier de vie
+1126;Suppression empathique
+1128;Chant de résurrection
+1129;Parole du censeur
+1130;Lance de lumière
+1131;Coup d'Amederoc
+1133;Attaque d'ivresse
+1134;Frappe du Léviathan
+1135;Frappe de Jaizhenju
+1136;Taillade pénétrante
+1137;Frappe du Yéti
+1140;Tempête d'épées
+1141;Vous mourrez !
+1142;Parade propice
+1144;Attaque d'Aildargent
+1146;Poussée
+1191;Attaque éclatante
+1192;Tir de Zojun
+1194;Lien du prédateur
+1195;Guérison partagée
+1196;Hâte de Zojun
+1197;Aiguillons
+1198;Flèche à pointe large
+1199;Flèches de verre
+1200;Sceau de l'Archer
+1201;Attaque sauvage
+1202;Coup enragé
+1203;Violence bestiale
+1205;Morsure empoisonnée
+1206;Bond
+1209;Furie bestiale
+1211;Nid de vipère
+1212;Equinoxe
+1213;Tranquillité
+1215;Clameur des âmes
+1217;Seigneur de rituel
+1218;Daoshen était cruel
+1219;Kaolai était protecteur
+1220;Songkai était attentive
+1221;Xiko était coriace
+1222;Namei était si gaie
+1223;Lingwah était angoissée
+1224;Attraction d'esprit
+1225;Frappe canalisée
+1226;Coup du compagnon spirituel
+1227;Frappe d'essence
+1228;Siphon de l'esprit
+1229;Expansion explosive
+1230;Compagnon de création
+1231;Canalisation d'esprit
+1232;Armure de l'impassible
+1233;Souvenirs apaisants
+1234;Guérison du corps et de l'âme
+1235;Arme émoussée
+1236;Chaînes d'asservissement
+1237;Lien de douleur
+1238;Sceau de création
+1239;Sceau des Esprits
+1240;Contorsion de l'âme
+1244;Vivacité spectrale
+1245;Vision de l'au-delà
+1246;Rage de l'ancêtre
+1247;Douleur
+1249;Déplacement
+1250;Préservation
+1251;Vie
+1252;Lien terrestre
+1253;Mélodie du sang
+1255;Voyage
+1257;Arme d'Esprit illuminé
+1258;Arme brute
+1259;Arme guidée
+1260;Soumission
+1261;Armure glaciale
+1262;Anneau de guérison
+1263;Renouvellement de vie
+1264;Destinée
+1265;Compagnon d'arme
+1266;Apaisement
+1267;Arme vitale
+1268;Arme de rapidité
+1269;Sceau de Rage
+1333;Conditions prolongées
+1334;Hypochondrie
+1335;Fin du gaspilleur
+1336;Douleur spirituelle
+1337;Drain d'illusions
+1338;Persistance du souvenir
+1339;Symboles d'inspiration
+1340;Célérité symbolique
 1341;Frustration
-1342;Tease
-1343;Ether Phantom
-1344;Web of Disruption
-1345;Enchanter's Conundrum
-1346;Signet of Illusions
-1347;Discharge Enchantment
-1348;Hex Eater Vortex
-1349;Mirror of Disenchantment
-1350;Simple Thievery
+1342;Taquinerie
+1343;Fantôme éthéré
+1344;Toile d'interruption
+1345;Enigme de l'enchanteur
+1346;Sceau des illusions
+1347;Congédiement d'enchantement
+1348;Vortex du Mangeur de Maléfices
+1349;Miroir de désenchantement
+1350;Simple vol
 1351;Animate Shambling Horror
-1352;Order of Undeath
-1353;Putrid Flesh
-1354;Feast for the Dead
-1355;Jagged Bones
+1352;Ordre des morts-vivants
+1353;Chair putride
+1354;Festin des morts
+1355;Os broyés
 1356;Contagion
-1358;Ulcerous Lungs
-1359;Pain of Disenchantment
-1360;Mark of Fury
-1362;Corrupt Enchantment
-1363;Signet of Sorrow
-1364;Signet of Suffering
-1365;Signet of Lost Souls
-1366;Well of Darkness
-1367;Blinding Surge
-1368;Chilling Winds
-1369;Lightning Bolt
-1370;Storm Djinn's Haste
-1371;Stone Striker
-1372;Sandstorm
-1373;Stone Sheath
-1374;Ebon Hawk
-1375;Stoneflesh Aura
-1376;Glyph of Restoration
-1377;Ether Prism
-1378;Master of Magic
-1379;Glowing Gaze
-1380;Savannah Heat
-1381;Flame Djinn's Haste
-1382;Freezing Gust
-1390;Judge's Intervention
-1391;Supportive Spirit
-1392;Watchful Healing
-1393;Healer's Boon
-1394;Healer's Covenant
-1395;Balthazar's Pendulum
-1396;Words of Comfort
-1397;Light of Deliverance
-1398;Scourge Enchantment
-1399;Shield of Absorption
-1400;Reversal of Damage
-1401;Mending Touch
-1402;Critical Chop
-1403;Agonizing Chop
-1404;Flail
-1405;Charging Strike
-1406;Headbutt
-1407;Lion's Comfort
-1408;Rage of the Ntouka
-1409;Mokele Smash
-1410;Overbearing Smash
-1411;Signet of Stamina
-1412;"You're All Alone!"
-1413;Burst of Aggression
-1414;Enraging Charge
-1415;Crippling Slash
-1416;Barbarous Slice
-1465;Prepared Shot
-1466;Burning Arrow
-1467;Arcing Shot
-1468;Strike as One
-1469;Crossfire
-1470;Barbed Arrows
-1471;Scavenger's Focus
-1472;Toxicity
-1473;Quicksand
-1474;Storm's Embrace
-1475;Trapper's Speed
-1476;Tripwire
-1478;Renewing Surge
-1479;Offering of Spirit
-1480;Spirit's Gift
-1481;Death Pact Signet
-1482;Reclaim Essence
-1483;Banishing Strike
-1484;Mystic Sweep
-1485;Eremite's Attack
-1486;Reap Impurities
-1487;Twin Moon Sweep
-1488;Victorious Sweep
-1489;Irresistible Sweep
-1490;Pious Assault
-1491;Mystic Twister
-1493;Grenth's Fingers
-1495;Aura of Thorns
-1496;Balthazar's Rage
-1497;Dust Cloak
-1498;Staggering Force
-1499;Pious Renewal
-1500;Mirage Cloak
-1502;Arcane Zeal
-1503;Mystic Vigor
-1504;Watchful Intervention
-1505;Vow of Piety
-1506;Vital Boon
-1507;Heart of Holy Flame
-1508;Extend Enchantments
-1509;Faithful Intervention
-1510;Sand Shards
-1512;Lyssa's Haste
-1513;Guiding Hands
-1514;Fleeting Stability
-1515;Armor of Sanctity
-1516;Mystic Regeneration
-1517;Vow of Silence
-1518;Avatar of Balthazar
-1519;Avatar of Dwayna
-1520;Avatar of Grenth
-1521;Avatar of Lyssa
-1522;Avatar of Melandru
-1523;Meditation
-1524;Eremite's Zeal
-1525;Natural Healing
-1526;Imbue Health
-1527;Mystic Healing
-1528;Dwayna's Touch
-1529;Pious Restoration
-1530;Signet of Pious Light
-1531;Intimidating Aura
-1532;Mystic Sandstorm
-1533;Winds of Disenchantment
-1534;Rending Touch
-1535;Crippling Sweep
-1536;Wounding Strike
-1537;Wearying Strike
-1538;Lyssa's Assault
-1539;Chilling Victory
+1358;Poumons ulcérés
+1359;Douleur de désenchantement
+1360;Marque de Furie
+1362;Enchantement corrompu
+1363;Sceau du chagrin
+1364;Sceau de souffrance
+1365;Sceau des âmes perdues
+1366;Puits d'obscurité
+1367;Afflux aveuglant
+1368;Vents glaciaux
+1369;Eclair
+1370;Hâte du jinn de tempête
+1371;Briseur de pierre
+1372;Tempête de sable
+1373;Bouclier de pierre
+1374;Faucon d'ébène
+1375;Aura de Chair de pierre
+1376;Glyphe de rétablissement
+1377;Prisme éthéré
+1378;Maître de la Magie
+1379;Regard embrasé
+1380;Chaleur de savane
+1381;Hâte du jinn de flamme
+1382;Rafale givrante
+1390;Intervention du juge
+1391;Esprit de soutien
+1392;Guérison attentive
+1393;Compagnon du guérisseur
+1394;Engagement du guérisseur
+1395;Balancier de Balthazar
+1396;Paroles de réconfort
+1397;Lumière de la délivrance
+1398;Enchantement fléau
+1399;Bouclier d'absorption
+1400;Revers de dégâts
+1401;Toucher réparateur
+1402;Entaille critique
+1403;Entaille agonisante
+1404;Peste
+1405;Frappe de charge
+1406;Coup de tête
+1407;Confort du lion
+1408;Rage du Ntouka
+1409;Frappe du Mokele
+1410;Attaque dominatrice
+1411;Sceau de constitution
+1412;Vous êtes seul !
+1413;Explosion d'agressivité
+1414;Charge enragée
+1415;Taillade incapacitante
+1416;Entaille barbare
+1465;Coup préparé
+1466;Flèche brûlante
+1467;Tir arqué
+1468;Attaque solidaire
+1469;Tir croisé
+1470;Flèches barbelées
+1471;Focus du charognard
+1472;Toxicité
+1473;Sables mouvants
+1474;Etreinte de la tempête
+1475;Vitesse du trappeur
+1476;Fil de détente
+1478;Afflux de renouvellement
+1479;Offrande de l'esprit
+1480;Don de l'esprit
+1481;Sceau du pacte avec la mort
+1482;Essence récupérée
+1483;Bannissement
+1484;Fauchage mystique
+1485;Attaque érémitique
+1486;Moisson des impuretés
+1487;Fauchage des deux lunes
+1488;Fauchage victorieux
+1489;Fauchage impérieux
+1490;Assaut pieux
+1491;Tornade mystique
+1493;Doigts de Grenth
+1495;Aura d'épines
+1496;Rage de Balthazar
+1497;Manteau de poussière
+1498;Force stupéfiante
+1499;Renouveau pieux
+1500;Manteau de mirage
+1502;Zèle arcane
+1503;Vigueur mystique
+1504;Intervention vigilante
+1505;Voeu de piété
+1506;Compagnon vital
+1507;Coeur de la Flamme sacrée
+1508;Prolongation des Enchantements
+1509;Intervention fidèle
+1510;Eclats de sable
+1512;Hâte de Lyssa
+1513;Mains directrices
+1514;Brève stabilité
+1515;Armure de sainteté
+1516;Régénération mystique
+1517;Voeu du silence
+1518;Avatar de Balthazar
+1519;Avatar de Dwayna
+1520;Avatar de Grenth
+1521;Avatar de Lyssa
+1522;Avatar de Melandru
+1523;Méditation
+1524;Zèle érémitique
+1525;Guérison naturelle
+1526;Santé imprégnée
+1527;Guérison mystique
+1528;Toucher de Dwayna
+1529;Rétablissement pieux
+1530;Sceau de lumière pieuse
+1531;Aura intimidante
+1532;Tempête de sable mystique
+1533;Vents de désenchantement
+1534;Toucher déchirant
+1535;Fauchage invalidant
+1536;Attaque blessante
+1537;Coup lassant
+1538;Assaut de Lyssa
+1539;Victoire frissonnante
 1540;Conviction
-1541;Enchanted Haste
-1542;Pious Concentration
-1543;Pious Haste
-1544;Whirling Charge
-1545;Test of Faith
-1546;Blazing Spear
-1547;Mighty Throw
-1548;Cruel Spear
-1549;Harrier's Toss
-1550;Unblockable Throw
-1551;Spear of Lightning
-1552;Wearying Spear
-1553;Anthem of Fury
-1554;Crippling Anthem
-1555;Defensive Anthem
-1556;Godspeed
-1557;Anthem of Flame
-1558;"Go for the Eyes!"
-1559;Anthem of Envy
-1560;Song of Power
-1561;Zealous Anthem
-1562;Aria of Zeal
-1563;Lyric of Zeal
-1564;Ballad of Restoration
-1565;Chorus of Restoration
-1566;Aria of Restoration
-1567;Song of Concentration
-1568;Anthem of Guidance
-1569;Energizing Chorus
-1570;Song of Purification
-1571;Hexbreaker Aria
-1572;"Brace Yourself!"
-1573;Awe
-1574;Enduring Harmony
-1575;Blazing Finale
-1576;Burning Refrain
-1577;Finale of Restoration
-1578;Mending Refrain
-1579;Purifying Finale
-1580;Bladeturn Refrain
-1581;Glowing Signet
-1583;Leader's Zeal
-1584;Leader's Comfort
-1585;Signet of Synergy
-1586;Angelic Protection
-1587;Angelic Bond
-1588;Cautery Signet
-1589;"Stand Your Ground!"
-1590;"Lead the Way!"
-1591;"Make Haste!"
-1592;"We Shall Return!"
-1593;"Never Give Up!"
-1594;"Help Me!"
-1595;"Fall Back!"
-1596;"Incoming!"
-1597;"They're on Fire!"
-1598;"Never Surrender!"
-1599;"It's Just a Flesh Wound."
-1600;Barbed Spear
-1601;Vicious Attack
-1602;Stunning Strike
-1603;Merciless Spear
-1604;Disrupting Throw
-1605;Wild Throw
-1633;Malicious Strike
-1634;Shattering Assault
-1635;Golden Skull Strike
-1636;Black Spider Strike
-1637;Golden Fox Strike
-1638;Deadly Haste
-1639;Assassin's Remedy
-1640;Fox's Promise
-1641;Feigned Neutrality
-1642;Hidden Caltrops
-1643;Assault Enchantments
-1644;Wastrel's Collapse
-1645;Lift Enchantment
-1646;Augury of Death
-1647;Signet of Toxic Shock
-1648;Signet of Twilight
-1649;Way of the Assassin
-1650;Shadow Walk
-1651;Death's Retreat
-1652;Shadow Prison
-1653;Swap
-1654;Shadow Meld
-1655;Price of Pride
-1656;Air of Disenchantment
-1657;Signet of Clumsiness
-1658;Symbolic Posture
-1659;Toxic Chill
-1660;Well of Silence
-1661;Glowstone
-1662;Mind Blast
-1663;Elemental Flame
-1664;Invoke Lightning
-1683;Pensive Guardian
-1684;Scribe's Insight
-1685;Holy Haste
-1686;Glimmer of Light
-1687;Zealous Benediction
-1688;Defender's Zeal
-1689;Signet of Mystic Wrath
-1690;Signet of Removal
-1691;Dismiss Condition
-1692;Divert Hexes
-1693;Counterattack
-1694;Magehunter Strike
-1695;Soldier's Strike
-1696;Decapitate
-1697;Magehunter's Smash
-1698;Soldier's Stance
-1699;Soldier's Defense
-1700;Frenzied Defense
-1701;Steady Stance
-1702;Steelfang Slash
-1719;Screaming Shot
-1720;Keen Arrow
-1721;Rampage as One
-1722;Forked Arrow
-1723;Disrupting Accuracy
-1724;Expert's Dexterity
-1725;Roaring Winds
-1726;Magebane Shot
-1727;Natural Stride
-1728;Heket's Rampage
-1729;Smoke Trap
-1730;Infuriating Heat
-1731;Vocal Was Sogolon
-1732;Destructive Was Glaive
-1733;Wielder's Strike
-1734;Gaze of Fury
-1736;Spirit's Strength
-1737;Wielder's Zeal
-1738;Sight Beyond Sight
-1739;Renewing Memories
-1740;Wielder's Remedy
-1741;Ghostmirror Light
-1742;Signet of Ghostly Might
-1743;Signet of Binding
-1744;Caretaker's Charge
-1745;Anguish
-1747;Empowerment
-1748;Recovery
-1749;Weapon of Fury
-1750;Xinrae's Weapon
-1751;Warmonger's Weapon
-1752;Weapon of Remedy
-1753;Rending Sweep
-1754;Onslaught
-1755;Mystic Corruption
-1756;Grenth's Grasp
-1757;Veil of Thorns
-1758;Harrier's Grasp
-1759;Vow of Strength
-1760;Ebon Dust Aura
-1761;Zealous Vow
-1762;Heart of Fury
-1763;Zealous Renewal
-1764;Attacker's Insight
-1765;Rending Aura
-1766;Featherfoot Grace
-1767;Reaper's Sweep
-1768;Harrier's Haste
-1769;Focused Anger
-1770;Natural Temper
-1771;Song of Restoration
-1772;Lyric of Purification
-1773;Soldier's Fury
-1774;Aggressive Refrain
-1775;Energizing Finale
-1776;Signet of Aggression
-1777;Remedy Signet
-1778;Signet of Return
-1779;"Make Your Time!"
-1780;"Can't Touch This!"
-1781;"Find Their Weakness!"
-1782;"The Power Is Yours!"
-1783;Slayer's Spear
-1784;Swift Javelin
-1814;Lightbringer's Gaze
-1815;Lightbringer Signet
-1816;Sunspear Rebirth Signet
-1986;Vampiric Assault
-1987;Lotus Strike
-1988;Golden Fang Strike
-1990;Falling Lotus Strike
-1991;Sadist's Signet
-1992;Signet of Distraction
-1993;Signet of Recall
-1994;Power Lock
-1995;Waste Not, Want Not
-1996;Sum of All Fears
-1997;Withering Aura
-1998;Cacophony
-1999;Winter's Embrace
-2000;Earthen Shackles
-2001;Ward of Weakness
-2002;Glyph of Swiftness
-2003;Cure Hex
-2004;Smite Condition
-2005;Smiter's Boon
-2006;Castigation Signet
-2007;Purifying Veil
-2008;Pulverizing Smash
-2009;Keen Chop
-2010;Knee Cutter
-2011;Grapple
-2012;Radiant Scythe
-2013;Grenth's Aura
-2014;Signet of Pious Restraint
-2015;Farmer's Scythe
-2016;Energetic Was Lee Sa
-2017;Anthem of Weariness
-2018;Anthem of Disruption
-2052;Shadow Fang
-2053;Calculated Risk
-2054;Shrinking Armor
-2055;Aneurysm
-2056;Wandering Eye
-2057;Foul Feast
-2058;Putrid Bile
-2059;Shell Shock
-2060;Glyph of Immolation
-2061;Patient Spirit
-2062;Healing Ribbon
-2063;Aura of Stability
-2064;Spotless Mind
-2065;Spotless Soul
-2066;Disarm
-2067;"I Meant to Do That!"
-2068;Rapid Fire
-2069;Sloth Hunter's Shot
-2070;Aura Slicer
-2071;Zealous Sweep
-2072;Pure Was Li Ming
-2073;Weapon of Aggression
-2074;Chest Thumper
-2075;Hasty Refrain
-2101;Critical Agility
-2102;Cry of Pain
-2103;Necrosis
-2104;Intensity
-2105;Seed of Life
-2107;Whirlwind Attack
-2108;Never Rampage Alone
-2109;Eternal Aura
-2110;Vampirism
-2112;"There's Nothing to Fear!"
-2116;Sneak Attack
-2135;Trampling Ox
-2136;Smoke Powder Defense
-2137;Confusing Images
-2138;Hexer's Vigor
-2139;Masochism
-2140;Piercing Trap
-2141;Companionship
-2142;Feral Aggression
-2143;Disrupting Shot
-2144;Volley
-2145;Expert Focus
-2146;Pious Fury
-2147;Crippling Victory
-2148;Sundering Weapon
-2149;Weapon of Renewal
-2150;Maiming Spear
-2186;Signet of Deadly Corruption
-2187;Way of the Master
-2188;Defile Defenses
-2189;Angorodon's Gaze
-2190;Magnetic Surge
-2191;Slippery Ground
-2192;Glowing Ice
-2193;Energy Blast
-2194;Distracting Strike
-2195;Symbolic Strike
-2196;Soldier's Speed
-2197;Body Blow
-2198;Body Shot
-2199;Poison Tip Signet
-2200;Signet of Mystic Speed
-2201;Shield of Force
-2202;Mending Grip
-2203;Spiritleech Aura
-2204;Rejuvenation
-2205;Agony
-2206;Ghostly Weapon
-2207;Inspirational Speech
-2208;Burning Shield
-2209;Holy Spear
-2210;Spear Swipe
-2211;Alkar's Alchemical Acid
-2212;Light of Deldrimor
-2213;Ear Bite
-2214;Low Blow
-2215;Brawling Headbutt
-2216;"Don't Trip!"
-2217;"By Ural's Hammer!"
-2218;Drunken Master
-2219;Great Dwarf Weapon
-2220;Great Dwarf Armor
-2221;Breath of the Great Dwarf
-2222;Snow Storm
-2223;Black Powder Mine
-2224;Summon Mursaat
-2225;Summon Ruby Djinn
-2226;Summon Ice Imp
-2227;Summon Naga Shaman
-2228;Deft Strike
-2229;Signet of Infection
-2230;Tryptophan Signet
-2231;Ebon Battle Standard of Courage
-2232;Ebon Battle Standard of Wisdom
-2233;Ebon Battle Standard of Honor
-2234;Ebon Vanguard Sniper Support
-2235;Ebon Vanguard Assassin Support
-2236;Well of Ruin
-2237;Atrophy
-2238;Spear of Redemption
-2353;"Finish Him!"
-2354;"Dodge This!"
-2355;"I Am the Strongest!"
-2356;"I Am Unstoppable!"
-2357;A Touch of Guile
-2358;"You Move Like a Dwarf!"
-2359;"You Are All Weaklings!"
-2360;Feel No Pain
-2361;Club of a Thousand Bears
-2374;Ursan Blessing
-2379;Volfen Blessing
-2384;Raven Blessing
-2411;Mindbender
-2412;Smooth Criminal
-2413;Technobabble
-2414;Radiation Field
-2415;Asuran Scan
-2416;Air of Superiority
-2417;Mental Block
-2418;Pain Inverter
-2420;Ebon Escape
-2421;Weakness Trap
-2422;Winds
-2423;Dwarven Stability
+1541;Hâte enchantée
+1542;Concentration pieuse
+1543;Hâte pieuse
+1544;Charge tourbillonnante
+1545;Test de foi
+1546;Javelot ardent
+1547;Lancer puissant
+1548;Javelot cruel
+1549;Lancer d'harrier
+1550;Lancer impitoyable
+1551;Javelot d'éclair
+1552;Javelot lassant
+1553;Hymne de furie
+1554;Hymne d'infirmité
+1555;Hymne défensif
+1556;Bon voyage
+1557;Hymne de flamme
+1558;"Visez les yeux !"
+1559;Hymne de jalousie
+1560;Chant de la puissance
+1561;Hymne zélé
+1562;Aria de zèle
+1563;Poème de zèle
+1564;Ballade de rétablissement
+1565;Choeur de rétablissement
+1566;Aria de rétablissement
+1567;Chanson de concentration
+1568;Hymne de direction
+1569;Choeur énergisant
+1570;Chanson de purification
+1571;Aria de leveur de maléfice
+1572;"Préparez-vous !"
+1573;Crainte
+1574;Harmonie persistante
+1575;Finale enflammé
+1576;Refrain brûlant
+1577;Finale de rétablissement
+1578;Refrain de réparation
+1579;Finale purifiant
+1580;Refrain du Bladeturn
+1581;Sceau rayonnant
+1583;Zèle du meneur
+1584;Confort du meneur
+1585;Sceau de synergie
+1586;Protection angélique
+1587;Lien angélique
+1588;Sceau cautère
+1589;Tenez bon !
+1590;Ouvrez le chemin !
+1591;Faites vite !
+1592;Nous reviendrons !
+1593;N'abandonnez jamais !
+1594;A l'aide !
+1595;Repliez-vous !
+1596;Attention !
+1597;Ils sont enflammés !
+1598;Ne vous rendez jamais !
+1599;C'est juste une petite blessure
+1600;Javelot perforant
+1601;Attaque vicieuse
+1602;Frappe stupéfiante
+1603;Javelot impitoyable
+1604;Lancer d'interruption
+1605;Lancer sauvage
+1633;Coup malicieux
+1634;Assaut dévastateur
+1635;Attaque du crâne doré
+1636;Attaque de l'araignée noire
+1637;Coup du renard doré
+1638;Hâte mortelle
+1639;Remède de l'Assassin
+1640;Promesse du renard
+1641;Neutralité simulée
+1642;Chausse-trappes cachées
+1643;Enchantements d'assauts
+1644;Effondrement du gaspilleur
+1645;Enchantements levés
+1646;Présage mortel
+1647;Sceau de choc toxique
+1648;Sceau de l'aube
+1649;Méthode de l'Assassin
+1650;Marche de l'ombre
+1651;Retraite de la mort
+1652;Prison d'ombre
+1653;Echange
+1654;Mêlée de l'ombre
+1655;Prix de l'orgueil
+1656;Air de Désenchantement
+1657;Sceau de Maladresse
+1658;Posture symbolique
+1659;Frisson toxique
+1660;Puits du silence
+1661;Pierre fluorescente
+1662;Explosion de l'âme
+1663;Flamme élémentaire
+1664;Invocation de la foudre
+1683;Gardien pensif
+1684;Clairvoyance du Scribe
+1685;Hâte sacrée
+1686;Lueur
+1687;Bénédiction zélée
+1688;Zèle du Défenseur
+1689;Sceau de colère mystique
+1690;Sceau de suppression
+1691;Suppression de condition
+1692;Diversion des maléfices
+1693;Contre-attaque
+1694;Frappe du chasseur de mages
+1695;Attaque de soldat
+1696;Décapitation
+1697;Attaque du chasseur de mages
+1698;Pose du soldat
+1699;Défense du soldat
+1700;Défense frénétique
+1701;Pose stable
+1702;Frappe Croc-d'acier
+1719;Tir hurleur
+1720;Flèche vive
+1721;Férocité unie
+1722;Flèche fourchue
+1723;Précision perturbatrice
+1724;Dextérité de l'expert
+1725;Vents mugissants
+1726;Tir du Fléau des mages
+1727;Foulée naturelle
+1728;Saccage du Heket
+1729;Piège de fumée
+1730;Chaleur exaspérante
+1731;Sogolon était énergétique
+1732;Glaive était destructrice
+1733;Attaque du porteur
+1734;Regard de fureur
+1736;Force de l'esprit
+1737;Zèle du porteur
+1738;Vision intérieure
+1739;Souvenirs renouvelés
+1740;Remède du porteur
+1741;Lumière du miroir fantôme
+1742;Sceau de puissance spectrale
+1743;Sceau d'asservissement
+1744;Charge du gardien
+1745;Angoisse
+1747;Responsabilisation
+1748;Récupération
+1749;Arme de furie
+1750;Arme de Xinrae
+1751;Arme du belliciste
+1752;Arme de remède
+1753;Frappe déchirante
+1754;Attaque
+1755;Corruption mystique
+1756;Empoigne de Grenth
+1757;Voile d'épines
+1758;Empoigne d'harrier
+1759;Voeu de force
+1760;Aura de poussière d'ébène
+1761;Voeu zélé
+1762;Coeur de furie
+1763;Renouveau zélé
+1764;Clairvoyance de l'attaquant
+1765;Aura déchirante
+1766;Grâce de Pied-de-plume
+1767;Frappe du moissonneur
+1768;Hâte d'harrier
+1769;Colère concentrée
+1770;Tempérament naturel
+1771;Chant de rétablissement
+1772;Poème de purification
+1773;Fureur du soldat
+1774;Refrain agressif
+1775;Finale énergisant
+1776;Sceau d'agression
+1777;Sceau du remède
+1778;Sceau de retour
+1779;Profitez de votre temps !
+1780;Touche pas !
+1781;Trouvez leur faiblesse !
+1782;La force est avec vous !
+1783;Javelot de l'assassin
+1784;Javeline leste
+1814;Regard du Porteur de lumière
+1815;Sceau du Porteur de lumière
+1816;Sceau de Renaissance du Lancier du Soleil
+1986;Assaut vampirique
+1987;Coup du lotus
+1988;Attaque des crocs dorés
+1990;Coup du lotus tombant
+1991;Sceau sadique
+1992;Sceau de distraction
+1993;Sceau de Rappel
+1994;Verrouillage de pouvoir
+1995;Pas de petites économies
+1996;La somme de toutes les peurs
+1997;Aura de Flétrissure
+1998;Cacophonie
+1999;Etreinte de l'hiver
+2000;Chaînes de terre
+2001;Protection de faiblesse
+2002;Glyphe de rapidité
+2003;Guérison de maléfice
+2004;Expiation des conditions
+2005;Compagnon du châtiment
+2006;Sceau de pénitence
+2007;Voile purifiant
+2008;Collision pulvérisante
+2009;Coup enthousiaste
+2010;Coupe-genou
+2011;Grappin
+2012;Faux rayonnante
+2013;Aura de Grenth
+2014;Sceau de contrainte pieuse
+2015;Faux du fermier
+2016;Lee Sa était énérgétique
+2017;Hymne de lassitude
+2018;Hymne d'interruption
+2052;Crocs de l'ombre
+2053;Risque calculé
+2054;Rétraction d'armure
+2055;Anévrisme
+2056;Oeil errant
+2057;Festin immonde
+2058;Fiel putrice
+2059;Traumatisme
+2060;Glyphe d'immolation
+2061;Esprit patient
+2062;Ruban de guérison
+2063;Ame inébranlable
+2064;Esprit impéccable
+2065;Ame impeccable
+2066;Désarmement
+2067;C'est ce que je comptais faire !
+2068;Feu rapide
+2069;Tir du chasseur paresseux
+2070;Trancheur d'aura
+2071;Frappe zélée
+2072;Li Ming était pure
+2073;Arme d'agression
+2074;Cogne poitrine
+2075;Refrain rapide
+2101;Agilité critique
+2102;Cri de douleur
+2103;Nécrose
+2104;Intensité
+2105;Graine de vie
+2107;Attaque tourbillon
+2108;Saccage collectif
+2109;Aura éternelle
+2110;Vampirisme
+2112;Il n'y a rien à craindre !
+2116;Attaque sournoise
+2135;Piétinement du boeuf
+2136;Defense poudre fumigène
+2137;Images déroutantes
+2138;Vigeur du lanceur de maléfice
+2139;Masochisme
+2140;Piège perforant
+2141;Camaraderie
+2142;Agression barbare
+2143;Tir d'interruption
+2144;Volée
+2145;Concentration experte
+2146;Fureur pieuse
+2147;Victoire paralysante
+2148;Arme de fractionnement
+2149;Arme du renouveau
+2150;Javelot mutilant
+2186;Sceau de corruption mortelle
+2187;Méthode du Maître
+2188;Défenses profanées
+2189;Regard d'Angorodon
+2190;Afflux magnétique
+2191;Terrain glissant
+2192;Glace scintillante
+2193;Explosion d'énergie
+2194;Frappe de diversion
+2195;Attaque symbolique
+2196;Vitesse du soldat
+2197;Frappe corporelle
+2198;Coup corporel
+2199;Sceau de Joute empoisonnée
+2200;Sceau de vitesse mystique
+2201;Bouclier de force
+2202;Etreinte réparatrice
+2203;Aura de sangsue de l'esprit
+2204;Rajeunissement
+2205;Agonie
+2206;Arme spectrale
+2207;Discours stimulant
+2208;Bouclier incandescent
+2209;Javelot sacré
+2210;Frappe du javelot
+2211;Acide alchimique d'Alkar
+2212;Lumière de Deldrimor
+2213;Morsure d'oreille
+2214;Coup bas
+2215;Coup du bagarreur
+2216;Ne trébuche pas !
+2217;Par le marteau d'Ural !
+2218;Maître ivre
+2219;Arme du Grand Nain
+2220;Armure du Grand Nain
+2221;Souffle du Grand Nain
+2222;Tempête de neige
+2223;Piège de poudre noire
+2224;Invocation du Mursaat
+2225;Invocation du Jinn de rubis
+2226;Invocation du Lutin de glace
+2227;Invocation du Chaman naga
+2228;Frappe habile
+2229;Sceau d'infection
+2230;Sceau tryptophane
+2231;Etendard du courage de la bataille d'Ebon
+2232;Etendard de sagesse de la bataille d'Ebon
+2233;Etendard d'honneur de la bataille d'Ebon
+2234;Tireur d'élite de soutien de l'Avant-garde d'Ebon
+2235;Assassin de soutien de l'Avant-garde d'Ebon
+2236;Puits de ruine
+2237;Atrophie
+2238;Javelot de rédemption
+2353;""Finissez-le !"
+2354;"Esquive ceci !"
+2355;"Je suis le plus fort !"
+2356;"Rien ne peut m'arrêter !"
+2357;Une pointe de ruse
+2358;"Tu te déplaces comme un Nain !"
+2359;"Vous êtes tous des mauviettes !"
+2360;Aucune douleur
+2361;Gourdin d'un millier d'ours
+2374;Bénédiction de l'ours
+2379;Bénédiction du loup
+2384;Bénédiction du corbeau
+2411;Distorsion de l'esprit
+2412;Criminel improbable
+2413;Technobabillage
+2414;Champ de rayonnement
+2415;Scan asura
+2416;Air de supériorité
+2417;Blocage mental
+2418;Inverseur de douleur
+2420;Echappatoire d'Ebon
+2421;Piège de faiblesse
+2422;Vents
+2423;Stabilité naine
 2657;Call of Haste (PvP)
 2683;Castigation Signet (Saul D'Alessio)
 2684;Unnatural Signet (Saul D'Alessio)
@@ -1458,13 +1458,13 @@ skillId, skillName
 3396;Lightning Hammer (PvP)
 3397;Elemental Flame (PvP)
 3398;Slippery Ground (PvP)
-3422;Time Ward
-3423;Soul Taker
-3424;Over the Limit
-3425;Judgment Strike
-3426;Seven Weapons Stance
-3427;"Together as One!"
-3428;Shadow Theft
-3429;Weapons of Three Forges
-3430;Vow of Revolution
-3431;Heroic Refrain
+3422;Protection du temps
+3423;Preneur d'Âmes
+3424;Au-délà de la limite
+3425;Frappe du jugement
+3426;Pose des setps armes
+3427;"Ensemble et unis !"
+3428;Voleur d'ombre
+3429;Armes des trois forges
+3430;Voeu de révolution
+3431;Rengaine héroïque
