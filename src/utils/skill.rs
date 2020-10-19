@@ -1,9 +1,6 @@
 use std::str::Chars;
 
-use crate::constants::{
-    SKILLS_EN,
-    STANDARD_DECODE,
-};
+use crate::constants::STANDARD_DECODE;
 use crate::enums::{AttributeType, ProfessionType};
 
 fn flip_binary_pad(binary: String) -> String {
@@ -24,11 +21,9 @@ fn unflip_binary(binary: String) -> u32 {
     let mut bit_pos = len;
     let mut num = 0u32;
     for c in binary.chars() {
-        // print!("{} {} || ", bit_pos, num);
         if c == '1' {
             num |= 1 << (len - bit_pos);
         }
-        // println!("{} {}", bit_pos, num);
         bit_pos -= 1;
     }
     num
@@ -76,25 +71,24 @@ fn read_attributes(binary: &mut Chars) -> Vec<(AttributeType, u32)> {
     attributes
 }
 
-fn read_skills<'a>(binary: &mut Chars) -> [(u32, &'a str); 8] {
+fn read_skills(binary: &mut Chars) -> [u32; 8] {
     let skill_chunk_size = string_from_n_chars(binary, 4);
     let skill_chunk_size = unflip_binary(skill_chunk_size) + 8;
-    let mut skills = [(0u32, ""); 8];
+    let mut skills = [0u32; 8];
     for i in 0..8 {
         let skill_id = string_from_n_chars(binary, skill_chunk_size as usize);
         let skill_id = unflip_binary(skill_id);
-        let skill_name = SKILLS_EN.get(&skill_id).unwrap_or(&"None");
-        skills[i] = (skill_id, skill_name);
+        skills[i] = skill_id;
     }
     skills
 }
 
 #[derive(Debug, PartialEq)]
-pub struct SkillCodeRecord<'a> {
+pub struct SkillCodeRecord {
     pub primary_profession: ProfessionType,
     pub secondary_profession: ProfessionType,
     pub attributes: Vec<(AttributeType, u32)>,
-    pub skills: [(u32, &'a str); 8],
+    pub skills: [u32; 8],
 }
 
 fn decode(code: String) -> String {
@@ -109,7 +103,7 @@ fn decode(code: String) -> String {
 pub struct SkillCodeParser;
 
 impl SkillCodeParser {
-    pub fn parse<'a>(skill_code: String) -> SkillCodeRecord<'a> {
+    pub fn parse(skill_code: String) -> SkillCodeRecord {
         let binary_code = decode(skill_code);
         let mut binary_code = binary_code.chars();
         read_template_header(&mut binary_code);
@@ -136,7 +130,7 @@ mod test {
     pub fn full_skill_set() {
         let code_skill = "OgdCoMzjyAYg7OiDDeBuQAA".to_string();
         let skill_record = SkillCodeParser::parse(code_skill);
-        let expected = SkillCodeRecord { primary_profession: Elementalist, secondary_profession: Assassin, attributes: vec![(FireMagic, 12), (EnergyStorage, 12)], skills: [(202, "Glyph of Sacrifice"), (192, "Meteor Shower"), (952, "Death\'s Charge"), (1095, "Star Burst"), (195, "Lava Font"), (188, "Flame Burst"), (184, "Fire Attunement"), (2, "Resurrection Signet")] };
+        let expected = SkillCodeRecord { primary_profession: Elementalist, secondary_profession: Assassin, attributes: vec![(FireMagic, 12), (EnergyStorage, 12)], skills: [202, 192, 952, 1095, 195, 188, 184, 2] };
         assert_eq!(skill_record, expected);
     }
 
@@ -147,7 +141,7 @@ mod test {
             primary_profession: Elementalist,
             secondary_profession: Assassin,
             attributes: vec![(ShadowArts, 12)],
-            skills: [(1043, "Dash"), (952, "Death\'s Charge"), (2358, "\"You Move Like a Dwarf!\""), (2212, "Light of Deldrimor"), (1041, "Unseen Fury"), (0, "None"), (0, "None"), (2217, "\"By Ural\'s Hammer!\"")],
+            skills: [1043, 952, 2358, 2212, 1041, 0, 0, 2217],
         };
         let actual = SkillCodeParser::parse(code_skill);
         assert_eq!(expected, actual);

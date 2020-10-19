@@ -32,7 +32,7 @@ use commands::{
 };
 
 use crate::enums::Language;
-use crate::utils::{BonusEventStore, get_special_events_time_range, GuildsConfig, I18nMessageStore, NicholasGiftStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
+use crate::utils::{BonusEventStore, get_special_events_time_range, GuildsConfig, I18nMessageStore, NicholasGiftStore, SKillI18nStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
 
 pub mod constants;
 pub mod enums;
@@ -126,7 +126,8 @@ pub struct BotData {
     pub bonus_pvp: I18nStore<BonusEventStore>,
     pub i18n_messages: I18nStore<I18nMessageStore>,
     pub event: (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>),
-    pub guilds_config: GuildsConfig
+    pub guilds_config: GuildsConfig,
+    pub skills: SKillI18nStore,
 }
 
 impl BotData {
@@ -201,7 +202,8 @@ impl BotData {
             bonus_pvp: I18nStore(bonus_pvp_events),
             i18n_messages: I18nStore(i18n_messages),
             event: (special_event_periods, I18nStore(special_events)),
-            guilds_config: GuildsConfig::load()
+            guilds_config: GuildsConfig::load(),
+            skills: SKillI18nStore::new(),
         };
         Arc::new(tokio::sync::RwLock::new(datas))
     }

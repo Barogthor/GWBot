@@ -7,18 +7,24 @@ use serenity::model::channel::Message;
 use serenity::model::guild::Emoji;
 use serenity::utils::MessageBuilder;
 
+use crate::get_bot_datas;
+use crate::utils::{I18nMessageStore, SKillI18nStore};
 use crate::utils::skill::SkillCodeParser;
 
 #[command]
 async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     let code_skill = args.single::<String>()?;
     let skill_record = SkillCodeParser::parse(code_skill.clone());
-    println!("{:?}", skill_record);
 
-    // let emojis = ctx.http.guild.get_guild(ctx.shard_id).await?.emojis(&ctx.http).await?;
-    let channel = msg.channel_id.to_channel(&ctx).await?.guild().unwrap();
+    let channel = msg.channel_id.to_channel(&ctx).await?.guild();
+    let guild = channel.and_then(|channel| Some(channel.guild_id.0)).unwrap_or(0);
+    let datas_lock = get_bot_datas(ctx).await;
+    let read_data = &datas_lock.read().await;
+    let (lang, _) = read_data.guilds_config.get_guild_config(guild);
+    let i18n_messages: &I18nMessageStore = &read_data.i18n_messages.lng(lang).unwrap();
+    let skills_store: &SKillI18nStore = &read_data.skills;
 
-    let emojis = ctx.http.get_guild(channel.guild_id.0).await?.emojis;
+    let emojis = ctx.http.get_guild(guild).await?.emojis;
     let emoji_lookup = emojis.iter()
         .map(|(_id, emoji)| (emoji.name.clone(), emoji.clone()))
         .collect::<HashMap<String, Emoji>>();
@@ -42,9 +48,10 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
         }
     }
     response.push_line("");
-
-    for i in 0..8{
-        response.push(format!("Skill {}: ", i + 1)).push_bold_line(skill_record.skills[i].1);
+    let empty_skill = skills_store.lang_and_id(lang, 0).unwrap();
+    for i in 0..8 {
+        let skill = skills_store.lang_and_id(lang, skill_record.skills[i]).unwrap_or_else(|| empty_skill.clone());
+        response.push(format!("Skill {}: ", i + 1)).push_bold_line(&skill.0.name);
     }
 
     if let Err(why) = msg.channel_id.say(&ctx.http, &response).await {

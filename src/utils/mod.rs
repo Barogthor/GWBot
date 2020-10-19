@@ -68,11 +68,89 @@ impl CSVFile {
     }
 }
 
+#[derive(Debug)]
+pub struct SkillName {
+    pub name: String
+}
+
+#[derive(Debug)]
+pub struct SkillNameStore(HashMap<u32, SkillName>);
+
+impl SkillNameStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut store = Self { 0: Default::default() };
+        for x in csv.records {
+            let id = x.get(0).map(|id| u32::from_str(&id).unwrap()).unwrap_or(0);
+            let name = x.get(1).unwrap().to_string();
+            store.0.insert(id, SkillName { name });
+        }
+        store
+    }
+
+    pub fn get_from_id(&self, id: u32) -> Option<&SkillName> {
+        self.0.get(&id)
+    }
+}
+
+#[derive(Debug)]
+pub struct SkillInfo {
+    pub skill_uri: String,
+    pub skill_icon: String,
+}
+
+#[derive(Debug)]
+pub struct SkillInfoStore(HashMap<u32, SkillInfo>);
+
+impl SkillInfoStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut store = Self { 0: Default::default() };
+        for x in csv.records {
+            let id = x.get(0).map(|id| u32::from_str(&id).unwrap()).unwrap_or(0);
+            let skill_uri = x.get(1).unwrap().to_string();
+            let skill_icon = x.get(2).unwrap().to_string();
+            store.0.insert(id, SkillInfo { skill_uri, skill_icon });
+        }
+        store
+    }
+
+    pub fn get_from_id(&self, id: u32) -> Option<&SkillInfo> {
+        self.0.get(&id)
+    }
+}
+
+#[derive(Debug)]
+pub struct SKillI18nStore(HashMap<Language, SkillNameStore>, SkillInfoStore);
+
+impl SKillI18nStore {
+    pub fn new() -> Self {
+        let mut m = HashMap::new();
+        m.insert(Language::French, SkillNameStore::from_csv("datas/skills_fr_FR.csv"));
+        m.insert(Language::English, SkillNameStore::from_csv("datas/skills_en_US.csv"));
+        let info_store = SkillInfoStore::from_csv("datas/skills.csv");
+        Self(
+            m,
+            info_store,
+        )
+    }
+
+    pub fn lang_and_id(&self, lng: Language, id: u32) -> Option<(&SkillName, Option<&SkillInfo>)> {
+        self.0.get(&lng)
+            .map(|store| store.get_from_id(id))
+            .and_then(|skill| skill)
+            .map_or(None, |skill| {
+                let info = self.1.get_from_id(id);
+                Some((skill, info))
+            })
+    }
+}
 
 #[derive(Debug)]
 pub struct ZaishenQuestData {
     pub name: String
 }
+
 #[derive(Debug)]
 pub struct ZaishenQuestStore(Vec<ZaishenQuestData>);
 
@@ -212,6 +290,7 @@ pub fn get_special_events_time_range() -> Vec<SpecialEventPeriod> {
     events
 }
 
+
 #[derive(Debug)]
 pub struct I18nMessageStore(HashMap<String, String>);
 
@@ -325,7 +404,6 @@ type GuildRawId = u64;
 #[derive(Debug)]
 pub struct GuildsConfig(HashMap<GuildRawId, GuildConfigData>);
 
-//TODO: save on disk changes
 impl GuildsConfig {
     pub fn load() -> Self {
         let mut hm = HashMap::new();
