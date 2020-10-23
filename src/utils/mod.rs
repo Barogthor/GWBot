@@ -5,7 +5,7 @@ use std::str::FromStr;
 
 use chrono::{DateTime, TimeZone, Utc};
 
-use crate::enums::Language;
+use crate::enums::{AttributeType, Language, ProfessionType};
 use crate::utils::time::{DateTimeRange, DateTimeRangeComparison};
 
 pub mod skill;
@@ -145,6 +145,53 @@ impl SKillI18nStore {
             })
     }
 }
+
+#[derive(Debug)]
+pub struct AttributeName(pub String);
+
+#[derive(Debug)]
+pub struct AttributeStore(HashMap<AttributeType, AttributeName>);
+
+impl AttributeStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut hm = HashMap::new();
+        for attr in csv.records {
+            let id = u32::from_str(attr.get(0).unwrap()).unwrap();
+            let name = attr.get(1).unwrap().to_string();
+            hm.insert(AttributeType::from(id), AttributeName(name));
+        }
+        Self(hm)
+    }
+
+    pub fn from(&self, attr: &AttributeType) -> Option<&AttributeName> {
+        self.0.get(attr)
+    }
+}
+
+#[derive(Debug)]
+pub struct ProfessionName(pub String);
+
+#[derive(Debug)]
+pub struct ProfessionStore(HashMap<ProfessionType, ProfessionName>);
+
+impl ProfessionStore {
+    pub fn from_csv(path: &str) -> Self {
+        let csv = CSVFile::parse(path).expect(&format!("{} doesn't exist", path));
+        let mut hm = HashMap::new();
+        for attr in csv.records {
+            let id = u32::from_str(attr.get(0).unwrap()).unwrap();
+            let name = attr.get(1).unwrap().to_string();
+            hm.insert(ProfessionType::from(id), ProfessionName(name));
+        }
+        Self(hm)
+    }
+
+    pub fn from(&self, prof: &ProfessionType) -> Option<&ProfessionName> {
+        self.0.get(prof)
+    }
+}
+
 
 #[derive(Debug)]
 pub struct ZaishenQuestData {

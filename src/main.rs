@@ -32,7 +32,7 @@ use commands::{
 };
 
 use crate::enums::Language;
-use crate::utils::{BonusEventStore, get_special_events_time_range, GuildsConfig, I18nMessageStore, NicholasGiftStore, SKillI18nStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
+use crate::utils::{AttributeStore, BonusEventStore, get_special_events_time_range, GuildsConfig, I18nMessageStore, NicholasGiftStore, ProfessionStore, SKillI18nStore, SpecialEventPeriod, SpecialEventStore, ZaishenQuestStore};
 
 pub mod constants;
 pub mod enums;
@@ -128,6 +128,8 @@ pub struct BotData {
     pub event: (Vec<SpecialEventPeriod>, I18nStore<SpecialEventStore>),
     pub guilds_config: GuildsConfig,
     pub skills: SKillI18nStore,
+    pub attributes: I18nStore<AttributeStore>,
+    pub professions: I18nStore<ProfessionStore>,
 }
 
 impl BotData {
@@ -185,6 +187,20 @@ impl BotData {
             m
         };
 
+        let attributes = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, AttributeStore::from_csv("datas/attributes_en_US.csv"));
+            m.insert(Language::French, AttributeStore::from_csv("datas/attributes_fr_FR.csv"));
+            m
+        };
+
+        let professions = {
+            let mut m = HashMap::new();
+            m.insert(Language::English, ProfessionStore::from_csv("datas/professions_en_US.csv"));
+            m.insert(Language::French, ProfessionStore::from_csv("datas/professions_fr_FR.csv"));
+            m
+        };
+
         let i18n_messages = {
             let mut m = HashMap::new();
             m.insert(Language::English, I18nMessageStore::from_csv("datas/message_en_US.csv"));
@@ -204,6 +220,8 @@ impl BotData {
             event: (special_event_periods, I18nStore(special_events)),
             guilds_config: GuildsConfig::load(),
             skills: SKillI18nStore::new(),
+            attributes: I18nStore(attributes),
+            professions: I18nStore(professions)
         };
         Arc::new(tokio::sync::RwLock::new(datas))
     }

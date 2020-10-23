@@ -17,7 +17,7 @@ impl Language {
     }
 }
 
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq, Hash)]
 pub enum ProfessionType {
     None,
     Warrior,
@@ -58,7 +58,7 @@ impl From<u32> for ProfessionType{
 }
 
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
 pub enum AttributeType {
     FastCasting,
     IllusionMagic,
