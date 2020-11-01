@@ -61,113 +61,110 @@ attributeMap["Earth Prayers"] = 43
 attributeMap["Mysticism"] = 44
 
 const typeMap = {}
-typeMap["Signet"] = 0
-typeMap["Stance"] = 1
-typeMap["Hex spell"] = 2
-typeMap["Snow fighting skill"] = 3
-typeMap["Shout"] = 4
-typeMap["Skill"] = 5
-typeMap["Dual attack"] = 6
-typeMap["Duplicate skill"] = 7
-typeMap["Spell"] = 8
-typeMap["Off-hand attack"] = 9
-typeMap["Lead attack"] = 10
-typeMap["Enchantment spell"] = 11
-typeMap["Elite enchantment spell"] = 12
-typeMap["Elite hex spell"] = 13
-typeMap["Elite stance"] = 14
-typeMap["Elite touch skill"] = 15
-typeMap["Elite spell"] = 16
-typeMap["Touch skill"] = 17
-typeMap["Ward spell"] = 18
-typeMap["Glyph"] = 19
-typeMap["Resurrection skill"] = 20
-typeMap["Melee attack"] = 21
-typeMap["Sword attack"] = 22
-typeMap["Axe attack"] = 23
-typeMap["Hammer attack"] = 24
-typeMap["Celestial skill"] = 25
-typeMap["Skill (PvE-only)"] = 26
-typeMap["Elite skill"] = 27
-typeMap["Bow attack"] = 28
-typeMap["Elite bow attack"] = 29
-typeMap["Elite preparation"] = 30
-typeMap["Elite signet"] = 31
-typeMap["Pet attack"] = 32
-typeMap["Elite pet attack"] = 33
-typeMap["Trap"] = 34
-typeMap["Elite nature ritual"] = 35
-typeMap["Nature ritual"] = 36
-typeMap["Item spell"] = 37
-typeMap["Elite item spell"] = 38
+typeMap["Stance"] = 0
+typeMap["Signet (PvE-only)"] = 1
+typeMap["Elite enchantment spell"] = 2
+typeMap["Hex spell"] = 3
+typeMap["Elite hex spell"] = 4
+typeMap["Spell"] = 5
+typeMap["Elite signet"] = 6
+typeMap["Elite spell"] = 7
+typeMap["Enchantment spell"] = 8
+typeMap["Touch skill"] = 9
+typeMap["Ward spell"] = 10
+typeMap["Signet"] = 11
+typeMap["Melee attack"] = 12
+typeMap["Hammer attack"] = 13
+typeMap["Sword attack"] = 14
+typeMap["Axe attack"] = 15
+typeMap["Shout"] = 16
+typeMap["Glyph"] = 17
+typeMap["Elite stance"] = 18
+typeMap["Bow attack"] = 19
+typeMap["Skill"] = 20
+typeMap["Well spell"] = 21
+typeMap["Elite well spell"] = 22
+typeMap["Elite bow attack"] = 23
+typeMap["Elite skill"] = 24
+typeMap["Trap"] = 25
+typeMap["Elite glyph"] = 26
+typeMap["Pet attack"] = 27
+typeMap["Preparation"] = 28
+typeMap["Elite trap"] = 29
+typeMap["Nature ritual"] = 30
+typeMap["Lead attack"] = 31
+typeMap["Elite ward spell"] = 32
+typeMap["Elite off-hand attack"] = 33
+typeMap["Elite item spell"] = 34
+typeMap["Elite axe attack"] = 35
+typeMap["Elite hammer attack"] = 36
+typeMap["Elite preparation"] = 37
+typeMap["Elite melee attack"] = 38
 typeMap["Binding ritual"] = 39
-typeMap["Elite binding ritual"] = 40
-typeMap["Elite weapon spell"] = 41
-typeMap["Weapon spell"] = 42
-typeMap["Well spell"] = 43
-typeMap["Elite shout"] = 44
-typeMap["Elite sword attack"] = 45
-typeMap["Preparation"] = 46
-typeMap["Scythe attack"] = 47
-typeMap["Flash enchantment spell"] = 48
-typeMap["Elite flash enchantment spell"] = 49
-typeMap["Elite form"] = 50
-typeMap["Elite scythe attack"] = 51
-typeMap["Spear attack"] = 52
-typeMap["Elite spear attack"] = 53
-typeMap["Elite chant"] = 54
-typeMap["Chant"] = 55
-typeMap["Echo"] = 56
-typeMap["Elite dual attack"] = 57
-typeMap["Elite off-hand attack"] = 58
-typeMap["Elite melee attack"] = 59
-typeMap["Elite axe attack"] = 60
-typeMap["Elite hammer attack"] = 61
-typeMap["Elite trap"] = 62
-typeMap["Elite echo"] = 63
-typeMap["Signet (PvE-only)"] = 64
-typeMap["Elite glyph"] = 65
-typeMap["Enchantment spell (PvE-only)"] = 66
-typeMap["Spell (PvE-only)"] = 67
-typeMap["Melee attack (PvE-only)"] = 68
-typeMap["Binding ritual (PvE-only)"] = 69
-typeMap["Shout (PvE-only)"] = 70
-typeMap["Touch skill (PvE-only)"] = 71
-typeMap["Stance (PvE-only)"] = 72
-typeMap["Weapon spell (PvE-only)"] = 73
+typeMap["Elite shout"] = 40
+typeMap["Elite sword attack"] = 41
+typeMap["Item spell"] = 42
+typeMap["Elite pet attack"] = 43
+typeMap["Off-hand attack"] = 44
+typeMap["Dual attack"] = 45
+typeMap["Elite nature ritual"] = 46
+typeMap["Weapon spell"] = 47
+typeMap["Elite touch skill"] = 48
+typeMap["Skill (PvE-only)"] = 49
+typeMap["Elite binding ritual"] = 50
+typeMap["Elite weapon spell"] = 51
+typeMap["Scythe attack"] = 52
+typeMap["Flash enchantment spell"] = 53
+typeMap["Spear attack"] = 54
+typeMap["Elite chant"] = 55
+typeMap["Chant"] = 56
+typeMap["Shout (PvE-only)"] = 57
+typeMap["Elite form (PvE-only)"] = 58
+typeMap["Ward spell (PvE-only)"] = 59
+typeMap["Ebon vanguard ritual (PvE-only)"] = 60
+typeMap["Elite flash enchantment spell"] = 61
+typeMap["Elite form"] = 62
+typeMap["Enchantment spell (PvE-only)"] = 63
+typeMap["Elite scythe attack"] = 64
+typeMap["Echo"] = 65
+typeMap["Elite spear attack"] = 66
+typeMap["Elite stance (PvE-only)"] = 67
+typeMap["Elite dual attack"] = 68
+typeMap["Spell (PvE-only)"] = 69
+typeMap["Ranged attack (PvE-only)"] = 70
+typeMap["Melee attack (PvE-only)"] = 71
+typeMap["Hex spell (PvE-only)"] = 72
+typeMap["Binding ritual (PvE-only)"] = 73
 typeMap["Trap (PvE-only)"] = 74
-typeMap["Ranged attack (PvE-only)"] = 75
-typeMap["Ward spell (PvE-only)"] = 76
-typeMap["Hex spell (PvE-only)"] = 77
-typeMap["Elite form (PvE-only)"] = 78
-typeMap["Elite ward spell"] = 79
-typeMap["Ebon vanguard ritual (PvE-only)"] = 80
-typeMap["Bonus Mission Pack skill"] = 81
-typeMap["Elite ward spell (PvE-only)"] = 82
-typeMap["Elite enchantment spell (PvE-only)"] = 83
-typeMap["Elite melee attack (PvE-only)"] = 84
-typeMap["Elite stance (PvE-only)"] = 85
-typeMap["Elite shout (PvE-only)"] = 86
-typeMap["Elite skill (PvE-only)"] = 87
-typeMap["Elite weapon spell (PvE-only)"] = 88
-typeMap["Elite echo (PvE-only)"] = 89
-typeMap["Elite well spell"] = 90
+typeMap["Elite echo"] = 75
+typeMap["Elite echo (PvE-only)"] = 76
+typeMap["Elite ward spell (PvE-only)"] = 77
+typeMap["Elite shout (PvE-only)"] = 78
+typeMap["Elite weapon spell (PvE-only)"] = 79
+typeMap["Stance (PvE-only)"] = 80
+typeMap["Elite enchantment spell (PvE-only)"] = 81
+typeMap["Elite melee attack (PvE-only)"] = 82
+typeMap["Touch skill (PvE-only)"] = 83
+typeMap["Weapon spell (PvE-only)"] = 84
+typeMap["Elite skill (PvE-only)"] = 85
 
-
-let countTypes = 91;
+let countTypes = 86;
 const serializeStats = stat => `${stat.type}=${stat.value}`;
 const serializeSkillInfo = skillInfo => {
     if (skillInfo.type === "Profession")
         return `${skillInfo.type}=${professionMap[skillInfo.value]}`
     if (skillInfo.type === "Attribute")
         return `${skillInfo.type}=${attributeMap[skillInfo.value]}`
-    let value = skillInfo.value.trim().replace(/\s+/g, " ")
-    value = value.substr(0, 1).toUpperCase() + value.substr(1)
-    if (typeMap[value] === undefined) {
-        typeMap[value] = countTypes;
-        countTypes++;
+    if (skillInfo.type === "Type") {
+        let value = skillInfo.value.trim().replace(/\s+/g, " ")
+        value = value.substr(0, 1).toUpperCase() + value.substr(1)
+        if (typeMap[value] === undefined) {
+            typeMap[value] = countTypes;
+            countTypes++;
+        }
+        return `${skillInfo.type}=${typeMap[value]}`
     }
-    return `${skillInfo.type}=${typeMap[value]}`
+    return `${skillInfo.type}=${skillInfo.value}`
 }
 
 const serializeArray = array => {
@@ -186,7 +183,6 @@ async function saveCsv(fr_skills, en_skills, skills) {
 
 
 const prepareSave = ({fr_skills, en_skills, skills, new_datas}) => {
-    const typeMap = {}
     new_datas.forEach((record, i) => {
         const fr_skill = fr_skills.find(r => r[0] === record.id)
         const en_skill = en_skills.find(r => r[0] === record.id)
@@ -197,14 +193,14 @@ const prepareSave = ({fr_skills, en_skills, skills, new_datas}) => {
         en_skill.push(record.description)
         const skillInfos = record.skillInfos.map(serializeSkillInfo).join("|")
         const stats = record.stats.map(serializeStats).join("|")
-        // skill.push(skillInfos)
-        // skill.push(stats)
+        skill.push(skillInfos)
+        skill.push(stats)
         // console.log(skill);
         // console.log(record, stats, skillInfos);
         // console.log(fr_skills[i], en_skills[i]);
     })
     saveCsv(fr_skills, en_skills, skills)
-    // console.log(typeMap);
+    console.log(typeMap);
 
 }
 
