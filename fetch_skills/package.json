@@ -1,0 +1,17 @@
+{
+  "name": "gw-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetch.js",
+  "scripts": {
+    "run": "node fetch.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^4.12.0",
+    "node-html-parser": "^1.3.1"
+  }
+}
