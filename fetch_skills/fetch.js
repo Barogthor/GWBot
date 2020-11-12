@@ -172,9 +172,9 @@ const serializeArray = array => {
 }
 
 async function saveCsv(fr_skills, en_skills, skills) {
-    const raw_fr = serializeArray(fr_skills)
-    const raw_en = serializeArray(en_skills)
-    const raw_skill = serializeArray(skills)
+    const raw_fr = "skillId;skillName;skillDescription\n" + serializeArray(fr_skills)
+    const raw_en = "skillId;skillName;skillDescription\n" + serializeArray(en_skills)
+    const raw_skill = "skillId;skillUri;skillIcon;skillInfos;skillStats\n" + serializeArray(skills)
     // console.log(raw_skill);
     await fs.writeFile(__dirname + '/skills_fr_FR_bis.csv', raw_fr, {encoding: 'utf8'})
     await fs.writeFile(__dirname + '/skills_en_US_bis.csv', raw_en, {encoding: 'utf8'})
