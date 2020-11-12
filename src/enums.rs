@@ -102,6 +102,15 @@ pub enum AttributeType {
     WindPrayers,
     EarthPrayers,
     Mysticism,
+    Luxon,
+    Kurzick,
+    Sunspear,
+    Lightbringer,
+    Norn,
+    EbonVangard,
+    Deldrimor,
+    Asura,
+    Other,
 }
 impl Display for AttributeType {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
@@ -154,6 +163,15 @@ impl From<u32> for AttributeType{
             42 => AttributeType::WindPrayers,
             43 => AttributeType::EarthPrayers,
             44 => AttributeType::Mysticism,
+            90 => AttributeType::Luxon,
+            91 => AttributeType::Kurzick,
+            92 => AttributeType::Sunspear,
+            93 => AttributeType::Lightbringer,
+            94 => AttributeType::Norn,
+            95 => AttributeType::EbonVangard,
+            96 => AttributeType::Deldrimor,
+            97 => AttributeType::Asura,
+            999 => AttributeType::Other,
             _ => panic!("Unknown attribute")
         }
     }

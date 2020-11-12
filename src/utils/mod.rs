@@ -70,7 +70,8 @@ impl CSVFile {
 
 #[derive(Debug)]
 pub struct SkillName {
-    pub name: String
+    pub name: String,
+    pub description: String,
 }
 
 #[derive(Debug)]
@@ -83,7 +84,8 @@ impl SkillNameStore {
         for x in csv.records {
             let id = x.get(0).map(|id| u32::from_str(&id).unwrap()).unwrap_or(0);
             let name = x.get(1).unwrap().to_string();
-            store.0.insert(id, SkillName { name });
+            let description = x.get(2).unwrap().to_string();
+            store.0.insert(id, SkillName { name, description });
         }
         store
     }
@@ -97,6 +99,8 @@ impl SkillNameStore {
 pub struct SkillInfo {
     pub skill_uri: String,
     pub skill_icon: String,
+    pub skill_infos: HashMap<String, u32>,
+    pub skill_stats: HashMap<String, String>,
 }
 
 #[derive(Debug)]
@@ -110,7 +114,26 @@ impl SkillInfoStore {
             let id = x.get(0).map(|id| u32::from_str(&id).unwrap()).unwrap_or(0);
             let skill_uri = x.get(1).unwrap().to_string();
             let skill_icon = x.get(2).unwrap().to_string();
-            store.0.insert(id, SkillInfo { skill_uri, skill_icon });
+            let skill_infos_raw = x.get(3).unwrap().to_string();
+            let skill_infos: HashMap<String, u32> =
+                skill_infos_raw
+                    .split("|")
+                    .filter(|info| !info.starts_with("Special") && info.len() > 0)
+                    .map(|info| {
+                        let v: Vec<&str> = info.split("=").collect();
+                        let id = u32::from_str(v[1]).unwrap();
+                        (v[0].to_string(), id)
+                    }).collect();
+            let skill_stats_raw = x.get(4).unwrap().to_string();
+            let skill_stats: HashMap<String, String> =
+                skill_stats_raw
+                    .split("|")
+                    .filter(|stat| stat.len() > 0)
+                    .map(|stat| {
+                        let v: Vec<&str> = stat.split("=").collect();
+                        (v[0].to_string(), v[1].to_string())
+                    }).collect();
+            store.0.insert(id, SkillInfo { skill_uri, skill_icon, skill_infos, skill_stats });
         }
         store
     }
