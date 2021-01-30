@@ -1,5 +1,5 @@
 skillId;skillName;skillDescription
-0;Blank;Blank
+0;No Skill;No Skill
 1;Healing Signet;Signet. You gain 82...154...172 Health. You have -40 armor while using this skill.
 2;Resurrection Signet;Signet. Resurrect target party member. That party member is returned to life with 100% Health and 25% Energy. This signet only recharges when you gain a morale boost.
 3;Signet of Capture;Signet. Choose one skill from a nearby dead Boss of your profession. Signet of Capture is permanently replaced by that skill. If that skill was elite, gain 250 XP for every level you have earned.
@@ -1141,6 +1141,15 @@ skillId;skillName;skillDescription
 1814;Lightbringer's Gaze;Skill. Target demonic servant of Abaddon takes 100 holy damage and is interrupted. This skill strikes one additional foe in the area for each rank of Lightbringer you have attained. This skill is disabled for 15 seconds after it is used.
 1815;Lightbringer Signet;Signet. If you are within the area of a demonic servant of Abaddon, you gain 4...5 strikes of adrenaline and 22...24 Energy.
 1816;Sunspear Rebirth Signet;Signet. Resurrect target dead party member at your location with full Health and 10% Energy for each Sunspear rank you have attained. This signet can only be used once per mission unless recharged by a morale boost.
+1948;Shadow Sanctuary;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+1949;Ether Nightmare;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+1950;Signet of Corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+1951;Elemental Lord;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+1952;Selfless Spirit;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+1953;Triple Shot;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+1954;"Save Yourselves!";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
+1955;Aura of Holy Might;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+1957;Spear of Fury;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
 1986;Vampiric Assault;Dual Attack. Must follow an off-hand attack. If this attack hits, you steal 10...34...40 Health.
 1987;Lotus Strike;Off-Hand Attack. Must follow a lead attack. If it hits, this attack strikes for +10...22...25 damage and you gain 5...17...20 Energy.
 1988;Golden Fang Strike;Off-Hand Attack. Must follow a lead attack. If you are under the effects of an enchantment and this attack hits, target foe suffers from a Deep Wound for 5...17...20 seconds.
@@ -1173,6 +1182,7 @@ skillId;skillName;skillDescription
 2016;Energetic Was Lee Sa;Item Spell. Hold Lee Sa's ashes for 5...13...15 seconds. While you hold her ashes, you gain +2 Energy regeneration. When you drop her ashes, you gain +1...8...10 Energy.
 2017;Anthem of Weariness;Chant. For 8 seconds, the next attack skill used by each ally within earshot also causes Weakness for 1...13...16 second[s].
 2018;Anthem of Disruption;Chant. For 1...8...10 seconds, the next attack skill used by each ally within earshot also interrupts an action.
+2051;Summon Spirits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2052;Shadow Fang;Hex Spell. Shadow Step to target foe. For 10 seconds, this hex does nothing. When this hex ends, you return to your original location and that foe suffers from a Deep Wound for 5...17...20 seconds.
 2053;Calculated Risk;Hex Spell. For 3...20...24 seconds, target foe's attacks do +10 damage, but there is a 50% chance that the damage from each attack will be done to that foe instead. (Maximum 15...83...100 damage.)
 2054;Shrinking Armor;Hex Spell. For 10 seconds, target foe suffers from -1...3...4 Health degeneration. When this hex ends, that foe has Cracked Armor for 5...17...20 seconds.
@@ -1197,6 +1207,16 @@ skillId;skillName;skillDescription
 2073;Weapon of Aggression;Weapon Spell. For 5...13...15 seconds, you attack 25% faster.
 2074;Chest Thumper;Spear Attack. If this attack hits a foe with Cracked Armor, that foe suffers a Deep Wound for 5...17...20 seconds.
 2075;Hasty Refrain;Echo. For 3...9...11 seconds, target ally moves 25% faster. This echo is reapplied every time a chant or shout ends on that ally.
+2091;Shadow Sanctuary;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+2092;Ether Nightmare;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+2093;Signet of Corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+2094;Elemental Lord;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+2095;Selfless Spirit;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+2096;Triple Shot;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+2097;"Save Yourselves!";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
+2098;Aura of Holy Might;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+2099;Spear of Fury;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
+2100;Summon Spirits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2101;Critical Agility;Enchantment Spell. For 4 seconds and 1 second for each rank of Critical Strikes, you attack 33% faster and gain 15...25 armor. This skill reapplies itself every time you land a critical hit.
 2102;Cry of Pain;Spell. Interrupt target foe's skill. If that foe was suffering from a Mesmer hex, that foe and all foes in the area take 25...50 damage and have 3...5 Health degeneration for 10 seconds.
 2103;Necrosis;Skill. If target foe is suffering from a condition or hex, that foe suffers 60...90 damage.

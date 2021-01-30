@@ -1141,6 +1141,15 @@ skillId;skillUri;skillIcon;skillInfos;skillStats
 1814;https://wiki.guildwars.com/wiki/Lightbringer%27s_Gaze;https://wiki.guildwars.com/images/c/c6/Lightbringer%27s_Gaze.jpg;Attribute=993|Type=49;Energy=5|Activation=1|Recharge=15
 1815;https://wiki.guildwars.com/wiki/Lightbringer_Signet;https://wiki.guildwars.com/images/4/43/Lightbringer_Signet.jpg;Attribute=993|Type=1;Activation=0.25|Recharge=25
 1816;https://wiki.guildwars.com/wiki/Sunspear_Rebirth_Signet;https://wiki.guildwars.com/images/e/e0/Sunspear_Rebirth_Signet.jpg;Attribute=992|Special=Resurrection skill|Type=1;Activation=3|Recharge=morale boost
+1948;https://wiki.guildwars.com/wiki/Shadow_Sanctuary;https://www.no-cookie.com/w/images/d/d4/Sanctuaire_de_l%27ombre_%28Luxon%29.png;Profession=7|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=30
+1949;https://wiki.guildwars.com/wiki/Ether_Nightmare;https://www.no-cookie.com/w/images/a/a6/Cauchemar_%C3%A9th%C3%A9r%C3%A9_%28Luxon%29.png;Profession=5|Attribute=91|Type=72;Energy=10|Activation=3.00|Recharge=25
+1950;https://wiki.guildwars.com/wiki/Signet_of_Corruption;https://www.no-cookie.com/w/images/8/87/Sceau_de_corruption_%28Luxon%29.png;Profession=4|Attribute=91|Type=1;Activation=1|Recharge=20
+1951;https://wiki.guildwars.com/wiki/Elemental_Lord;https://www.no-cookie.com/w/images/7/7d/Seigneur_%C3%A9l%C3%A9mentaire_%28Luxon%29.png;Profession=6|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=45
+1952;https://wiki.guildwars.com/wiki/Selfless_Spirit;https://www.no-cookie.com/w/images/3/38/Esprit_altruiste_%28Luxon%29.png;Profession=3|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=45
+1953;https://wiki.guildwars.com/wiki/Triple_Shot;https://www.no-cookie.com/w/images/d/db/Triple_tir_%28Luxon%29.png;Profession=2|Attribute=91|Type=19;Energy=10|Recharge=10
+1954;https://wiki.guildwars.com/wiki/%22Save_Yourselves!%22;https://www.no-cookie.com/w/images/f/f7/%22Sauvez_votre_peau_%21%22_%28Luxon%29.png;Profession=1|Attribute=91|Type=57;Adrenaline=8
+1955;https://wiki.guildwars.com/wiki/Aura_of_Holy_Might;https://www.no-cookie.com/w/images/1/1f/Aura_de_la_puissance_sacr%C3%A9e_%28Luxon%29.png;Profession=10|Attribute=91|Type=63;Energy=10|Activation=0.75|Recharge=30
+1957;https://wiki.guildwars.com/wiki/Spear_of_Fury;https://www.no-cookie.com/w/images/a/a3/Javelot_de_furie_%28Luxon%29.png;Profession=9|Attribute=91|Type=54;Energy=5|Activation=1.00|Recharge=8
 1986;https://wiki.guildwars.com/wiki/Vampiric_Assault;https://wiki.guildwars.com/images/a/a1/Vampiric_Assault.jpg;Profession=7|Attribute=30|Type=45;Energy=5|Recharge=8|Requires off-hand attack=
 1987;https://wiki.guildwars.com/wiki/Lotus_Strike;https://wiki.guildwars.com/images/a/a9/Lotus_Strike.jpg;Profession=7|Attribute=29|Type=44;Energy=10|Recharge=12|Requires lead attack=
 1988;https://wiki.guildwars.com/wiki/Golden_Fang_Strike;https://wiki.guildwars.com/images/0/0c/Golden_Fang_Strike.jpg;Profession=7|Attribute=29|Type=44;Energy=5|Recharge=4|Requires lead attack=
@@ -1173,6 +1182,7 @@ skillId;skillUri;skillIcon;skillInfos;skillStats
 2016;https://wiki.guildwars.com/wiki/Energetic_Was_Lee_Sa;https://wiki.guildwars.com/images/9/96/Energetic_Was_Lee_Sa.jpg;Profession=8|Attribute=36|Type=42;Energy=10|Activation=2|Recharge=20
 2017;https://wiki.guildwars.com/wiki/Anthem_of_Weariness;https://wiki.guildwars.com/images/a/a2/Anthem_of_Weariness.jpg;Profession=9|Attribute=38|Type=56;Energy=5|Activation=1|Recharge=10
 2018;https://wiki.guildwars.com/wiki/Anthem_of_Disruption;https://wiki.guildwars.com/images/4/43/Anthem_of_Disruption.jpg;Profession=9|Attribute=38|Type=56;Energy=10|Activation=1|Recharge=15
+2051;https://wiki.guildwars.com/wiki/Summon_Spirits;https://www.no-cookie.com/w/images/6/6d/Invocation_des_esprits_%28Luxon%29.png;Profession=8|Attribute=91|Type=69;Energy=5|Activation=0.25|Recharge=5
 2052;https://wiki.guildwars.com/wiki/Shadow_Fang;https://wiki.guildwars.com/images/5/53/Shadow_Fang.jpg;Profession=7|Attribute=30|Type=3;Energy=10|Activation=0.25|Recharge=45
 2053;https://wiki.guildwars.com/wiki/Calculated_Risk;https://wiki.guildwars.com/images/8/87/Calculated_Risk.jpg;Profession=5|Attribute=1|Type=3;Energy=5|Activation=1|Recharge=7
 2054;https://wiki.guildwars.com/wiki/Shrinking_Armor;https://wiki.guildwars.com/images/e/e9/Shrinking_Armor.jpg;Profession=5|Attribute=1|Type=3;Energy=5|Activation=1|Recharge=8
@@ -1197,6 +1207,16 @@ skillId;skillUri;skillIcon;skillInfos;skillStats
 2073;https://wiki.guildwars.com/wiki/Weapon_of_Aggression;https://wiki.guildwars.com/images/f/f2/Weapon_of_Aggression.jpg;Profession=8|Attribute=34|Type=47;Energy=10|Activation=0.25|Recharge=10
 2074;https://wiki.guildwars.com/wiki/Chest_Thumper;https://wiki.guildwars.com/images/5/5d/Chest_Thumper.jpg;Profession=9|Attribute=37|Type=54;Energy=5|Recharge=5
 2075;https://wiki.guildwars.com/wiki/Hasty_Refrain;https://wiki.guildwars.com/images/a/a5/Hasty_Refrain.jpg;Profession=9|Attribute=40|Type=65;Energy=5|Activation=1|Recharge=10
+2091;https://wiki.guildwars.com/wiki/Shadow_Sanctuary;https://www.no-cookie.com/w/images/d/dc/Sanctuaire_de_l%27ombre_%28Kurzick%29.png;Profession=7|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=30
+2092;https://wiki.guildwars.com/wiki/Ether_Nightmare;https://www.no-cookie.com/w/images/8/85/Cauchemar_%C3%A9th%C3%A9r%C3%A9_%28Kurzick%29.png;Profession=5|Attribute=91|Type=72;Energy=10|Activation=3.00|Recharge=25
+2093;https://wiki.guildwars.com/wiki/Signet_of_Corruption;https://www.no-cookie.com/w/images/c/cb/Sceau_de_corruption_%28Kurzick%29.png;Profession=4|Attribute=91|Type=1;Activation=1|Recharge=20
+2094;https://wiki.guildwars.com/wiki/Elemental_Lord;https://www.no-cookie.com/w/images/b/b2/Seigneur_%C3%A9l%C3%A9mentaire_%28Kurzick%29.png;Profession=6|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=45
+2095;https://wiki.guildwars.com/wiki/Selfless_Spirit;https://www.no-cookie.com/w/images/b/b0/Esprit_altruiste_%28Kurzick%29.png;Profession=3|Attribute=91|Type=63;Energy=5|Activation=0.25|Recharge=45
+2096;https://wiki.guildwars.com/wiki/Triple_Shot;https://www.no-cookie.com/w/images/f/fc/Triple_tir_%28Kurzick%29.png;Profession=2|Attribute=91|Type=19;Energy=10|Recharge=10
+2097;https://wiki.guildwars.com/wiki/%22Save_Yourselves!%22;https://www.no-cookie.com/w/images/a/a4/%22Sauvez_votre_peau_%21%22_%28Kurzick%29.png;Profession=1|Attribute=91|Type=57;Adrenaline=8
+2098;https://wiki.guildwars.com/wiki/Aura_of_Holy_Might;https://www.no-cookie.com/w/images/0/02/Aura_de_la_puissance_sacr%C3%A9e_%28Kurzick%29.png;Profession=10|Attribute=91|Type=63;Energy=10|Activation=0.75|Recharge=30
+2099;https://wiki.guildwars.com/wiki/Spear_of_Fury;https://www.no-cookie.com/w/images/e/ec/Javelot_de_furie_%28Kurzick%29.png;Profession=9|Attribute=91|Type=54;Energy=5|Activation=1.00|Recharge=8
+2100;https://wiki.guildwars.com/wiki/Summon_Spirits;https://www.no-cookie.com/w/images/2/2d/Invocation_des_esprits_%28Kurzick%29.png;Profession=8|Attribute=91|Type=69;Energy=5|Activation=0.25|Recharge=5
 2101;https://wiki.guildwars.com/wiki/Critical_Agility;https://wiki.guildwars.com/images/e/e8/Critical_Agility.jpg;Profession=7|Attribute=992|Type=63;Energy=5|Activation=1|Recharge=30
 2102;https://wiki.guildwars.com/wiki/Cry_of_Pain;https://wiki.guildwars.com/images/9/93/Cry_of_Pain.jpg;Profession=5|Attribute=992|Type=69;Energy=10|Activation=0.25|Recharge=15
 2103;https://wiki.guildwars.com/wiki/Necrosis;https://wiki.guildwars.com/images/9/99/Necrosis.jpg;Profession=4|Attribute=992|Type=49;Energy=5|Activation=1|Recharge=2

@@ -1141,6 +1141,15 @@ skillId;skillName;skillDescription
 1814;Regard du Porteur de lumière;Skill. Target demonic servant of Abaddon takes 100 holy damage and is interrupted. This skill strikes one additional foe in the area for each rank of Lightbringer you have attained. This skill is disabled for 15 seconds after it is used.
 1815;Sceau du Porteur de lumière;Signet. If you are within the area of a demonic servant of Abaddon, you gain 4...5 strikes of adrenaline and 22...24 Energy.
 1816;Sceau de Renaissance du Lancier du Soleil;Signet. Resurrect target dead party member at your location with full Health and 10% Energy for each Sunspear rank you have attained. This signet can only be used once per mission unless recharged by a morale boost.
+1948;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+1949;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+1950;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+1951;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+1952;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+1953;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+1954;"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
+1955;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+1957;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
 1986;Assaut vampirique;Dual Attack. Must follow an off-hand attack. If this attack hits, you steal 10...34...40 Health.
 1987;Coup du lotus;Off-Hand Attack. Must follow a lead attack. If it hits, this attack strikes for +10...22...25 damage and you gain 5...17...20 Energy.
 1988;Attaque des crocs dorés;Off-Hand Attack. Must follow a lead attack. If you are under the effects of an enchantment and this attack hits, target foe suffers from a Deep Wound for 5...17...20 seconds.
@@ -1173,6 +1182,7 @@ skillId;skillName;skillDescription
 2016;Lee Sa était énérgétique;Item Spell. Hold Lee Sa's ashes for 5...13...15 seconds. While you hold her ashes, you gain +2 Energy regeneration. When you drop her ashes, you gain +1...8...10 Energy.
 2017;Hymne de lassitude;Chant. For 8 seconds, the next attack skill used by each ally within earshot also causes Weakness for 1...13...16 second[s].
 2018;Hymne d'interruption;Chant. For 1...8...10 seconds, the next attack skill used by each ally within earshot also interrupts an action.
+2051;Invocation des esprits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2052;Crocs de l'ombre;Hex Spell. Shadow Step to target foe. For 10 seconds, this hex does nothing. When this hex ends, you return to your original location and that foe suffers from a Deep Wound for 5...17...20 seconds.
 2053;Risque calculé;Hex Spell. For 3...20...24 seconds, target foe's attacks do +10 damage, but there is a 50% chance that the damage from each attack will be done to that foe instead. (Maximum 15...83...100 damage.)
 2054;Rétraction d'armure;Hex Spell. For 10 seconds, target foe suffers from -1...3...4 Health degeneration. When this hex ends, that foe has Cracked Armor for 5...17...20 seconds.
@@ -1197,6 +1207,16 @@ skillId;skillName;skillDescription
 2073;Arme d'agression;Weapon Spell. For 5...13...15 seconds, you attack 25% faster.
 2074;Cogne poitrine;Spear Attack. If this attack hits a foe with Cracked Armor, that foe suffers a Deep Wound for 5...17...20 seconds.
 2075;Refrain rapide;Echo. For 3...9...11 seconds, target ally moves 25% faster. This echo is reapplied every time a chant or shout ends on that ally.
+2091;Sanctuaire de l'ombre;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+2092;Cauchemar Ethéré;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+2093;Sceau de corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+2094;Seigneur élementaire;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+2095;Esprit altruiste;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+2096;Triple tir;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+2097;"Sauvez votre peau !";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
+2098;Aura de la puissance sacré;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+2099;Javelot de furie;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
+2100;Invocation des esprits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2101;Agilité critique;Enchantment Spell. For 4 seconds and 1 second for each rank of Critical Strikes, you attack 33% faster and gain 15...25 armor. This skill reapplies itself every time you land a critical hit.
 2102;Cri de douleur;Spell. Interrupt target foe's skill. If that foe was suffering from a Mesmer hex, that foe and all foes in the area take 25...50 damage and have 3...5 Health degeneration for 10 seconds.
 2103;Nécrose;Skill. If target foe is suffering from a condition or hex, that foe suffers 60...90 damage.
