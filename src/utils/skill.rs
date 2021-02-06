@@ -75,10 +75,10 @@ fn read_skills(binary: &mut Chars) -> [u32; 8] {
     let skill_chunk_size = string_from_n_chars(binary, 4);
     let skill_chunk_size = unflip_binary(skill_chunk_size) + 8;
     let mut skills = [0u32; 8];
-    for i in 0..8 {
+    for skill in skills.iter_mut() {
         let skill_id = string_from_n_chars(binary, skill_chunk_size as usize);
         let skill_id = unflip_binary(skill_id);
-        skills[i] = skill_id;
+        *skill = skill_id;
     }
     skills
 }

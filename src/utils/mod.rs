@@ -117,17 +117,17 @@ impl SkillInfoStore {
             let skill_infos_raw = x.get(3).unwrap().to_string();
             let skill_infos: HashMap<String, u32> =
                 skill_infos_raw
-                    .split("|")
-                    .filter(|info| !info.starts_with("Special") && info.len() > 0)
+                    .split('|')
+                    .filter(|info| !info.starts_with("Special") && !info.is_empty())
                     .map(|info| {
-                        let v: Vec<&str> = info.split("=").collect();
+                        let v: Vec<&str> = info.split('=').collect();
                         let id = u32::from_str(v[1]).unwrap();
                         (v[0].to_string(), id)
                     }).collect();
             let skill_stats_raw = x.get(4).unwrap().to_string();
             let skill_stats: HashMap<String, String> =
                 skill_stats_raw
-                    .split("|")
+                    .split('|')
                     .filter(|stat| !stat.is_empty())
                     .map(|stat| {
                         let v: Vec<&str> = stat.split('=').collect();
@@ -187,8 +187,8 @@ impl AttributeStore {
         Self(hm)
     }
 
-    pub fn from(&self, attr: &AttributeType) -> Option<&AttributeName> {
-        self.0.get(attr)
+    pub fn from(&self, attr: AttributeType) -> Option<&AttributeName> {
+        self.0.get(&attr)
     }
 }
 
@@ -210,8 +210,8 @@ impl ProfessionStore {
         Self(hm)
     }
 
-    pub fn from(&self, prof: &ProfessionType) -> Option<&ProfessionName> {
-        self.0.get(prof)
+    pub fn from(&self, prof: ProfessionType) -> Option<&ProfessionName> {
+        self.0.get(&prof)
     }
 }
 
@@ -492,7 +492,7 @@ impl GuildsConfig {
     }
 
     fn save(&self) {
-        let func: fn(Vec<&str>) -> Vec<String> = |vec| vec.iter().map(|s| s.to_string()).collect();
+        let func: fn(Vec<&str>) -> Vec<String> = |vec| vec.iter().map(|s| (*s).to_string()).collect();
         let headers = func(vec!["guild", "language", "utc"]);
         let records: Vec<CSVRecord> = self.0.iter()
             .map(|item| {
@@ -511,7 +511,7 @@ impl GuildsConfig {
                 Some(true)
             })
             .or_else(|| {
-                let config = GuildConfigData { language: lng.clone(), utc: 0 };
+                let config = GuildConfigData { language: lng, utc: 0 };
                 self.0.insert(guild, config);
                 Some(true)
             });

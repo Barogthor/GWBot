@@ -8,7 +8,7 @@ pub enum Language {
 }
 
 impl Language {
-    pub fn from(s: &String) -> Result<Self, String> {
+    pub fn from(s: &str) -> Result<Self, String> {
         match s.to_lowercase().as_str() {
             "fr" | "fr_fr" | "french" => Ok(Language::French),
             "en" | "en_US" | "english" => Ok(Language::English),

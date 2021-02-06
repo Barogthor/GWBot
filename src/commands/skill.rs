@@ -37,9 +37,9 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     let mut response = MessageBuilder::new();
     response
         .emoji(emoji_lookup.get(&skill_record.primary_profession.to_string()).unwrap())
-        .push_bold(&professions_store.from(&skill_record.primary_profession).unwrap().0)
+        .push_bold(&professions_store.from(skill_record.primary_profession).unwrap().0)
         .push(" / ")
-        .push_bold(&professions_store.from(&skill_record.secondary_profession).unwrap().0)
+        .push_bold(&professions_store.from(skill_record.secondary_profession).unwrap().0)
         .emoji(emoji_lookup.get(&skill_record.secondary_profession.to_string()).unwrap())
         .push("--")
         .push_mono(code_skill)
@@ -47,7 +47,7 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     let mut count = skill_record.attributes.len();
     for (attr, points) in skill_record.attributes {
         count -= 1;
-        response.push(format!("{}: ", attributes_store.from(&attr).unwrap().0)).push_bold(points);
+        response.push(format!("{}: ", attributes_store.from(attr).unwrap().0)).push_bold(points);
         if count>0 {
             response.push(", ");
         }
@@ -55,7 +55,7 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     response.push_line("");
     let empty_skill = skills_store.lang_and_id(lang, 0).unwrap();
     for i in 0..8 {
-        let skill = skills_store.lang_and_id(lang, skill_record.skills[i]).unwrap_or_else(|| empty_skill.clone());
+        let skill = skills_store.lang_and_id(lang, skill_record.skills[i]).unwrap_or_else(|| empty_skill);
         response.push(format!("Skill {}: ", i + 1)).push_bold_line(&skill.0.name);
     }
 

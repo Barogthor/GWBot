@@ -40,7 +40,7 @@ async fn event(ctx: &Context, msg: &Message) -> CommandResult {
     if running_events.is_empty() {
         response.push_line(localized_messages.event_no_running());
     } else {
-        running_events.iter().for_each(|evt| print_running_event(&mut response, evt, localized_events, localized_messages, &now));
+        running_events.iter().for_each(|evt| print_running_event(&mut response, *evt, localized_events, localized_messages, &now));
 
         if let Some(event_period) = next_event {
             print_next_event(&mut response, event_period, localized_events, localized_messages, &now);
@@ -53,7 +53,7 @@ async fn event(ctx: &Context, msg: &Message) -> CommandResult {
     Ok(())
 }
 
-fn print_running_event(response: &mut MessageBuilder, event_period: &&&SpecialEventPeriod, localized_events: &SpecialEventStore, localized_messages: &I18nMessageStore, now: &DateTime<Utc>) {
+fn print_running_event(response: &mut MessageBuilder, event_period: &SpecialEventPeriod, localized_events: &SpecialEventStore, localized_messages: &I18nMessageStore, now: &DateTime<Utc>) {
     let event = localized_events.get_from_id(event_period.0).unwrap();
     let event_range: &DateTimeRange<_> = &event_period.1;
     response.push_bold(&event.name);
@@ -64,7 +64,7 @@ fn print_running_event(response: &mut MessageBuilder, event_period: &&&SpecialEv
     response.push_line(format!(" ({})\n", event_range.1.format(DATETIME_FORMAT)));
 }
 
-fn print_next_event(response: &mut MessageBuilder, event_period: &&&SpecialEventPeriod, localized_events: &SpecialEventStore, localized_messages: &I18nMessageStore, now: &DateTime<Utc>) {
+fn print_next_event(response: &mut MessageBuilder, event_period: &SpecialEventPeriod, localized_events: &SpecialEventStore, localized_messages: &I18nMessageStore, now: &DateTime<Utc>) {
     let event = localized_events.get_from_id(event_period.0).unwrap();
     let event_range: &DateTimeRange<_> = &event_period.1;
     response.push(localized_messages.event_next());
