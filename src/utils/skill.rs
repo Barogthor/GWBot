@@ -139,7 +139,7 @@ mod test {
 
     fn record_to_translated(record: SkillCodeRecord, skills_store: &SKillI18nStore) -> SkillCodeRecordTranslated {
         let mut skills_name = vec![];
-        record.skills.iter().enumerate().for_each(|(i, id)| {
+        record.skills.iter().for_each(|id| {
             let skill = skills_store.lang_and_id(Language::English, *id).unwrap();
             skills_name.push(skill.0.name.clone());
         });

@@ -35,7 +35,7 @@ async fn lang(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
             println!("Error sending message: {:?}", why);
         }
     } else {
-        msg.channel_id.say(&ctx.http, "Can't configure outside a server").await;
+        msg.channel_id.say(&ctx.http, "Can't configure outside a server").await.ok();
     }
     Ok(())
 }

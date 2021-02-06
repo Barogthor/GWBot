@@ -9,7 +9,7 @@ use serenity::model::guild::Emoji;
 use serenity::utils::MessageBuilder;
 
 use crate::get_bot_datas;
-use crate::utils::{AttributeStore, I18nMessageStore, ProfessionStore, SKillI18nStore};
+use crate::utils::{AttributeStore, ProfessionStore, SKillI18nStore};
 use crate::utils::skill::SkillCodeParser;
 
 #[command]
@@ -19,10 +19,12 @@ async fn skill(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
 
     let channel = msg.channel_id.to_channel(&ctx).await?.guild();
     let guild = channel.and_then(|channel| Some(channel.guild_id.0)).unwrap_or(0);
+    println!("guild id: {}", guild);
+    println!("env guild id: {}", env::var("HOME_GUILD").expect("missing env HOME_GUILD"));
     let datas_lock = get_bot_datas(ctx).await;
     let read_data = &datas_lock.read().await;
     let (lang, _) = read_data.guilds_config.get_guild_config(guild);
-    let i18n_messages: &I18nMessageStore = &read_data.i18n_messages.lng(lang).unwrap();
+    // let i18n_messages: &I18nMessageStore = &read_data.i18n_messages.lng(lang).unwrap();
     let skills_store: &SKillI18nStore = &read_data.skills;
     let attributes_store: &AttributeStore = &read_data.attributes.lng(lang).unwrap();
     let professions_store: &ProfessionStore = &read_data.professions.lng(lang).unwrap();

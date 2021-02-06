@@ -40,16 +40,16 @@ impl CSVFile {
         let file = File::create(path).or_else(|_| File::open(path));
         file.and_then(|mut f| {
             let headers = format!("{}\n", headers.join(";"));
-            f.write_all(headers.as_bytes());
+            f.write_all(headers.as_bytes()).ok();
             records.iter()
                 .map(|record| record.join(";"))
                 .map(|record| format!("{}\n", record))
                 .for_each(|record| {
-                    f.write_all(record.as_bytes());
+                    f.write_all(record.as_bytes()).ok();
                 });
 
             Ok(())
-        });
+        }).ok();
     }
 
     fn parse(path: &str) -> Result<Self, ()> {
@@ -128,9 +128,9 @@ impl SkillInfoStore {
             let skill_stats: HashMap<String, String> =
                 skill_stats_raw
                     .split("|")
-                    .filter(|stat| stat.len() > 0)
+                    .filter(|stat| !stat.is_empty())
                     .map(|stat| {
-                        let v: Vec<&str> = stat.split("=").collect();
+                        let v: Vec<&str> = stat.split('=').collect();
                         (v[0].to_string(), v[1].to_string())
                     }).collect();
             store.0.insert(id, SkillInfo { skill_uri, skill_icon, skill_infos, skill_stats });
@@ -162,7 +162,7 @@ impl SKillI18nStore {
         self.0.get(&lng)
             .map(|store| store.get_from_id(id))
             .and_then(|skill| skill)
-            .map_or(None, |skill| {
+            .and_then(|skill| {
                 let info = self.1.get_from_id(id);
                 Some((skill, info))
             })
