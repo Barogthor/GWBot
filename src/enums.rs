@@ -52,7 +52,7 @@ impl From<u32> for ProfessionType{
             8  => ProfessionType::Ritualist,
             9  => ProfessionType::Paragon,
             10 => ProfessionType::Dervish,
-            _ => panic!("unknown profession")
+            _ => panic!("unknown profession '{}'", n)
         }
     }
 }
@@ -172,7 +172,7 @@ impl From<u32> for AttributeType{
             96 => AttributeType::Deldrimor,
             97 => AttributeType::Asura,
             999 => AttributeType::Other,
-            _ => panic!("Unknown attribute")
+            _ => panic!("Unknown attribute '{}'", n)
         }
     }
 }

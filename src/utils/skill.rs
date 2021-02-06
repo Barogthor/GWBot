@@ -119,31 +119,80 @@ impl SkillCodeParser {
     }
 }
 
-
+// https://wiki.guildwars.com/wiki/Widget:Build_template_decoder
 #[cfg(test)]
 mod test {
-    use crate::enums::AttributeType::{EnergyStorage, FireMagic, ShadowArts};
-    use crate::enums::ProfessionType::{Assassin, Elementalist};
+    use crate::BotData;
+    use crate::enums::{AttributeType, Language, ProfessionType};
+    use crate::enums::AttributeType::*;
+    use crate::enums::ProfessionType::*;
     use crate::utils::skill::{SkillCodeParser, SkillCodeRecord};
+    use crate::utils::SKillI18nStore;
+
+    #[derive(Debug, PartialEq)]
+    pub struct SkillCodeRecordTranslated {
+        pub primary_profession: ProfessionType,
+        pub secondary_profession: ProfessionType,
+        pub attributes: Vec<(AttributeType, u32)>,
+        pub skills: Vec<String>,
+    }
+
+    fn record_to_translated(record: SkillCodeRecord, skills_store: &SKillI18nStore) -> SkillCodeRecordTranslated {
+        let mut skills_name = vec![];
+        record.skills.iter().enumerate().for_each(|(i, id)| {
+            let skill = skills_store.lang_and_id(Language::English, *id).unwrap();
+            skills_name.push(skill.0.name.clone());
+        });
+        SkillCodeRecordTranslated {
+            primary_profession: record.primary_profession,
+            secondary_profession: record.secondary_profession,
+            attributes: record.attributes,
+            skills: skills_name,
+        }
+    }
+
 
     #[test]
     pub fn full_skill_set() {
+        let datas = BotData::init();
         let code_skill = "OgdCoMzjyAYg7OiDDeBuQAA".to_string();
-        let skill_record = SkillCodeParser::parse(code_skill);
-        let expected = SkillCodeRecord { primary_profession: Elementalist, secondary_profession: Assassin, attributes: vec![(FireMagic, 12), (EnergyStorage, 12)], skills: [202, 192, 952, 1095, 195, 188, 184, 2] };
-        assert_eq!(skill_record, expected);
+        let skills = vec!["Glyph of Sacrifice".to_string(), "Meteor Shower".to_string(), "Death's Charge".to_string(), "Star Burst".to_string(), "Lava Font".to_string(), "Flame Burst".to_string(), "Fire Attunement".to_string(), "Resurrection Signet".to_string()];
+        let expected = SkillCodeRecordTranslated { primary_profession: Elementalist, secondary_profession: Assassin, attributes: vec![(FireMagic, 12), (EnergyStorage, 12)], skills };
+        let actual = SkillCodeParser::parse(code_skill);
+        let actual = record_to_translated(actual, &datas.skills);
+        assert_eq!(actual, expected);
     }
 
     #[test]
     pub fn skill_holed_set() {
+        let datas = BotData::init();
         let code_skill = "OgdR8ZaCC3xmkUMCCAAAIVE".to_string();
-        let expected = SkillCodeRecord {
+        let skills = vec!["Dash".to_string(), "Death's Charge".to_string(), "\"You Move Like a Dwarf!\"".to_string(), "Light of Deldrimor".to_string(), "Unseen Fury".to_string(), "No Skill".to_string(), "No Skill".to_string(), "\"By Ural's Hammer!\"".to_string()];
+        let expected = SkillCodeRecordTranslated {
             primary_profession: Elementalist,
             secondary_profession: Assassin,
             attributes: vec![(ShadowArts, 12)],
-            skills: [1043, 952, 2358, 2212, 1041, 0, 0, 2217],
+            skills,
         };
         let actual = SkillCodeParser::parse(code_skill);
+        let actual = record_to_translated(actual, &datas.skills);
         assert_eq!(expected, actual);
     }
+
+    #[test]
+    pub fn skill_seed_mindbender_lightdeldrimor() {
+        let datas = BotData::init();
+        let code_skill = "OwYT4yXCZCgYtcZIHMlAAgUMeAA".to_string();
+        let skills = vec!["Blessed Aura".to_string(), "Mindbender".to_string(), "Glyph of Renewal".to_string(), "Seed of Life".to_string(), "Blessed Signet".to_string(), "No Skill".to_string(), "Light of Deldrimor".to_string(), "Life Bond".to_string()];
+        let expected = SkillCodeRecordTranslated {
+            primary_profession: Monk,
+            secondary_profession: Elementalist,
+            attributes: vec![(SmitingPrayers, 9), (ProtectionPrayers, 9), (DivineFavor, 12)],
+            skills,
+        };
+        let actual = SkillCodeParser::parse(code_skill);
+        let actual = record_to_translated(actual, &datas.skills);
+        assert_eq!(expected, actual);
+    }
+    //rajouter test skill pve lulu/kuku et co et inconnu
 }

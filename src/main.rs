@@ -92,7 +92,8 @@ async fn main() {
     {
         // https://docs.rs/serenity/0.8.7/serenity/client/struct.Client.html#structfield.data
         let mut data = client.data.write().await;
-        data.insert::<BotData>(BotData::init());
+        let bot_datas = Arc::new(tokio::sync::RwLock::new(BotData::init()));
+        data.insert::<BotData>(bot_datas);
     }
 
 
@@ -131,7 +132,7 @@ pub struct BotData {
 }
 
 impl BotData {
-    pub fn init() -> Arc<tokio::sync::RwLock<Self>> {
+    pub fn init() -> Self {
         let special_events = {
             let mut m = HashMap::new();
             m.insert(Language::English, SpecialEventStore::from_csv("datas/special_events_en_US.csv"));
@@ -206,7 +207,7 @@ impl BotData {
             m
         };
 
-        let datas = Self {
+        Self {
             zaishen_vanquish: I18nStore(zaishen_vanquish_quests),
             zaishen_bounty: I18nStore(zaishen_bounty_quests),
             zaishen_mission: I18nStore(zaishen_mission_quests),
@@ -219,9 +220,9 @@ impl BotData {
             guilds_config: GuildsConfig::load(),
             skills: SKillI18nStore::new(),
             attributes: I18nStore(attributes),
-            professions: I18nStore(professions)
-        };
-        Arc::new(tokio::sync::RwLock::new(datas))
+            professions: I18nStore(professions),
+        }
+        // Arc::new(tokio::sync::RwLock::new(datas))
     }
 }
 
