@@ -1207,15 +1207,15 @@ skillId;skillName;skillDescription
 2073;Weapon of Aggression;Weapon Spell. For 5...13...15 seconds, you attack 25% faster.
 2074;Chest Thumper;Spear Attack. If this attack hits a foe with Cracked Armor, that foe suffers a Deep Wound for 5...17...20 seconds.
 2075;Hasty Refrain;Echo. For 3...9...11 seconds, target ally moves 25% faster. This echo is reapplied every time a chant or shout ends on that ally.
-2091;Shadow Sanctuary;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
-2092;Ether Nightmare;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
-2093;Signet of Corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
-2094;Elemental Lord;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
-2095;Selfless Spirit;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
-2096;Triple Shot;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
-2097;"Save Yourselves!";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
-2098;Aura of Holy Might;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
-2099;Spear of Fury;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
+2091;Shadow Sanctuary;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+2092;Ether Nightmare;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+2093;Signet of Corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+2094;Elemental Lord;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+2095;Selfless Spirit;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+2096;Triple Shot;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+2097;"Save Yourselves!";Shout. For 4...6 seconds, all other party members gain +100 armor.
+2098;Aura of Holy Might;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+2099;Spear of Fury;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
 2100;Summon Spirits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2101;Critical Agility;Enchantment Spell. For 4 seconds and 1 second for each rank of Critical Strikes, you attack 33% faster and gain 15...25 armor. This skill reapplies itself every time you land a critical hit.
 2102;Cry of Pain;Spell. Interrupt target foe's skill. If that foe was suffering from a Mesmer hex, that foe and all foes in the area take 25...50 damage and have 3...5 Health degeneration for 10 seconds.
