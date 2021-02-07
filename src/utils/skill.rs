@@ -122,6 +122,9 @@ impl SkillCodeParser {
 // https://wiki.guildwars.com/wiki/Widget:Build_template_decoder
 #[cfg(test)]
 mod test {
+    use image::{DynamicImage, GenericImage};
+    use image::io::Reader as ImageReader;
+
     use crate::BotData;
     use crate::enums::{AttributeType, Language, ProfessionType};
     use crate::enums::AttributeType::*;
@@ -195,4 +198,16 @@ mod test {
         assert_eq!(expected, actual);
     }
     //rajouter test skill pve lulu/kuku et co et inconnu
+
+    #[test]
+    pub fn test_image_build() {
+        let ids = [1043, 952, 2358, 2212, 1041, 0, 0, 2217];
+        let mut build_image = DynamicImage::new_rgb8(64 * 8, 64);
+        for (i, id) in ids.iter().enumerate() {
+            let image = ImageReader::open(format!("cache/{}.jpg", id)).unwrap().decode().unwrap();
+            let mut skill_part = build_image.sub_image((i * 64) as u32, 0, 64, 64);
+            skill_part.copy_from(&image, 0, 0).ok();
+        }
+        build_image.save("test.jpg").ok();
+    }
 }
