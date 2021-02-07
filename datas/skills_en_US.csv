@@ -190,7 +190,7 @@ skillId;skillName;skillDescription
 196;Searing Heat;Spell. Cause Searing Heat at target foe's location. For 5 seconds, foes near this location are struck for 10...34...40 fire damage each second. When Searing Heat ends, foes in the area of effect are set on fire for 3 seconds.
 197;Fire Storm;Spell. Create a Fire Storm at target foe's location. For 10 seconds, foes adjacent to that location are struck for 5...29...35 fire damage each second.
 198;Glyph of Elemental Power;Glyph. For 25 seconds, your elemental attributes are boosted by 2 for your next 10 spells.
-199;Glyph of Energy;Elite Glyph. Your next 1...3...3 spell[s] [does/do] not cause Overcast and cost[s] [sic] 10...22...25 less Energy to cast. Your elemental attributes are increased by 1...2...2.
+199;Glyph of Energy;Elite Glyph. Your next 1...3...3 spell[s] do[es] not cause Overcast and cost[s] 10...22...25 less Energy to cast. Your elemental attributes are increased by 1...2...2.
 200;Glyph of Lesser Energy;Glyph. For the next 15 seconds, your next 2 spells cost 10...16...18 less Energy to cast.
 201;Glyph of Concentration;Glyph.  For 15 seconds, your next 1 spell cannot be interrupted and ignores the effects of being Dazed.
 202;Glyph of Sacrifice;Glyph. For 15 seconds, your next spell casts instantly, but it takes an additional 30 seconds to recharge. Ends prematurely if you use a non-spell skill.
@@ -1141,15 +1141,15 @@ skillId;skillName;skillDescription
 1814;Lightbringer's Gaze;Skill. Target demonic servant of Abaddon takes 100 holy damage and is interrupted. This skill strikes one additional foe in the area for each rank of Lightbringer you have attained. This skill is disabled for 15 seconds after it is used.
 1815;Lightbringer Signet;Signet. If you are within the area of a demonic servant of Abaddon, you gain 4...5 strikes of adrenaline and 22...24 Energy.
 1816;Sunspear Rebirth Signet;Signet. Resurrect target dead party member at your location with full Health and 10% Energy for each Sunspear rank you have attained. This signet can only be used once per mission unless recharged by a morale boost.
-1948;Shadow Sanctuary;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
-1949;Ether Nightmare;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
-1950;Signet of Corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
-1951;Elemental Lord;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
-1952;Selfless Spirit;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
-1953;Triple Shot;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
-1954;"Save Yourselves!";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
-1955;Aura of Holy Might;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
-1957;Spear of Fury;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
+1948;Shadow Sanctuary;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+1949;Ether Nightmare;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+1950;Signet of Corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+1951;Elemental Lord;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+1952;Selfless Spirit;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+1953;Triple Shot;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+1954;"Save Yourselves!";Shout. For 4...6 seconds, all other party members gain +100 armor.
+1955;Aura of Holy Might;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+1957;Spear of Fury;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
 1986;Vampiric Assault;Dual Attack. Must follow an off-hand attack. If this attack hits, you steal 10...34...40 Health.
 1987;Lotus Strike;Off-Hand Attack. Must follow a lead attack. If it hits, this attack strikes for +10...22...25 damage and you gain 5...17...20 Energy.
 1988;Golden Fang Strike;Off-Hand Attack. Must follow a lead attack. If you are under the effects of an enchantment and this attack hits, target foe suffers from a Deep Wound for 5...17...20 seconds.

@@ -190,7 +190,7 @@ skillId;skillName;skillDescription
 196;Chaleur de fournaise;Spell. Cause Searing Heat at target foe's location. For 5 seconds, foes near this location are struck for 10...34...40 fire damage each second. When Searing Heat ends, foes in the area of effect are set on fire for 3 seconds.
 197;Tempête de feu;Spell. Create a Fire Storm at target foe's location. For 10 seconds, foes adjacent to that location are struck for 5...29...35 fire damage each second.
 198;Glyphe de pouvoir élémentaire;Glyph. For 25 seconds, your elemental attributes are boosted by 2 for your next 10 spells.
-199;Glyphe d'énergie;Elite Glyph. Your next 1...3...3 spell[s] [does/do] not cause Overcast and cost[s] [sic] 10...22...25 less Energy to cast. Your elemental attributes are increased by 1...2...2.
+199;Glyphe d'énergie;Elite Glyph. Your next 1...3...3 spell[s] do[es] not cause Overcast and cost[s] 10...22...25 less Energy to cast. Your elemental attributes are increased by 1...2...2.
 200;Glyphe d'énergie mineure;Glyph. For the next 15 seconds, your next 2 spells cost 10...16...18 less Energy to cast.
 201;Glyphe de concentration;Glyph.  For 15 seconds, your next 1 spell cannot be interrupted and ignores the effects of being Dazed.
 202;Glyphe de sacrifice;Glyph. For 15 seconds, your next spell casts instantly, but it takes an additional 30 seconds to recharge. Ends prematurely if you use a non-spell skill.
@@ -1207,15 +1207,15 @@ skillId;skillName;skillDescription
 2073;Arme d'agression;Weapon Spell. For 5...13...15 seconds, you attack 25% faster.
 2074;Cogne poitrine;Spear Attack. If this attack hits a foe with Cracked Armor, that foe suffers a Deep Wound for 5...17...20 seconds.
 2075;Refrain rapide;Echo. For 3...9...11 seconds, target ally moves 25% faster. This echo is reapplied every time a chant or shout ends on that ally.
-2091;Sanctuaire de l'ombre;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
-2092;Cauchemar Ethéré;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
-2093;Sceau de corruption;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
-2094;Seigneur élementaire;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
-2095;Esprit altruiste;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
-2096;Triple tir;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
-2097;"Sauvez votre peau !";"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
-2098;Aura de la puissance sacré;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
-2099;Javelot de furie;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
+2091;Sanctuaire de l'ombre;Enchantment Spell. You are Blinded for 5 seconds. For 10 seconds, you gain +7...10 Health regeneration and +40 armor.
+2092;Cauchemar Ethéré;Hex Spell. Target foe loses 5...8 Energy. For each point of Energy lost in this way, that foe and all foes in the area suffer -1 Health degeneration for 10 seconds.
+2093;Sceau de corruption;Signet. Target foe and all nearby foes take 20...30 damage. For each affected foe suffering from a condition or hex, you gain 2 Energy (maximum 12...20 Energy).
+2094;Seigneur élementaire;Enchantment Spell. For 40...60 seconds, your elemental attributes are boosted by 1. Each time you cast a spell, you gain 1 Energy for every 10 ranks of Energy Storage and are healed for 100...300% of the spell's Energy cost.
+2095;Esprit altruiste;Enchantment Spell. For 15...20 seconds, spells you cast that target another ally cost 3 less energy.
+2096;Triple tir;Bow Attack. Shoot 3 arrows simultaneously at target foe. These arrows deal 40...25% less damage.
+2097;"Sauvez votre peau !";Shout. For 4...6 seconds, all other party members gain +100 armor.
+2098;Aura de la puissance sacré;Enchantment Spell. For 45 seconds, you deal 20...25 holy damage to all adjacent foes whenever you lose a Dervish enchantment.
+2099;Javelot de furie;Spear Attack. This attack deals +30...40 damage. If this attack hits a foe suffering from a condition, you gain 3...6 strikes of adrenaline.
 2100;Invocation des esprits;Spell. All spirits you control Shadow Step to your location, and gain 60...100 Health.
 2101;Agilité critique;Enchantment Spell. For 4 seconds and 1 second for each rank of Critical Strikes, you attack 33% faster and gain 15...25 armor. This skill reapplies itself every time you land a critical hit.
 2102;Cri de douleur;Spell. Interrupt target foe's skill. If that foe was suffering from a Mesmer hex, that foe and all foes in the area take 25...50 damage and have 3...5 Health degeneration for 10 seconds.
