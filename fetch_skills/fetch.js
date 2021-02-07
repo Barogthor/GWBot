@@ -61,94 +61,42 @@ attributeMap["Earth Prayers"] = 43
 attributeMap["Mysticism"] = 44
 
 const typeMap = {}
-typeMap["Stance"] = 0
-typeMap["Signet (PvE-only)"] = 1
-typeMap["Elite enchantment spell"] = 2
-typeMap["Hex spell"] = 3
-typeMap["Elite hex spell"] = 4
-typeMap["Spell"] = 5
-typeMap["Elite signet"] = 6
-typeMap["Elite spell"] = 7
-typeMap["Enchantment spell"] = 8
-typeMap["Touch skill"] = 9
-typeMap["Ward spell"] = 10
-typeMap["Signet"] = 11
-typeMap["Melee attack"] = 12
-typeMap["Hammer attack"] = 13
-typeMap["Sword attack"] = 14
-typeMap["Axe attack"] = 15
-typeMap["Shout"] = 16
-typeMap["Glyph"] = 17
-typeMap["Elite stance"] = 18
-typeMap["Bow attack"] = 19
-typeMap["Skill"] = 20
-typeMap["Well spell"] = 21
-typeMap["Elite well spell"] = 22
-typeMap["Elite bow attack"] = 23
-typeMap["Elite skill"] = 24
-typeMap["Trap"] = 25
-typeMap["Elite glyph"] = 26
-typeMap["Pet attack"] = 27
-typeMap["Preparation"] = 28
-typeMap["Elite trap"] = 29
-typeMap["Nature ritual"] = 30
-typeMap["Lead attack"] = 31
-typeMap["Elite ward spell"] = 32
-typeMap["Elite off-hand attack"] = 33
-typeMap["Elite item spell"] = 34
-typeMap["Elite axe attack"] = 35
-typeMap["Elite hammer attack"] = 36
-typeMap["Elite preparation"] = 37
-typeMap["Elite melee attack"] = 38
-typeMap["Binding ritual"] = 39
-typeMap["Elite shout"] = 40
-typeMap["Elite sword attack"] = 41
-typeMap["Item spell"] = 42
-typeMap["Elite pet attack"] = 43
-typeMap["Off-hand attack"] = 44
-typeMap["Dual attack"] = 45
-typeMap["Elite nature ritual"] = 46
-typeMap["Weapon spell"] = 47
-typeMap["Elite touch skill"] = 48
-typeMap["Skill (PvE-only)"] = 49
-typeMap["Elite binding ritual"] = 50
-typeMap["Elite weapon spell"] = 51
-typeMap["Scythe attack"] = 52
-typeMap["Flash enchantment spell"] = 53
-typeMap["Spear attack"] = 54
-typeMap["Elite chant"] = 55
-typeMap["Chant"] = 56
-typeMap["Shout (PvE-only)"] = 57
-typeMap["Elite form (PvE-only)"] = 58
-typeMap["Ward spell (PvE-only)"] = 59
-typeMap["Ebon vanguard ritual (PvE-only)"] = 60
-typeMap["Elite flash enchantment spell"] = 61
-typeMap["Elite form"] = 62
-typeMap["Enchantment spell (PvE-only)"] = 63
-typeMap["Elite scythe attack"] = 64
-typeMap["Echo"] = 65
-typeMap["Elite spear attack"] = 66
-typeMap["Elite stance (PvE-only)"] = 67
-typeMap["Elite dual attack"] = 68
-typeMap["Spell (PvE-only)"] = 69
-typeMap["Ranged attack (PvE-only)"] = 70
-typeMap["Melee attack (PvE-only)"] = 71
-typeMap["Hex spell (PvE-only)"] = 72
-typeMap["Binding ritual (PvE-only)"] = 73
-typeMap["Trap (PvE-only)"] = 74
-typeMap["Elite echo"] = 75
-typeMap["Elite echo (PvE-only)"] = 76
-typeMap["Elite ward spell (PvE-only)"] = 77
-typeMap["Elite shout (PvE-only)"] = 78
-typeMap["Elite weapon spell (PvE-only)"] = 79
-typeMap["Stance (PvE-only)"] = 80
-typeMap["Elite enchantment spell (PvE-only)"] = 81
-typeMap["Elite melee attack (PvE-only)"] = 82
-typeMap["Touch skill (PvE-only)"] = 83
-typeMap["Weapon spell (PvE-only)"] = 84
-typeMap["Elite skill (PvE-only)"] = 85
+typeMap['spell'] = 0
+typeMap['signet'] = 1
+typeMap['hex spell'] = 2
+typeMap['ward spell'] = 3
+typeMap['bow attack'] = 4
+typeMap['enchantment spell'] = 5
+typeMap['shout'] = 6
+typeMap['stance'] = 7
+typeMap['hammer attack'] = 8
+typeMap['binding ritual'] = 9
+typeMap['lead attack'] = 10
+typeMap['trap'] = 11
+typeMap['preparation'] = 12
+typeMap['spear attack'] = 13
+typeMap['nature ritual'] = 14
+typeMap['touch skill'] = 15
+typeMap['item spell'] = 16
+typeMap['dual attack'] = 17
+typeMap['weapon spell'] = 18
+typeMap['axe attack'] = 19
+typeMap['off-hand attack'] = 20
+typeMap['flash enchantment spell'] = 21
+typeMap['melee attack'] = 22
+typeMap['echo'] = 23
+typeMap['scythe attack'] = 24
+typeMap['chant'] = 25
+typeMap['sword attack'] = 26
+typeMap['well spell'] = 27
+typeMap['skill'] = 28
+typeMap['pet attack'] = 29
+typeMap['form'] = 30
+typeMap['glyph'] = 31
+typeMap['ranged attack'] = 32
+typeMap['ebon vanguard ritual'] = 33
 
-let countTypes = 86;
+let countTypes = 0;
 const serializeStats = stat => `${stat.type}=${stat.value}`;
 const serializeSkillInfo = skillInfo => {
     if (skillInfo.type === "Profession")
@@ -156,8 +104,8 @@ const serializeSkillInfo = skillInfo => {
     if (skillInfo.type === "Attribute")
         return `${skillInfo.type}=${attributeMap[skillInfo.value]}`
     if (skillInfo.type === "Type") {
-        let value = skillInfo.value.trim().replace(/\s+/g, " ")
-        value = value.substr(0, 1).toUpperCase() + value.substr(1)
+        let value = skillInfo.value.trim().replace(/\s+/g, " ").toLowerCase();
+        // value = value.substr(0, 1).toUpperCase() + value.substr(1)
         if (typeMap[value] === undefined) {
             typeMap[value] = countTypes;
             countTypes++;
@@ -174,7 +122,7 @@ const serializeArray = array => {
 async function saveCsv(fr_skills, en_skills, skills) {
     const raw_fr = "skillId;skillName;skillDescription\n" + serializeArray(fr_skills)
     const raw_en = "skillId;skillName;skillDescription\n" + serializeArray(en_skills)
-    const raw_skill = "skillId;skillUri;skillIcon;skillInfos;skillStats\n" + serializeArray(skills)
+    const raw_skill = "skillId;skillUri;skillIcon;skillInfos;skillStats;onlyPve;elite\n" + serializeArray(skills)
     // console.log(raw_skill);
     await fs.writeFile(__dirname + '/skills_fr_FR_bis.csv', raw_fr, {encoding: 'utf8'})
     await fs.writeFile(__dirname + '/skills_en_US_bis.csv', raw_en, {encoding: 'utf8'})
@@ -183,24 +131,27 @@ async function saveCsv(fr_skills, en_skills, skills) {
 
 
 const prepareSave = ({fr_skills, en_skills, skills, new_datas}) => {
+
     new_datas.forEach((record, i) => {
         const fr_skill = fr_skills.find(r => r[0] === record.id)
         const en_skill = en_skills.find(r => r[0] === record.id)
         const skill = skills.find(r => r[0] === record.id)
         skill[2] = record.imgUrl
         // console.log(skill, fr_skill, record)
-        fr_skill.push(record.description)
-        en_skill.push(record.description)
+        fr_skill[2] = (record.description)
+        en_skill[2] = (record.description)
         const skillInfos = record.skillInfos.map(serializeSkillInfo).join("|")
         const stats = record.stats.map(serializeStats).join("|")
-        skill.push(skillInfos)
-        skill.push(stats)
-        // console.log(skill);
+        skill[3] = skillInfos
+        skill[4] = stats
+        skill.push(record.pve)
+        skill.push(record.elite)
+        // console.log(skill, record, record.skillInfos.map(serializeSkillInfo).join("|"));
         // console.log(record, stats, skillInfos);
         // console.log(fr_skills[i], en_skills[i]);
     })
     saveCsv(fr_skills, en_skills, skills)
-    console.log(typeMap);
+    // console.log(typeMap);
 
 }
 
@@ -209,8 +160,10 @@ const searchSkillInfo = (record, html) => {
     const root = html_parser.parse(html).querySelector("#bodyContent");
     const img = root.querySelector('.skill-image img');
     const skill_stats = root.querySelectorAll(".skill-stats li");
-    const imgUrl = "https://wiki.guildwars.com" + img.attributes.src;
+    const imgUrl = record[2];
     const stats = [];
+    let pve = false;
+    let elite = false;
     skill_stats.forEach(stat => {
         try {
             const statValue = stat.childNodes[0].rawText
@@ -228,8 +181,23 @@ const searchSkillInfo = (record, html) => {
         const value = rawSkillInfo[i + 1];
         skillInfos.push({type, value})
     }
+    const typeRec = skillInfos.find(skillInfo => skillInfo.type === "Type")
+    if (typeRec) {
+        const isPve = typeRec.value.includes("(PvE-only)")
+        const isElite = typeRec.value.includes("Elite")
+        if (isPve) {
+            typeRec.value = typeRec.value.replace(/\(PvE-only\)/g, "")
+            // skillInfos.push({type: "onlypve", value:"true"})
+            pve = true;
+        }
+        if (isElite) {
+            typeRec.value = typeRec.value.replace(/Elite/g, "")
+            // skillInfos.push({type: "elite", value:"true"})
+            elite = true;
+        }
+    }
     let description = root.querySelectorAll("#mw-content-text .mw-parser-output .noexcerpt")[0].text.replace(/\n/g, "");
-    return {id: record[0], stats, skillInfos, description, imgUrl}
+    return {id: record[0], stats, skillInfos, description, imgUrl, pve, elite}
 }
 
 const compare = (a, b) => {
@@ -254,6 +222,7 @@ const fetchSkill = context => record => {
                 const new_skill_data = searchSkillInfo(record, rawData)
                 context.new_datas.push(new_skill_data);
                 context.counter--
+                // if (context.counter === context.skills.length-3) {
                 if (context.counter === 0) {
                     // context.new_datas.sort(compare)
                     prepareSave(context)
