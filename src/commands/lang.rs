@@ -1,7 +1,7 @@
-use serenity::client::Context;
 use serenity::framework::standard::{Args, CommandResult};
 use serenity::framework::standard::macros::command;
 use serenity::model::channel::Message;
+use serenity::prelude::*;
 use serenity::utils::MessageBuilder;
 
 use crate::enums::Language;

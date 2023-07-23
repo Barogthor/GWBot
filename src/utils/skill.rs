@@ -122,6 +122,10 @@ impl SkillCodeParser {
 // https://wiki.guildwars.com/wiki/Widget:Build_template_decoder
 #[cfg(test)]
 mod test {
+    use std::fs;
+    use std::fs::File;
+    use std::io::Read;
+
     use image::{DynamicImage, GenericImage};
     use image::io::Reader as ImageReader;
 
@@ -209,5 +213,17 @@ mod test {
             skill_part.copy_from(&image, 0, 0).ok();
         }
         build_image.save("test.jpg").ok();
+    }
+
+    #[test]
+    pub fn test_dataset_skill() {
+        let dataset_paths = fs::read_dir("./dataset_skill_test").expect("Dataset test directory missing or unvalid path.");
+        for path in dataset_paths {
+            let mut file_skill = File::open(path.unwrap().path()).unwrap();
+            let mut skill = String::new();
+            file_skill.read_to_string(&mut skill).expect("");
+            println!("Skill code : {:?}", skill);
+            SkillCodeParser::parse(skill);
+        }
     }
 }

@@ -6,12 +6,12 @@ use std::sync::Arc;
 
 use dotenv::dotenv;
 use serenity::async_trait;
-use serenity::client::{Client, Context, EventHandler};
-use serenity::framework::standard::{
-    macros::group,
-};
+use serenity::Client;
+use serenity::framework::standard::macros::{group, hook};
 use serenity::framework::StandardFramework;
-use serenity::model::prelude::Ready;
+use serenity::model::gateway::*;
+use serenity::model::prelude::Message;
+use serenity::prelude::*;
 use serenity::prelude::TypeMapKey;
 
 use commands::{
@@ -50,6 +50,13 @@ impl EventHandler for Handler {
     }
 }
 
+#[hook]
+async fn before(ctx: &Context, msg: &Message, command_name: &str) -> bool {
+    println!("Got command '{}' by user '{}'", command_name, msg.author.name);
+
+    true // if `before` returns false, command processing doesn't happen.
+}
+
 #[tokio::main]
 async fn main() {
     // let now = Utc::now();
@@ -84,7 +91,13 @@ async fn main() {
     // Login with a bot token from the environment
     let token = env::var("DISCORD_TOKEN").expect("token");
     // println!("{}", token);
-    let mut client = Client::new(token)
+    let intents = GatewayIntents::GUILD_EMOJIS_AND_STICKERS
+        | GatewayIntents::MESSAGE_CONTENT
+        | GatewayIntents::GUILD_MESSAGES
+        | GatewayIntents::GUILD_MESSAGE_REACTIONS
+        | GatewayIntents::DIRECT_MESSAGE_REACTIONS
+        | GatewayIntents::DIRECT_MESSAGES;
+    let mut client = Client::builder(token, intents)
         .event_handler(Handler)
         .framework(framework)
         .await
