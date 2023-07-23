@@ -7,7 +7,7 @@ use serenity::utils::MessageBuilder;
 
 use crate::constants::{EMOTE_MAP, EMOTE_POINT_RIGHT, NICHOLAS_TRAVELER_SIZE_CYCLE, NICHOLAS_TRAVELER_START};
 use crate::get_bot_datas;
-use crate::utils::{I18nMessageStore, NicholasGiftStore};
+use crate::utils::{I18nMessageStore, NicholasGiftData, NicholasGiftStore};
 use crate::utils::time::{get_next_week, get_time_left, get_weekly_start};
 
 fn get_cycle_start() -> Date<Utc> {
@@ -31,6 +31,19 @@ async fn nick(ctx: &Context, msg: &Message) -> CommandResult {
     let (days_left, hours_left, mins_left, secs_left) = get_time_left(next_week, now);
 
     let gift = nicholas_gift.get_from_id(gift_id).unwrap();
+    let response = build_response(i18n_messages, days_left, hours_left, mins_left, secs_left, gift);
+
+    if let Err(why) = msg.channel_id.send_message(&ctx.http, |m| {
+        m.content(response);
+        m
+    }).await {
+        println!("Error sending message: {:?}", why);
+    }
+
+    Ok(())
+}
+
+fn build_response(i18n_messages: &I18nMessageStore, days_left: i64, hours_left: i64, mins_left: i64, secs_left: i64, gift: &NicholasGiftData) -> MessageBuilder {
     let mut response = MessageBuilder::new();
     response
         .push_underline_line(i18n_messages.nicholas_gift_headline())
@@ -45,13 +58,5 @@ async fn nick(ctx: &Context, msg: &Message) -> CommandResult {
         .push_bold_line(format!("{} {}, {:0>2}:{:0>2}:{:0>2}!", days_left, i18n_messages.time_days(), hours_left, mins_left, secs_left))
         .push(format!("{} {} ", EMOTE_MAP, EMOTE_POINT_RIGHT))
         .push_spoiler_line(&gift.location_url);
-
-    if let Err(why) = msg.channel_id.send_message(&ctx.http, |m| {
-        m.content(response);
-        m
-    }).await {
-        println!("Error sending message: {:?}", why);
-    }
-
-    Ok(())
+    response
 }

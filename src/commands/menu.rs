@@ -1,20 +1,17 @@
-use serenity::framework::standard::macros::command;
-use serenity::framework::standard::CommandResult;
-use serenity::{
-    builder::CreateMessage,
-    model::prelude::{
-        Message,
-    },
-    prelude::Context,
+use std::sync::Arc;
 
-};
+use serenity::builder::CreateMessage;
+use serenity::framework::standard::CommandResult;
+use serenity::framework::standard::macros::command;
+use serenity::model::channel::Message;
+use serenity::model::channel::ReactionType::Unicode;
+use serenity::model::prelude::Reaction;
+use serenity::prelude::*;
 use serenity_utils::{
     menu::{Menu, MenuOptions},
 };
 use serenity_utils::menu::Control;
-use std::sync::Arc;
-use serenity::model::prelude::Reaction;
-use serenity::model::channel::ReactionType::Unicode;
+
 use crate::constants::{REACTION_ONE, REACTION_TWO};
 
 #[command]
@@ -22,7 +19,7 @@ async fn menu(ctx: &Context, msg: &Message) -> CommandResult {
 
     let channel = msg.channel_id.to_channel(&ctx).await?.guild().unwrap();
     let emojis = ctx.http.get_guild(channel.guild_id.0).await?.emojis;
-    println!("{:?}", emojis);
+    // println!("{:?}", emojis);
     let mut page_one = CreateMessage::default();
     page_one
         .content("Page number one!")

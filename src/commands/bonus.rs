@@ -1,8 +1,8 @@
 use chrono::{Date, TimeZone, Utc};
-use serenity::client::Context;
 use serenity::framework::standard::CommandResult;
 use serenity::framework::standard::macros::command;
 use serenity::model::channel::Message;
+use serenity::prelude::*;
 use serenity::utils::MessageBuilder;
 
 use crate::constants::{
